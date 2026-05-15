@@ -15,9 +15,10 @@ import Link from 'next/link';
 
 interface Question {
   id: number;
-  type: 'multiple-choice' | 'fill-in-the-blank';
+  type: 'multiple-choice' | 'fill-in-the-blank' | 'unscramble';
   question: string;
   options?: string[];
+  scrambledWords?: string[];
   correctAnswer: string;
   explanation: string;
 }
@@ -78,6 +79,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'It was great catching up. I should probably head to the next session. Let\'s talk soon!',
         explanation: 'Acknowledging the value of the talk before stating a reason to leave is professional.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a polite greeting using these words:',
+        scrambledWords: ['nice', 'to', 'It', 'is', 'meet', 'finally', 'you'],
+        correctAnswer: 'It is nice to finally meet you',
+        explanation: '"It is nice to finally meet you" is perfect for meeting someone in person after talking online.'
       }
     ]
   },
@@ -136,6 +145,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'Sorry to jump in, but could I just clarify one thing?',
         explanation: '"Sorry to jump in" or "May I just add..." are polite ways to interrupt.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a phrase to change the topic:',
+        scrambledWords: ['move', 'on', 'Let', 'us', 'the', 'item', 'to', 'next'],
+        correctAnswer: 'Let us move on to the next item',
+        explanation: 'This is a standard way to transition between agenda points.'
       }
     ]
   },
@@ -194,6 +211,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'By matching your skills and experience to the specific needs of the company.',
         explanation: 'Showing alignment between your profile and their problems is the key to success.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a sentence about your experience:',
+        scrambledWords: ['have', 'I', 'years', 'five', 'of', 'experience'],
+        correctAnswer: 'I have five years of experience',
+        explanation: 'Clear and direct statement of your professional background.'
       }
     ]
   },
@@ -252,6 +277,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'When you don\'t know the specific name of the recipient.',
         explanation: 'It is a formal way to address an unknown person or department.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a phrase to refer to an attachment:',
+        scrambledWords: ['find', 'Please', 'attached', 'requested', 'document', 'the'],
+        correctAnswer: 'Please find attached the requested document',
+        explanation: 'A very common and formal way to point out email attachments.'
       }
     ]
   },
@@ -310,6 +343,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'To build mutually beneficial professional relationships.',
         explanation: 'Networking is about long-term value and connection, not just immediate sales.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a phrase to exchange contacts:',
+        scrambledWords: ['like', 'I', 'would', 'to', 'in', 'stay', 'touch'],
+        correctAnswer: 'I would like to stay in touch',
+        explanation: 'A polite way to express interest in maintaining the professional relationship.'
       }
     ]
   },
@@ -368,6 +409,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'Mute yourself when you are not speaking.',
         explanation: 'Muting helps maintain clear audio for other participants when you have background noise.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a phrase to solve an audio issue:',
+        scrambledWords: ['think', 'I', 'you', 'are', 'mute', 'on'],
+        correctAnswer: 'I think you are on mute',
+        explanation: 'A polite way to inform someone their microphone is off.'
       }
     ]
   },
@@ -426,6 +475,14 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         ],
         correctAnswer: 'A period of time between connecting flights.',
         explanation: 'Layovers can range from a few hours to a whole day depending on the route.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a sentence asking about locations:',
+        scrambledWords: ['Is', 'restaurant', 'the', 'security', 'behind', 'check', 'the'],
+        correctAnswer: 'Is the restaurant behind the security check',
+        explanation: 'Asking for directions using spatial prepositions.'
       }
     ]
   }
@@ -438,6 +495,7 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState('');
+  const [selectedWordIndices, setSelectedWordIndices] = useState<number[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [score, setScore] = useState(0);
@@ -445,12 +503,25 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
 
   const currentQuestion = module.questions[currentQuestionIndex];
 
+  const handleSelectWord = (index: number) => {
+    if (!selectedWordIndices.includes(index)) {
+      setSelectedWordIndices([...selectedWordIndices, index]);
+    }
+  };
+
+  const handleRemoveWord = (indexToRemove: number) => {
+    setSelectedWordIndices(selectedWordIndices.filter(index => index !== indexToRemove));
+  };
+
   const handleSubmit = () => {
     let correct = false;
     if (currentQuestion.type === 'multiple-choice') {
       correct = selectedOption === currentQuestion.correctAnswer;
-    } else {
+    } else if (currentQuestion.type === 'fill-in-the-blank') {
       correct = inputValue.trim().toLowerCase() === currentQuestion.correctAnswer.toLowerCase();
+    } else if (currentQuestion.type === 'unscramble') {
+      const answerStr = selectedWordIndices.map(i => currentQuestion.scrambledWords![i]).join(' ');
+      correct = answerStr === currentQuestion.correctAnswer;
     }
     
     setIsCorrect(correct);
@@ -463,6 +534,7 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
       setInputValue('');
+      setSelectedWordIndices([]);
       setIsSubmitted(false);
       setIsCorrect(null);
     } else {
@@ -474,10 +546,18 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
     setCurrentQuestionIndex(0);
     setSelectedOption(null);
     setInputValue('');
+    setSelectedWordIndices([]);
     setIsSubmitted(false);
     setIsCorrect(null);
     setScore(0);
     setIsFinished(false);
+  };
+
+  const canSubmit = () => {
+    if (currentQuestion.type === 'multiple-choice') return !!selectedOption;
+    if (currentQuestion.type === 'fill-in-the-blank') return !!inputValue.trim();
+    if (currentQuestion.type === 'unscramble') return selectedWordIndices.length === currentQuestion.scrambledWords?.length;
+    return false;
   };
 
   if (isFinished) {
@@ -585,7 +665,7 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
                 {isSubmitted && selectedOption === option && option !== currentQuestion.correctAnswer && <XCircle className="text-[#EF4444]" size={20} />}
               </button>
             ))
-          ) : (
+          ) : currentQuestion.type === 'fill-in-the-blank' ? (
             <div className="relative">
               <input 
                 type="text"
@@ -606,7 +686,53 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
                 </div>
               )}
             </div>
-          )}
+          ) : currentQuestion.type === 'unscramble' ? (
+            <div className="space-y-6">
+              {/* Answer Slot */}
+              <div className={`min-h-[80px] p-4 rounded-2xl flex flex-wrap gap-2 items-start transition-all border
+                ${isSubmitted 
+                    ? (isCorrect ? 'border-[#10B981] bg-[#10B981]/5' : 'border-[#EF4444] bg-[#EF4444]/5')
+                    : 'border-[#334155] bg-[#0F172A]'
+                }`}
+              >
+                {selectedWordIndices.map((wordIndex) => (
+                  <button
+                    key={`ans-${wordIndex}`}
+                    onClick={() => !isSubmitted && handleRemoveWord(wordIndex)}
+                    disabled={isSubmitted}
+                    className="px-4 py-2 bg-[#D97706] text-white rounded-xl font-bold hover:bg-[#B45309] transition-all shadow-md"
+                  >
+                    {currentQuestion.scrambledWords![wordIndex]}
+                  </button>
+                ))}
+                {selectedWordIndices.length === 0 && !isSubmitted && (
+                  <span className="text-gray-500 italic p-2 w-full text-center mt-2">Click words below to build the sentence</span>
+                )}
+              </div>
+
+              {/* Word Bank */}
+              <div className="flex flex-wrap gap-3 p-4 bg-[#0B1120] rounded-2xl border border-[#1E293B] justify-center">
+                {currentQuestion.scrambledWords?.map((word, idx) => {
+                  const isSelected = selectedWordIndices.includes(idx);
+                  return (
+                    <button
+                      key={`bank-${idx}`}
+                      onClick={() => handleSelectWord(idx)}
+                      disabled={isSelected || isSubmitted}
+                      className={`px-4 py-2 rounded-xl font-bold transition-all shadow-sm
+                        ${isSelected 
+                          ? 'bg-[#1E293B] text-[#1E293B] border border-[#1E293B] opacity-50 cursor-not-allowed pointer-events-none' 
+                          : 'bg-[#1E293B] text-gray-200 border border-[#334155] hover:border-[#D97706] hover:text-white hover:-translate-y-1'
+                        }
+                      `}
+                    >
+                      {word}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
 
         {/* Explanation & Action */}
@@ -651,10 +777,10 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
         {!isSubmitted && (
           <div className="mt-8">
             <button
-              disabled={currentQuestion.type === 'multiple-choice' ? !selectedOption : !inputValue.trim()}
+              disabled={!canSubmit()}
               onClick={handleSubmit}
               className={`w-full py-4 rounded-xl font-bold transition-all
-                ${(currentQuestion.type === 'multiple-choice' ? selectedOption : inputValue.trim())
+                ${canSubmit()
                   ? 'bg-[#D97706] text-white hover:bg-[#B45309]'
                   : 'bg-[#1E293B] text-gray-500 cursor-not-allowed'
                 }
