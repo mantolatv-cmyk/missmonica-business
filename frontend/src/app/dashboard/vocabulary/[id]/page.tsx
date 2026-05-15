@@ -207,9 +207,9 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B1120] pb-20">
-      {/* Premium Header */}
-      <div className="bg-[#0F172A] border-b border-[#1E293B] sticky top-0 z-10">
+    <div className="flex flex-col min-h-screen bg-[#0B1120] pb-20 -m-8">
+      {/* Premium Header - Fixed at the top */}
+      <div className="bg-[#0F172A] border-b border-[#1E293B] sticky top-0 z-50 shadow-xl">
         <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link href="/dashboard" className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1E293B] transition-colors">
