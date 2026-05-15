@@ -132,9 +132,9 @@ export default function LessonControl() {
                   src={lesson.image} 
                   alt={lesson.title}
                   fill
-                  className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-in-out"
+                  className="object-cover opacity-95 contrast-110 group-hover:opacity-100 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-125 transition-all duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-90"></div>
                 
                 {/* Icon Badge */}
                 <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#0F172A]/80 backdrop-blur-md flex items-center justify-center border border-[#334155] shadow-lg">
