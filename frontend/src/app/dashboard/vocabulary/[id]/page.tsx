@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, BookOpen, Volume2, Search, Sparkles, Languages, ChevronRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Volume2, Search, Sparkles, Languages, ChevronRight, Star, Brain, Lightbulb, Trophy } from 'lucide-react';
 import Link from 'next/link';
 
 interface VocabItem {
@@ -12,9 +12,16 @@ interface VocabItem {
   category: 'Business' | 'Action' | 'Tool' | 'Travel' | 'Grammar';
 }
 
-const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
+interface LessonData {
+  title: string;
+  items: VocabItem[];
+  culturalTip: string;
+}
+
+const vocabularyData: Record<string, LessonData> = {
   '1': {
     title: 'Small Talk & Presentations',
+    culturalTip: "In English-speaking business cultures, small talk is essential for building 'rapport'. Stick to safe topics like the weather, travel, or the event itself. Avoid personal questions about age, salary, or religion early on.",
     items: [
       { english: 'Small Talk', portuguese: 'Conversa fiada / casual', example: 'We did some small talk before the meeting.', category: 'Business' },
       { english: 'Employee', portuguese: 'Funcionário / Empregado', example: 'The company has over 500 employees.', category: 'Business' },
@@ -34,6 +41,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '2': {
     title: 'Meetings & Communication',
+    culturalTip: "Time is money. In American business culture, 'on time' actually means 5 minutes early. In the UK, punctuality is equally strict. If you are going to be even 2 minutes late, send a quick note immediately.",
     items: [
       { english: 'Deadline', portuguese: 'Prazo final', example: 'We must meet the project deadline.', category: 'Business' },
       { english: 'Feedback', portuguese: 'Retorno / Comentários / Avaliação', example: 'I need some feedback on my presentation.', category: 'Business' },
@@ -53,6 +61,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '3': {
     title: 'Interviews & HR',
+    culturalTip: "Self-promotion is expected in US interviews but should be backed by 'STAR' method examples (Situation, Task, Action, Result). In British interviews, a bit more modesty is common, though results still matter most.",
     items: [
       { english: 'Resume / CV', portuguese: 'Currículo', example: 'Please send your resume to our HR team.', category: 'Tool' },
       { english: 'Background', portuguese: 'Histórico / Experiência / Formação', example: 'Tell me about your professional background.', category: 'Business' },
@@ -72,6 +81,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '4': {
     title: 'Professional Emails',
+    culturalTip: "Email tone should be 'professional yet conversational'. Use clear subject lines. In the US, people often use first names immediately; in more formal European contexts, titles (Mr./Ms.) might be preferred initially.",
     items: [
       { english: 'Attached', portuguese: 'Em anexo', example: 'Please find the report attached.', category: 'Tool' },
       { english: 'Oversight', portuguese: 'Descuido / Lapso', example: 'I apologize for the oversight.', category: 'Business' },
@@ -91,6 +101,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '5': {
     title: 'Networking & Events',
+    culturalTip: "Networking is about 'farming, not hunting'. Focus on how you can help others before asking for favors. Always follow up with a personalized LinkedIn message within 24 hours of meeting someone.",
     items: [
       { english: 'Firm', portuguese: 'Empresa / Firma', example: 'I work for an international tech firm.', category: 'Business' },
       { english: 'Trends', portuguese: 'Tendências', example: 'We need to stay updated on industry trends.', category: 'Business' },
@@ -110,6 +121,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '6': {
     title: 'Teams & Online Calls',
+    culturalTip: "Virtual etiquette: Keep your camera on unless you have a poor connection. Use the 'raise hand' feature in large groups. Mute yourself when not speaking to avoid background noise interference.",
     items: [
       { english: 'Unstable', portuguese: 'Instável', example: 'My internet connection is a bit unstable.', category: 'Tool' },
       { english: 'Muted', portuguese: 'Silenciado / No mudo', example: 'Your microphone is muted.', category: 'Tool' },
@@ -129,6 +141,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '7': {
     title: 'Prepositions & Travel',
+    culturalTip: "In many countries, 'business casual' is the standard for travel, but for important meetings, always lean towards 'business formal'. Keep your travel documents organized and easily accessible.",
     items: [
       { english: 'Suitcase', portuguese: 'Mala', example: 'Place your suitcase on the scale.', category: 'Travel' },
       { english: 'Scale', portuguese: 'Balança', example: 'The scale is next to the counter.', category: 'Travel' },
@@ -148,6 +161,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '8': {
     title: 'DO / CAN / TO',
+    culturalTip: "Politeness over directness: In English, using 'Could you...' or 'Would it be possible to...' is often preferred over a direct 'Do this' or 'I want this', especially in service situations.",
     items: [
       { english: 'Passport', portuguese: 'Passaporte', example: 'Do you have your passport?', category: 'Travel' },
       { english: 'Water', portuguese: 'Água', example: 'Can I get some water, please?', category: 'Travel' },
@@ -167,6 +181,7 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
   },
   '9': {
     title: 'Present To Be',
+    culturalTip: "When arriving in a new city for business, it's polite to mention something positive about the place or the weather during your first meeting. It helps set a friendly tone for the relationship.",
     items: [
       { english: 'Brazil', portuguese: 'Brasil', example: 'I am from Brazil.', category: 'Travel' },
       { english: 'Husband', portuguese: 'Marido', example: 'He is my husband.', category: 'Travel' },
@@ -192,6 +207,9 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
   
   const [searchTerm, setSearchTerm] = useState('');
   const [revealedIds, setRevealedIds] = useState<number[]>([]);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [flashcardMode, setFlashcardMode] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredItems = lesson.items.filter(item => 
     item.english.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -206,9 +224,17 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
     }
   };
 
+  const toggleFavorite = (english: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (favorites.includes(english)) {
+      setFavorites(favorites.filter(id => id !== english));
+    } else {
+      setFavorites([...favorites, english]);
+    }
+  };
+
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] -m-8 bg-[#0B1120] relative overflow-hidden">
-      {/* Premium Header - Truly Fixed */}
       <div className="h-20 bg-[#0F172A] border-b border-[#1E293B] shrink-0 z-10 shadow-xl">
         <div className="max-w-5xl mx-auto px-6 h-full flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -222,128 +248,211 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
             </div>
           </div>
           
-          <div className="hidden md:flex items-center bg-[#0B1120] border border-[#1E293B] rounded-xl px-4 py-2 focus-within:border-[#D97706] transition-all w-64 shadow-inner">
-            <Search size={18} className="text-gray-500 mr-2" />
-            <input 
-              type="text" 
-              placeholder="Search words..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-transparent border-none outline-none text-sm text-white w-full placeholder:text-gray-600"
-            />
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setFlashcardMode(!flashcardMode)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all ${flashcardMode ? 'bg-[#D97706] text-white' : 'bg-[#1E293B] text-gray-400 hover:text-white'}`}
+            >
+              <Brain size={14} />
+              {flashcardMode ? 'Grid View' : 'Flashcards'}
+            </button>
+            <div className="hidden md:flex items-center bg-[#0B1120] border border-[#1E293B] rounded-xl px-4 py-2 focus-within:border-[#D97706] transition-all w-48 shadow-inner">
+              <Search size={18} className="text-gray-500 mr-2" />
+              <input 
+                type="text" 
+                placeholder="Search..." 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="bg-transparent border-none outline-none text-sm text-white w-full placeholder:text-gray-600"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Scrollable Content Area */}
       <div className="flex-1 overflow-y-auto px-6 py-10">
         <div className="max-w-5xl mx-auto w-full pb-20">
-          {/* Intro Section */}
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-2 mb-3">
-                <BookOpen className="text-[#D97706]" size={18} />
-                <h2 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Vocabulary Lab</h2>
-              </div>
-              <h3 className="font-serif text-3xl font-bold text-white mb-4">Master Essential Phrasing</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Explore the key terminology and professional expressions used in this lesson. 
-                Click on the cards to reveal the translation and master the context.
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <div className="px-4 py-2 bg-[#D97706]/10 border border-[#D97706]/30 rounded-lg">
-                <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-widest block">Total Words</span>
-                <span className="text-xl font-bold text-white">{lesson.items.length}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Vocabulary Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, index) => (
-                <motion.div
-                  key={item.english}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.03 }}
-                  onClick={() => toggleReveal(index)}
-                  className="group cursor-pointer"
-                >
-                  <div className="bg-[#0F172A] border border-[#1E293B] rounded-2xl p-6 hover:border-[#D97706]/50 transition-all relative overflow-hidden shadow-lg h-full flex flex-col">
-                    {/* Category Badge */}
-                    <div className="flex justify-between items-start mb-4">
-                      <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter border
-                        ${item.category === 'Business' ? 'text-blue-400 border-blue-400/30 bg-blue-400/5' : 
-                          item.category === 'Action' ? 'text-emerald-400 border-emerald-400/30 bg-emerald-400/5' : 
-                          item.category === 'Grammar' ? 'text-violet-400 border-violet-400/30 bg-violet-400/5' :
-                          item.category === 'Travel' ? 'text-amber-400 border-amber-400/30 bg-amber-400/5' :
-                          'text-gray-400 border-gray-400/30 bg-gray-400/5'}`}
+          
+          {flashcardMode ? (
+            <div className="flex flex-col items-center justify-center min-h-[500px]">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-full max-w-lg aspect-[4/3] relative perspective-1000 group cursor-pointer"
+                onClick={() => toggleReveal(currentIndex)}
+              >
+                <div className="bg-[#0F172A] border-2 border-[#1E293B] rounded-[32px] p-12 h-full flex flex-col items-center justify-center text-center shadow-2xl group-hover:border-[#D97706]/30 transition-all">
+                  <span className="text-[10px] font-black text-[#D97706] uppercase tracking-[0.4em] mb-8">{lesson.items[currentIndex].category}</span>
+                  <h4 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">{lesson.items[currentIndex].english}</h4>
+                  
+                  <AnimatePresence mode="wait">
+                    {revealedIds.includes(currentIndex) ? (
+                      <motion.div
+                        key="trans"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="space-y-4"
                       >
-                        {item.category}
-                      </span>
-                      <Volume2 size={16} className="text-gray-600 group-hover:text-[#D97706] transition-colors" />
-                    </div>
+                        <p className="text-2xl text-[#D97706] font-medium">{lesson.items[currentIndex].portuguese}</p>
+                        <p className="text-sm text-gray-500 italic max-w-xs">"{lesson.items[currentIndex].example}"</p>
+                      </motion.div>
+                    ) : (
+                      <motion.div key="hint" className="text-gray-600 text-sm flex items-center gap-2">
+                        <ChevronRight size={16} /> Tap to flip card
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#D97706] transition-colors">
-                        {item.english}
-                      </h4>
-                      
-                      <div className="min-h-[40px] flex flex-col justify-center">
-                        <AnimatePresence mode="wait">
-                          {revealedIds.includes(index) ? (
-                            <motion.div
-                              key="translation"
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              className="flex items-center gap-2 text-[#D97706] font-medium"
-                            >
-                              <Languages size={14} />
-                              <span>{item.portuguese}</span>
-                            </motion.div>
-                          ) : (
-                            <motion.div
-                              key="hidden"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              className="text-gray-600 text-sm italic flex items-center gap-2"
-                            >
-                              <ChevronRight size={14} />
-                              <span>Click to reveal translation</span>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    </div>
+                  <button 
+                    onClick={(e) => toggleFavorite(lesson.items[currentIndex].english, e)}
+                    className={`absolute top-8 right-8 p-3 rounded-full transition-all ${favorites.includes(lesson.items[currentIndex].english) ? 'text-[#D97706] bg-[#D97706]/10 shadow-[0_0_15px_rgba(217,119,6,0.2)]' : 'text-gray-700 hover:text-gray-400'}`}
+                  >
+                    <Star size={24} fill={favorites.includes(lesson.items[currentIndex].english) ? "currentColor" : "none"} />
+                  </button>
+                </div>
+              </motion.div>
 
-                    {/* Example sentence */}
-                    <div className="mt-6 pt-4 border-t border-[#1E293B]">
-                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Practical Usage</span>
-                      <p className="text-xs text-gray-400 italic leading-relaxed">
-                        "{item.example}"
-                      </p>
-                    </div>
-
-                    {/* Accent Line */}
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D97706] opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_#D97706]"></div>
+              <div className="mt-12 flex items-center gap-8">
+                <button 
+                  onClick={() => { setCurrentIndex(prev => Math.max(0, prev - 1)); setRevealedIds([]); }}
+                  disabled={currentIndex === 0}
+                  className="p-4 bg-[#1E293B] rounded-full text-white disabled:opacity-20 transition-all hover:bg-[#334155]"
+                >
+                  <ArrowLeft size={24} />
+                </button>
+                <span className="text-gray-500 font-bold tracking-widest">{currentIndex + 1} / {lesson.items.length}</span>
+                <button 
+                  onClick={() => { setCurrentIndex(prev => Math.min(lesson.items.length - 1, prev + 1)); setRevealedIds([]); }}
+                  disabled={currentIndex === lesson.items.length - 1}
+                  className="p-4 bg-[#1E293B] rounded-full text-white disabled:opacity-20 transition-all hover:bg-[#334155]"
+                >
+                  <ChevronRight size={24} className="rotate-0" />
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="mb-12 flex flex-col md:flex-row md:items-start justify-between gap-8">
+                <div className="max-w-xl">
+                  <div className="flex items-center gap-2 mb-3">
+                    <BookOpen className="text-[#D97706]" size={18} />
+                    <h2 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Vocabulary Lab</h2>
                   </div>
+                  <h3 className="font-serif text-3xl font-bold text-white mb-4">Master Essential Phrasing</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Explore the key terminology and professional expressions used in this lesson. 
+                    Save your favorites and try the Flashcard mode for active recall.
+                  </p>
+                </div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="flex-1 bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#D97706]/30 rounded-2xl p-6 relative overflow-hidden group shadow-2xl"
+                >
+                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Lightbulb size={60} className="text-[#D97706]" />
+                  </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="text-[#D97706]" size={14} />
+                    <span className="text-[10px] font-black text-[#D97706] uppercase tracking-widest">Cultural Insight</span>
+                  </div>
+                  <p className="text-xs text-gray-300 leading-relaxed italic relative z-10">
+                    "{lesson.culturalTip}"
+                  </p>
                 </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
+              </div>
 
-          {/* Empty State */}
-          {filteredItems.length === 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <AnimatePresence mode="popLayout">
+                  {filteredItems.map((item, index) => (
+                    <motion.div
+                      key={item.english}
+                      layout
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.03 }}
+                      onClick={() => toggleReveal(index)}
+                      className="group cursor-pointer"
+                    >
+                      <div className="bg-[#0F172A] border border-[#1E293B] rounded-2xl p-6 hover:border-[#D97706]/50 transition-all relative overflow-hidden shadow-lg h-full flex flex-col">
+                        <div className="flex justify-between items-start mb-4">
+                          <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter border
+                            ${item.category === 'Business' ? 'text-blue-400 border-blue-400/30 bg-blue-400/5' : 
+                              item.category === 'Action' ? 'text-emerald-400 border-emerald-400/30 bg-emerald-400/5' : 
+                              item.category === 'Grammar' ? 'text-violet-400 border-violet-400/30 bg-violet-400/5' :
+                              item.category === 'Travel' ? 'text-amber-400 border-amber-400/30 bg-amber-400/5' :
+                              'text-gray-400 border-gray-400/30 bg-gray-400/5'}`}
+                          >
+                            {item.category}
+                          </span>
+                          <div className="flex items-center gap-3">
+                            <button 
+                              onClick={(e) => toggleFavorite(item.english, e)}
+                              className={`p-1 transition-all ${favorites.includes(item.english) ? 'text-[#D97706]' : 'text-gray-700 hover:text-gray-400'}`}
+                            >
+                              <Star size={18} fill={favorites.includes(item.english) ? "currentColor" : "none"} />
+                            </button>
+                            <Volume2 size={16} className="text-gray-600 group-hover:text-[#D97706] transition-colors" />
+                          </div>
+                        </div>
+
+                        <div className="flex-1">
+                          <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#D97706] transition-colors">
+                            {item.english}
+                          </h4>
+                          
+                          <div className="min-h-[40px] flex flex-col justify-center">
+                            <AnimatePresence mode="wait">
+                              {revealedIds.includes(index) ? (
+                                <motion.div
+                                  key="translation"
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  className="flex items-center gap-2 text-[#D97706] font-medium"
+                                >
+                                  <Languages size={14} />
+                                  <span>{item.portuguese}</span>
+                                </motion.div>
+                              ) : (
+                                <motion.div
+                                  key="hidden"
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  className="text-gray-600 text-sm italic flex items-center gap-2"
+                                >
+                                  <ChevronRight size={14} />
+                                  <span>Click to reveal translation</span>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        </div>
+
+                        <div className="mt-6 pt-4 border-t border-[#1E293B]">
+                          <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Practical Usage</span>
+                          <p className="text-xs text-gray-400 italic leading-relaxed">
+                            "{item.example}"
+                          </p>
+                        </div>
+
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D97706] opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_#D97706]"></div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            </>
+          )}
+
+          {!flashcardMode && filteredItems.length === 0 && (
             <div className="py-20 text-center">
               <Search size={48} className="text-gray-700 mx-auto mb-4 opacity-20" />
               <p className="text-gray-500 font-serif text-xl italic">No vocabulary found for your search.</p>
             </div>
           )}
 
-          {/* Footer Navigation */}
           <div className="mt-16 pt-8 border-t border-[#1E293B] flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2 text-gray-500 text-sm">
               <Sparkles size={16} className="text-[#D97706]" />

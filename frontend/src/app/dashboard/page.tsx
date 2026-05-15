@@ -103,7 +103,7 @@ export default function LessonControl() {
   return (
     <div className="flex flex-col gap-8 pb-12">
       {/* Header Section */}
-      <div className="flex justify-between items-end border-b border-[#1E293B] pb-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1E293B] pb-6 gap-6">
         <div>
           <h1 className="font-serif text-4xl font-bold text-[#F8FAFC] tracking-tight neon-text">
             Lesson Control
@@ -113,7 +113,48 @@ export default function LessonControl() {
             Select a business lesson to initiate your immersive conversational simulation.
           </p>
         </div>
+
+        <div className="flex gap-4 w-full md:w-auto">
+          <div className="flex-1 md:flex-none bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-2">
+            <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest block">Focus Score</span>
+            <span className="text-lg font-bold text-white">840 <span className="text-[10px] text-emerald-400 font-medium">+12%</span></span>
+          </div>
+          <div className="flex-1 md:flex-none bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-2">
+            <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest block">Study Streak</span>
+            <span className="text-lg font-bold text-white">5 Days</span>
+          </div>
+        </div>
       </div>
+
+      {/* Dynamic Context Card */}
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="bg-gradient-to-r from-[#1E293B] to-[#0F172A] border border-[#D97706]/30 rounded-3xl p-8 relative overflow-hidden group shadow-2xl"
+      >
+        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+          <Briefcase size={120} className="text-[#D97706]" />
+        </div>
+        
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+          <div className="p-5 bg-[#D97706]/10 text-[#D97706] rounded-2xl shadow-[0_0_20px_rgba(217,119,6,0.1)]">
+            <Sparkles size={32} />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+              <span className="px-2 py-0.5 bg-[#D97706] text-white text-[9px] font-black rounded uppercase tracking-widest">Daily Executive Tip</span>
+              <span className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">May 15, 2026</span>
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white mb-2">Master the 'Power Pause'</h3>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-2xl">
+              In high-stakes negotiations, a 3-second pause after a key point projects authority and gives the other party time to process your value. Silence is a professional tool, not a weakness.
+            </p>
+          </div>
+          <Link href="/dashboard/resources" className="px-8 py-4 bg-white text-[#0F172A] rounded-xl font-bold text-sm hover:bg-gray-100 transition-all shadow-xl whitespace-nowrap">
+            View All Tips
+          </Link>
+        </div>
+      </motion.div>
 
       {/* Grid of Lessons */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

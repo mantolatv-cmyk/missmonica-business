@@ -5,7 +5,8 @@ import {
   Target, 
   Settings,
   Search,
-  UserCircle
+  UserCircle,
+  Briefcase
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -34,6 +35,7 @@ export default function DashboardLayout({
 
         <nav className="flex-1 w-full space-y-4">
           <NavItem icon={<Target size={20} />} label="Lesson Control" href="/dashboard" active={pathname === '/dashboard'} />
+          <NavItem icon={<Briefcase size={20} />} label="Executive Toolbox" href="/dashboard/resources" active={pathname === '/dashboard/resources'} />
         </nav>
 
         <div className="w-full mt-auto">
