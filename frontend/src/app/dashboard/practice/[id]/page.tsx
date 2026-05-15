@@ -15,10 +15,13 @@ import Link from 'next/link';
 
 interface Question {
   id: number;
-  type: 'multiple-choice' | 'fill-in-the-blank' | 'unscramble';
+  type: 'multiple-choice' | 'fill-in-the-blank' | 'unscramble' | 'find-the-mistake';
   question: string;
   options?: string[];
   scrambledWords?: string[];
+  sentenceWords?: string[];
+  incorrectWordIndex?: number;
+  correctedWord?: string;
   correctAnswer: string;
   explanation: string;
 }
@@ -87,6 +90,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['nice', 'to', 'It', 'is', 'meet', 'finally', 'you'],
         correctAnswer: 'It is nice to finally meet you',
         explanation: '"It is nice to finally meet you" is perfect for meeting someone in person after talking online.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the grammar mistake and correct it:',
+        sentenceWords: ['I', 'am', 'look', 'forward', 'to', 'the', 'weekend.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'looking',
+        correctAnswer: 'looking',
+        explanation: 'After "look forward to", the verb must be in the -ing form (gerund).'
       }
     ]
   },
@@ -153,6 +166,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['move', 'on', 'Let', 'us', 'the', 'item', 'to', 'next'],
         correctAnswer: 'Let us move on to the next item',
         explanation: 'This is a standard way to transition between agenda points.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['I', 'agree', 'with', 'you', 'in', 'this', 'point.'],
+        incorrectWordIndex: 4,
+        correctedWord: 'on',
+        correctAnswer: 'on',
+        explanation: 'The correct phrase is "agree on this point", not "in this point".'
       }
     ]
   },
@@ -219,6 +242,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['have', 'I', 'years', 'five', 'of', 'experience'],
         correctAnswer: 'I have five years of experience',
         explanation: 'Clear and direct statement of your professional background.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the time expression mistake and correct it:',
+        sentenceWords: ['I', 'graduated', 'university', 'two', 'years', 'since.'],
+        incorrectWordIndex: 5,
+        correctedWord: 'ago',
+        correctAnswer: 'ago',
+        explanation: 'We use "ago" for a specific point in the past measured back from the present.'
       }
     ]
   },
@@ -285,6 +318,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['find', 'Please', 'attached', 'requested', 'document', 'the'],
         correctAnswer: 'Please find attached the requested document',
         explanation: 'A very common and formal way to point out email attachments.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the vocabulary mistake and correct it:',
+        sentenceWords: ['Please', 'find', 'the', 'attach', 'document', 'below.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'attached',
+        correctAnswer: 'attached',
+        explanation: 'It must be the adjective "attached", not the verb "attach".'
       }
     ]
   },
@@ -351,6 +394,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['like', 'I', 'would', 'to', 'in', 'stay', 'touch'],
         correctAnswer: 'I would like to stay in touch',
         explanation: 'A polite way to express interest in maintaining the professional relationship.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the grammar mistake and correct it:',
+        sentenceWords: ['It', 'was', 'a', 'pleasure', 'to', 'meeting', 'you.'],
+        incorrectWordIndex: 5,
+        correctedWord: 'meet',
+        correctAnswer: 'meet',
+        explanation: 'After the infinitive "to", use the base form of the verb ("meet").'
       }
     ]
   },
@@ -417,6 +470,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['think', 'I', 'you', 'are', 'mute', 'on'],
         correctAnswer: 'I think you are on mute',
         explanation: 'A polite way to inform someone their microphone is off.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['I', 'cannot', 'hear', 'you.', 'You', 'are', 'in', 'mute.'],
+        incorrectWordIndex: 6,
+        correctedWord: 'on',
+        correctAnswer: 'on',
+        explanation: 'The correct phrase is "on mute".'
       }
     ]
   },
@@ -483,6 +546,16 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         scrambledWords: ['Is', 'restaurant', 'the', 'security', 'behind', 'check', 'the'],
         correctAnswer: 'Is the restaurant behind the security check',
         explanation: 'Asking for directions using spatial prepositions.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['My', 'flight', 'departs', 'in', '5:30', 'PM.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'at',
+        correctAnswer: 'at',
+        explanation: 'We use the preposition "at" for specific times on the clock.'
       }
     ]
   }
@@ -496,6 +569,9 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState('');
   const [selectedWordIndices, setSelectedWordIndices] = useState<number[]>([]);
+  const [selectedMistakeIndex, setSelectedMistakeIndex] = useState<number | null>(null);
+  const [correctionInput, setCorrectionInput] = useState('');
+  
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [score, setScore] = useState(0);
@@ -522,6 +598,9 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
     } else if (currentQuestion.type === 'unscramble') {
       const answerStr = selectedWordIndices.map(i => currentQuestion.scrambledWords![i]).join(' ');
       correct = answerStr === currentQuestion.correctAnswer;
+    } else if (currentQuestion.type === 'find-the-mistake') {
+      correct = selectedMistakeIndex === currentQuestion.incorrectWordIndex &&
+                correctionInput.trim().toLowerCase() === currentQuestion.correctedWord?.toLowerCase();
     }
     
     setIsCorrect(correct);
@@ -535,6 +614,8 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
       setSelectedOption(null);
       setInputValue('');
       setSelectedWordIndices([]);
+      setSelectedMistakeIndex(null);
+      setCorrectionInput('');
       setIsSubmitted(false);
       setIsCorrect(null);
     } else {
@@ -547,6 +628,8 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
     setSelectedOption(null);
     setInputValue('');
     setSelectedWordIndices([]);
+    setSelectedMistakeIndex(null);
+    setCorrectionInput('');
     setIsSubmitted(false);
     setIsCorrect(null);
     setScore(0);
@@ -557,6 +640,7 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
     if (currentQuestion.type === 'multiple-choice') return !!selectedOption;
     if (currentQuestion.type === 'fill-in-the-blank') return !!inputValue.trim();
     if (currentQuestion.type === 'unscramble') return selectedWordIndices.length === currentQuestion.scrambledWords?.length;
+    if (currentQuestion.type === 'find-the-mistake') return selectedMistakeIndex !== null && !!correctionInput.trim();
     return false;
   };
 
@@ -732,6 +816,69 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
                 })}
               </div>
             </div>
+          ) : currentQuestion.type === 'find-the-mistake' ? (
+            <div className="space-y-6">
+              <span className="text-sm text-gray-500 block text-center italic mb-4">Click the word that is incorrect</span>
+              
+              {/* Clickable Sentence */}
+              <div className="flex flex-wrap gap-2 justify-center bg-[#0B1120] p-6 rounded-2xl border border-[#1E293B]">
+                {currentQuestion.sentenceWords?.map((word, idx) => {
+                  const isSelected = selectedMistakeIndex === idx;
+                  const isWrongSelection = isSubmitted && isSelected && idx !== currentQuestion.incorrectWordIndex;
+                  const isCorrectSelection = isSubmitted && isSelected && idx === currentQuestion.incorrectWordIndex;
+
+                  return (
+                    <button
+                      key={`word-${idx}`}
+                      onClick={() => !isSubmitted && setSelectedMistakeIndex(idx)}
+                      disabled={isSubmitted}
+                      className={`text-lg px-3 py-2 rounded-lg transition-all font-serif
+                        ${isSelected && !isSubmitted ? 'bg-[#D97706] text-white shadow-md transform -translate-y-1' : ''}
+                        ${!isSelected && !isSubmitted ? 'text-gray-300 hover:text-white hover:bg-[#1E293B]' : ''}
+                        ${isCorrectSelection ? 'bg-[#10B981] text-white' : ''}
+                        ${isWrongSelection ? 'bg-[#EF4444] text-white' : ''}
+                        ${isSubmitted && !isSelected ? 'text-gray-600 opacity-50 cursor-not-allowed' : ''}
+                      `}
+                    >
+                      {word}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Correction Input (Appears only after a word is selected) */}
+              <AnimatePresence>
+                {selectedMistakeIndex !== null && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="relative mt-4"
+                  >
+                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">
+                      Type the correct word:
+                    </label>
+                    <input 
+                      type="text"
+                      disabled={isSubmitted}
+                      value={correctionInput}
+                      onChange={(e) => setCorrectionInput(e.target.value)}
+                      placeholder={`Replace "${currentQuestion.sentenceWords![selectedMistakeIndex]}" with...`}
+                      className={`w-full p-4 bg-[#0F172A] border rounded-2xl focus:outline-none transition-all font-medium text-white
+                        ${isSubmitted 
+                          ? (isCorrect ? 'border-[#10B981] bg-[#10B981]/5' : 'border-[#EF4444] bg-[#EF4444]/5')
+                          : 'border-[#1E293B] focus:border-[#D97706]'
+                        }
+                      `}
+                    />
+                    {isSubmitted && (
+                      <div className="absolute right-5 top-10">
+                        {isCorrect ? <CheckCircle2 className="text-[#10B981]" size={24} /> : <XCircle className="text-[#EF4444]" size={24} />}
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ) : null}
         </div>
 
@@ -754,7 +901,12 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
                   <p className="text-sm text-gray-400 leading-relaxed">
                     {currentQuestion.explanation}
                   </p>
-                  {!isCorrect && (
+                  {!isCorrect && currentQuestion.type === 'find-the-mistake' && (
+                    <p className="text-sm text-white mt-2">
+                      Correct word: <span className="font-bold">{currentQuestion.correctedWord}</span>
+                    </p>
+                  )}
+                  {!isCorrect && currentQuestion.type !== 'find-the-mistake' && (
                     <p className="text-sm text-white mt-2">
                       Correct answer: <span className="font-bold">{currentQuestion.correctAnswer}</span>
                     </p>
