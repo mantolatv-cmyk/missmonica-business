@@ -7,103 +7,61 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  STUDENT
-  TEACHER
-  ADMIN
-}
-
-enum LessonType {
-  TEXT
-  AUDIO
-  VIDEO
-}
-
-enum SimulationStatus {
-  PENDING
-  REVIEWED
-}
-
-enum InputType {
-  TEXT
-  AUDIO
-}
-
 model User {
   id            String   @id @default(uuid())
   email         String   @unique
-  passwordHash  String
   name          String
-  role          Role     @default(STUDENT)
+  role          String   @default("STUDENT")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  studentProfile StudentProfile?
-  submissions    SimulationSubmission[] @relation("StudentSubmissions")
-  reviews        SimulationSubmission[] @relation("TeacherReviews")
-  glossaryItems  GlossaryItem[]
+  sessions      SimulationSession[]
 }
 
-model StudentProfile {
-  id             String @id @default(uuid())
-  userId         String @unique
-  user           User   @relation(fields: [userId], references: [id])
-  englishLevel   String // e.g., B1, B2, C1
-  corporateGoals String // e.g., "Improve presentation skills"
-}
-
-model Module {
+model Mission {
   id          String   @id @default(uuid())
-  title       String   // e.g., "Meetings & Negotiations"
-  description String?
-  order       Int
-  lessons     Lesson[]
-  scenarios   Scenario[]
+  title       String   
+  difficulty  String   
+  objective   String   
+  context     String
+  sessions    SimulationSession[]
 }
 
-model Lesson {
-  id          String     @id @default(uuid())
-  moduleId    String
-  module      Module     @relation(fields: [moduleId], references: [id])
-  title       String
-  type        LessonType
-  contentUrl  String     // Link para o vídeo/áudio ou markdown do texto
-  order       Int
-}
-
-model Scenario {
-  id          String   @id @default(uuid())
-  moduleId    String
-  module      Module   @relation(fields: [moduleId], references: [id])
-  title       String   // e.g., "Responder a um cliente insatisfeito"
-  prompt      String   // Descrição detalhada do cenário
-  submissions SimulationSubmission[]
-}
-
-model SimulationSubmission {
-  id          String           @id @default(uuid())
-  scenarioId  String
-  scenario    Scenario         @relation(fields: [scenarioId], references: [id])
-  studentId   String
-  student     User             @relation("StudentSubmissions", fields: [studentId], references: [id])
-  teacherId   String?
-  teacher     User?            @relation("TeacherReviews", fields: [teacherId], references: [id])
-  status      SimulationStatus @default(PENDING)
-  inputType   InputType
-  contentUrl  String           // Link do áudio ou texto submetido pelo aluno
-  feedback    String?          // Avaliação do professor
-  score       Int?             // Nota de 0 a 100
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
-}
-
-model GlossaryItem {
+model SimulationSession {
   id             String   @id @default(uuid())
+  missionId      String
+  mission        Mission  @relation(fields: [missionId], references: [id])
   studentId      String
   student        User     @relation(fields: [studentId], references: [id])
-  term           String   // e.g., "Think outside the box"
-  definition     String
-  exampleContext String   // Exemplo de uso corporativo
-  category       String   // e.g., "Idiom", "Phrasal Verb"
-  nextReviewDate DateTime @default(now())
+  status         String   @default("IN_PROGRESS") 
+  startedAt      DateTime @default(now())
+  completedAt    DateTime?
+  
+  turns          DialogueTurn[]
+  report         PerformanceReport?
+}
+
+model DialogueTurn {
+  id             String   @id @default(uuid())
+  sessionId      String
+  session        SimulationSession @relation(fields: [sessionId], references: [id])
+  speaker        String   // "AI_PARTNER" or "STUDENT"
+  content        String   
+  timestamp      DateTime @default(now())
+  
+  grammarFixes   String?
+  suggestedVocab String? 
+}
+
+model PerformanceReport {
+  id             String   @id @default(uuid())
+  sessionId      String   @unique
+  session        SimulationSession @relation(fields: [sessionId], references: [id])
+  
+  clarityScore   Int
+  techTermsScore Int
+  diplomacyScore Int
+  
+  overallFeedback String
+  createdAt      DateTime @default(now())
 }

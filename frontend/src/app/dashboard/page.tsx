@@ -2,184 +2,101 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  PlayCircle, 
-  Clock, 
-  ArrowUpRight,
-  MessageSquare,
-  Briefcase
-} from 'lucide-react';
+import { ArrowRight, Briefcase, Coffee, TrendingUp, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
-import { 
-  AreaChart, 
-  Area, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer 
-} from 'recharts';
 
-const fluencyData = [
-  { month: 'Jan', score: 65 },
-  { month: 'Feb', score: 68 },
-  { month: 'Mar', score: 74 },
-  { month: 'Apr', score: 72 },
-  { month: 'May', score: 85 },
-  { month: 'Jun', score: 89 },
+const missions = [
+  {
+    id: 1,
+    title: "Contract Negotiation (Supplier)",
+    difficulty: "Advanced",
+    objective: "Negotiate a 15% discount using diplomatic language without harming the relationship.",
+    icon: <Briefcase className="text-[#D97706]" size={24} />,
+    href: "/dashboard/simulations/1"
+  },
+  {
+    id: 2,
+    title: "Q3 Results Presentation",
+    difficulty: "Intermediate",
+    objective: "Present financial metrics clearly and field hostile questions from the board.",
+    icon: <TrendingUp className="text-[#10B981]" size={24} />,
+    href: "/dashboard/simulations/2"
+  },
+  {
+    id: 3,
+    title: "Elevator Pitch to CEO",
+    difficulty: "Beginner",
+    objective: "Deliver a concise, impactful summary of your new project in under 60 seconds.",
+    icon: <Coffee className="text-[#94A3B8]" size={24} />,
+    href: "/dashboard/simulations/3"
+  },
+  {
+    id: 4,
+    title: "Performance Review Feedback",
+    difficulty: "Advanced",
+    objective: "Deliver constructive criticism to an underperforming employee politely.",
+    icon: <AlertTriangle className="text-red-400" size={24} />,
+    href: "/dashboard/simulations/4"
+  }
 ];
 
-export default function ExecutiveDashboard() {
+export default function MissionControl() {
   return (
     <div className="flex flex-col gap-8 pb-12">
       {/* Header Section */}
-      <div className="flex justify-between items-end">
+      <div className="flex justify-between items-end border-b border-[#1E293B] pb-6">
         <div>
-          <h1 className="font-serif text-4xl font-bold text-[#0F172A] tracking-tight">
-            War Room
+          <h1 className="font-serif text-4xl font-bold text-[#F8FAFC] tracking-tight">
+            Mission Control
           </h1>
-          <p className="font-sans text-gray-500 mt-2 text-sm">
-            Overview of your executive communication metrics.
+          <p className="font-sans text-gray-400 mt-2 text-sm">
+            Select a corporate scenario to initiate your immersive conversational simulation.
           </p>
-        </div>
-        <div className="text-right">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">
-            Current Level
-          </p>
-          <div className="inline-flex items-center px-4 py-1.5 rounded bg-white border border-[#E2E8F0] shadow-sm">
-            <span className="font-serif font-bold text-[#D97706] text-lg">C1</span>
-            <span className="ml-2 font-sans text-sm font-medium text-[#0F172A]">Advanced</span>
-          </div>
         </div>
       </div>
 
-      {/* Bento Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        {/* Card 1: Next Meeting Simulation */}
-        <motion.div 
-          whileHover={{ y: -4, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(217, 119, 6, 0.1)' }}
-          className="lg:col-span-2 bg-white rounded-2xl p-8 border border-[#E2E8F0] shadow-sm relative overflow-hidden group transition-all duration-300"
-        >
-          {/* Subtle Accent Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D97706] rounded-full blur-3xl opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
-          
-          <div className="flex justify-between items-start mb-10">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-[#0F172A] rounded-xl flex items-center justify-center text-white shadow-md">
-                <Briefcase size={24} />
-              </div>
-              <div className="ml-4">
-                <h2 className="font-serif text-2xl font-bold text-[#0F172A]">Board Presentation Prep</h2>
-                <p className="font-sans text-sm text-gray-500 flex items-center mt-1">
-                  <Clock size={14} className="mr-1" /> Due in 2 days
+      {/* Grid of Missions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {missions.map((mission, index) => (
+          <Link href={mission.href} key={mission.id}>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.02, backgroundColor: '#1E293B' }}
+              className="bg-[#0B1120] border border-[#1E293B] rounded-2xl p-6 h-full flex flex-col justify-between group cursor-pointer relative overflow-hidden"
+            >
+              {/* Subtle hover glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#D97706]/0 via-[#D97706]/10 to-[#D97706]/0 opacity-0 group-hover:opacity-100 transition duration-500 blur-lg pointer-events-none"></div>
+
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-[#1E293B] flex items-center justify-center border border-[#334155]">
+                    {mission.icon}
+                  </div>
+                  <span className={`px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider border
+                    ${mission.difficulty === 'Advanced' ? 'text-[#D97706] border-[#D97706]/30 bg-[#D97706]/10' : 
+                      mission.difficulty === 'Intermediate' ? 'text-[#10B981] border-[#10B981]/30 bg-[#10B981]/10' : 
+                      'text-gray-300 border-gray-600 bg-gray-800'}`}
+                  >
+                    {mission.difficulty}
+                  </span>
+                </div>
+                
+                <h2 className="font-serif text-2xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#D97706] transition-colors">
+                  {mission.title}
+                </h2>
+                <p className="font-sans text-sm text-gray-400 leading-relaxed">
+                  {mission.objective}
                 </p>
               </div>
-            </div>
-            <span className="px-3 py-1 bg-[#F8FAFC] border border-[#E2E8F0] rounded text-xs font-semibold text-[#0F172A] uppercase tracking-wider">
-              Simulation
-            </span>
-          </div>
 
-          <div className="bg-[#F8FAFC] rounded-xl p-5 border border-[#E2E8F0] mb-8">
-            <p className="font-sans text-[#0F172A] text-sm leading-relaxed">
-              <span className="font-semibold">Scenario:</span> You are required to present the Q3 financial results to the international board of directors, addressing the recent supply chain delays and proposing the Q4 mitigation strategy.
-            </p>
-          </div>
-
-          <Link href="/dashboard/simulations" className="w-full bg-[#0F172A] text-white font-sans font-medium py-4 rounded-xl hover:bg-[#1E293B] transition-colors shadow-md flex items-center justify-center">
-            <PlayCircle size={18} className="mr-2" /> Start Immersive Simulation
+              <div className="mt-8 flex items-center text-sm font-semibold text-[#D97706] group-hover:translate-x-2 transition-transform">
+                Initiate Simulation <ArrowRight size={16} className="ml-2" />
+              </div>
+            </motion.div>
           </Link>
-        </motion.div>
-
-        {/* Card 2: Fluency KPI */}
-        <motion.div 
-          whileHover={{ y: -4, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05)' }}
-          className="bg-white rounded-2xl p-8 border border-[#E2E8F0] shadow-sm flex flex-col justify-between"
-        >
-          <div>
-            <h3 className="font-sans text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
-              Fluency KPI
-            </h3>
-            <div className="flex items-end">
-              <span className="font-serif text-5xl font-bold text-[#0F172A]">89</span>
-              <span className="text-sm font-medium text-[#10B981] flex items-center ml-3 mb-1 bg-emerald-50 px-2 py-0.5 rounded">
-                <ArrowUpRight size={14} className="mr-1" /> +4%
-              </span>
-            </div>
-          </div>
-
-          <div className="h-40 w-full mt-6">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={fluencyData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0F172A" stopOpacity={0.1}/>
-                    <stop offset="95%" stopColor="#0F172A" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
-                <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#94A3B8' }} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#94A3B8' }} />
-                <Tooltip 
-                  contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-                  itemStyle={{ color: '#0F172A', fontWeight: 600 }}
-                />
-                <Area type="monotone" dataKey="score" stroke="#0F172A" strokeWidth={3} fillOpacity={1} fill="url(#colorScore)" />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        </motion.div>
-
-        {/* Card 3: Word of the Day */}
-        <motion.div 
-          whileHover={{ y: -4, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(217, 119, 6, 0.1)' }}
-          className="bg-[#0F172A] rounded-2xl p-8 shadow-xl text-white relative overflow-hidden group"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-3xl opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none"></div>
-          
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="font-sans text-sm font-semibold text-gray-400 uppercase tracking-wider">
-              Business Idiom
-            </h3>
-            <button className="text-gray-400 hover:text-[#D97706] transition-colors">
-              <PlayCircle size={24} />
-            </button>
-          </div>
-
-          <div>
-            <h4 className="font-serif text-3xl font-bold mb-2">Think outside the box</h4>
-            <p className="font-sans text-sm text-gray-400 italic mb-6">
-              /θɪŋk aʊtˈsaɪd ðə bɒks/
-            </p>
-            <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-              <p className="text-sm font-medium leading-relaxed">
-                <span className="text-[#D97706] mr-2">Usage:</span>
-                "To solve this supply chain issue, we really need to think outside the box."
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Card 4: Quick Actions / Milestones */}
-        <motion.div 
-          whileHover={{ y: -4, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05)' }}
-          className="lg:col-span-2 bg-white rounded-2xl p-8 border border-[#E2E8F0] shadow-sm flex items-center justify-between"
-        >
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-[#10B981] mr-4">
-              <MessageSquare size={20} />
-            </div>
-            <div>
-              <h3 className="font-serif font-bold text-lg text-[#0F172A]">Milestone Unlocked</h3>
-              <p className="text-sm text-gray-500 font-sans">Successfully negotiated 5 emails with positive sentiment.</p>
-            </div>
-          </div>
-          <button className="text-sm font-semibold text-[#0F172A] border border-[#0F172A] px-5 py-2 rounded-lg hover:bg-[#F8FAFC] transition-colors">
-            View Certificate
-          </button>
-        </motion.div>
-
+        ))}
       </div>
     </div>
   );
