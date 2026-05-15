@@ -28,7 +28,7 @@ export default function DashboardLayout({
         </div>
 
         <nav className="flex-1 w-full space-y-4">
-          <NavItem icon={<Target size={20} />} label="Mission Control" active />
+          <NavItem icon={<Target size={20} />} label="Lesson Control" active />
         </nav>
 
         <div className="w-full mt-auto">
@@ -44,7 +44,7 @@ export default function DashboardLayout({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input 
               type="text" 
-              placeholder="Search missions..." 
+              placeholder="Search lessons..." 
               className="w-full pl-10 pr-4 py-2 bg-[#1E293B] border border-transparent rounded-md focus:outline-none focus:ring-1 focus:ring-[#D97706] focus:border-transparent text-sm font-sans transition-all text-[#F8FAFC] placeholder-gray-500"
             />
           </div>
