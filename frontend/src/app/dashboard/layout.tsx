@@ -7,6 +7,7 @@ import {
   Search,
   UserCircle
 } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function DashboardLayout({
@@ -14,32 +15,36 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
   return (
     <div className="flex h-screen bg-[#0F172A] text-[#F8FAFC]">
       {/* Sidebar - Slim & Elegant */}
       <aside className="w-20 lg:w-64 bg-[#0B1120] flex flex-col items-center lg:items-start py-8 px-4 border-r border-[#1E293B] transition-all duration-300">
         <div className="mb-12 flex items-center justify-center lg:justify-start w-full px-2">
-          <div className="w-10 h-10 rounded bg-[#D97706] flex items-center justify-center font-serif text-white font-bold text-xl shadow-lg">
-            M
-          </div>
-          <span className="hidden lg:block ml-3 font-serif font-semibold text-white tracking-wide">
-            Business
-          </span>
+          <Link href="/dashboard" className="flex items-center">
+            <div className="w-10 h-10 rounded bg-[#D97706] flex items-center justify-center font-serif text-white font-bold text-xl shadow-lg hover:scale-105 transition-transform">
+              M
+            </div>
+            <span className="hidden lg:block ml-3 font-serif font-semibold text-white tracking-wide">
+              Business
+            </span>
+          </Link>
         </div>
 
         <nav className="flex-1 w-full space-y-4">
-          <NavItem icon={<Target size={20} />} label="Lesson Control" href="/dashboard" active={true} />
+          <NavItem icon={<Target size={20} />} label="Lesson Control" href="/dashboard" active={pathname === '/dashboard'} />
         </nav>
 
         <div className="w-full mt-auto">
-          <NavItem icon={<Settings size={20} />} label="Settings" />
+          <NavItem icon={<Settings size={20} />} label="Settings" href="/dashboard/settings" active={pathname === '/dashboard/settings'} />
         </div>
       </aside>
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Top Bar */}
-        <header className="h-20 bg-[#0F172A] border-b border-[#1E293B] px-8 flex items-center justify-between">
+        <header className="h-20 bg-[#0F172A] border-b border-[#1E293B] px-8 flex items-center justify-between shrink-0">
           <div className="flex-1 max-w-md relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input 
@@ -55,9 +60,9 @@ export default function DashboardLayout({
               <span className="text-sm font-bold text-[#D97706] font-serif">Director</span>
             </div>
             
-            <div className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-white transition-colors cursor-pointer">
+            <Link href="/dashboard/profile" className={`w-10 h-10 flex items-center justify-center rounded-full transition-all cursor-pointer ${pathname === '/dashboard/profile' ? 'bg-[#D97706] text-white shadow-[0_0_15px_#D97706]' : 'text-gray-400 hover:text-white hover:bg-[#1E293B]'}`}>
               <UserCircle size={28} />
-            </div>
+            </Link>
           </div>
         </header>
 
@@ -74,9 +79,9 @@ export default function DashboardLayout({
 
 function NavItem({ icon, label, href = "/dashboard", active = false }: { icon: React.ReactNode, label: string, href?: string, active?: boolean }) {
   return (
-    <Link href={href} className={`flex items-center justify-center lg:justify-start w-full p-3 rounded-lg transition-colors duration-200 group ${active ? 'bg-[#1E293B] text-[#D97706]' : 'text-gray-500 hover:bg-[#1E293B] hover:text-white'}`}>
-      <span className={`${active ? 'text-[#D97706]' : 'text-gray-500 group-hover:text-white'}`}>{icon}</span>
-      <span className="hidden lg:block ml-3 text-sm font-medium">{label}</span>
+    <Link href={href} className={`flex items-center justify-center lg:justify-start w-full p-3 rounded-lg transition-all duration-200 group ${active ? 'bg-[#1E293B] text-[#D97706] shadow-[inset_0_0_10px_rgba(217,119,6,0.1)]' : 'text-gray-500 hover:bg-[#1E293B] hover:text-white'}`}>
+      <span className={`${active ? 'text-[#D97706]' : 'text-gray-500 group-hover:text-white transition-colors'}`}>{icon}</span>
+      <span className={`hidden lg:block ml-3 text-sm font-medium ${active ? 'text-white font-bold' : ''}`}>{label}</span>
     </Link>
   );
 }
