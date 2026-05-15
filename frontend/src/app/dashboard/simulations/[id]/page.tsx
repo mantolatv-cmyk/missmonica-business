@@ -24,8 +24,14 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "Hi John, nice to meet you. I'm doing well, thank you. Things are quite busy here with the new project launch." },
       { sender: 'ai', text: "I can imagine! It's always a bit hectic during a launch. Are you working remotely today or are you in the office?" },
       { sender: 'user', text: "I'm working from home today. We have a flexible schedule, so I usually come into the office only a few times a week." },
-      { sender: 'ai', text: "That's great. We have something similar in London. Well, let's get started with the presentation, shall we?" },
-      { sender: 'user', text: "Yes, let's. I'll share my screen to show the initial slides." }
+      { sender: 'ai', text: "That's great. We have something similar in London. By the way, have you had a chance to look at the team introduction slides?" },
+      { sender: 'user', text: "Yes, I have. They look very professional. I think they really capture our team's dynamic well." },
+      { sender: 'ai', text: "Glad you liked them! We're trying to make sure everyone in the multinational company feels connected. Do you often work with the London team?" },
+      { sender: 'user', text: "Not as often as I'd like, but I'm looking forward to more collaboration in the future. It's a great opportunity to learn from different perspectives." },
+      { sender: 'ai', text: "Absolutely. Well, let's get started with the presentation, shall we? I'm excited to hear your thoughts on the first few modules." },
+      { sender: 'user', text: "Yes, let's. I'll share my screen and we can walk through the initial phases together." },
+      { sender: 'ai', text: "Perfect. I'm all ears!" },
+      { sender: 'user', text: "Great. First, I'd like to present the coordinator's role in this project..." }
     ]
   },
   "2": {
@@ -43,8 +49,12 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "Certainly. I need clarification on the brand guidelines before I can finalize the backend integration. Can you repeat that last part about the mobile layout?" },
       { sender: 'ai', text: "Yes, they are finalizing the mobile assets today. We might need to push back the team alignment session to Thursday." },
       { sender: 'user', text: "Let me check my schedule for Thursday. I think I have a follow-up meeting with the client then, but I can make it work." },
-      { sender: 'ai', text: "Great. Please ensure the project update is shared with everyone before the meeting ends. Do you have any other points for the agenda?" },
-      { sender: 'user', text: "I'll send you an update via email with the task breakdown. I'll also follow up with the design team right after this call." }
+      { sender: 'ai', text: "Great. Also, we need to ensure everyone is on the same page regarding the new feature set. Any concerns?" },
+      { sender: 'user', text: "I think we should prioritize the core features first to ensure we meet the primary deadline. What do you think?" },
+      { sender: 'ai', text: "That's a valid point. Let's focus on the essential tasks first and keep the extra features as secondary objectives." },
+      { sender: 'user', text: "Agreed. I'll send you an update via email with the revised task breakdown later today." },
+      { sender: 'ai', text: "Thank you. Please ensure the project update is shared with everyone before the meeting ends. Do you have any other points for the agenda?" },
+      { sender: 'user', text: "No other points from my side. I'll also follow up with the design team right after this call." }
     ]
   },
   "3": {
@@ -62,6 +72,10 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "My main strength is my ability to adapt to new environments quickly. As for a weakness, I sometimes focus too much on details, but I'm working on balancing that with the bigger picture." },
       { sender: 'ai', text: "I appreciate the honesty. How do you handle conflict within a remote team?" },
       { sender: 'user', text: "I believe in clear communication and setting expectations early. My experience has taught me that most issues can be resolved with a quick alignment call." },
+      { sender: 'ai', text: "That's a good approach. Can you give me an example of a time you had to take on a task outside of your usual scope?" },
+      { sender: 'user', text: "Certainly. Last year, I stepped in to lead the client presentation when our supervisor was unavailable. It was a challenging but rewarding experience." },
+      { sender: 'ai', text: "Impressive. And what are your expectations for your career growth within our company?" },
+      { sender: 'user', text: "I'm looking for a position that offers international exposure and the chance to contribute my skills to global projects while growing into a leadership role." },
       { sender: 'ai', text: "Excellent. We will be in touch soon regarding the next steps of the recruitment process." },
       { sender: 'user', text: "Thank you for your time. I look forward to hearing from you." }
     ]
@@ -80,7 +94,13 @@ const lessonsData: Record<string, any> = {
       { sender: 'ai', text: "Thank you. I see the attachment now. Also, I need to check your availability for a brief meeting next week. Does Monday work for you?" },
       { sender: 'user', text: "Could you help me with the specific time? I have some availability in the afternoon. Thank you for your time and for looking into this so quickly." },
       { sender: 'ai', text: "Monday at 3 PM would be perfect. I'll send a calendar invite shortly to confirm the schedule." },
-      { sender: 'user', text: "That works for me. Thank you for your time. I look forward to our discussion." }
+      { sender: 'user', text: "That works for me. By the way, did you receive the confirmation for the last payment?" },
+      { sender: 'ai', text: "Let me check... Yes, it was processed yesterday. We'll send the official receipt by the end of the week." },
+      { sender: 'user', text: "That's great to hear. Is there anything else you need from my side before our meeting?" },
+      { sender: 'ai', text: "Not for now. I'll review the documents you sent and we can discuss them in detail on Monday." },
+      { sender: 'user', text: "Understood. I'll make sure to have all the necessary information ready." },
+      { sender: 'ai', text: "Perfect. Have a great weekend!" },
+      { sender: 'user', text: "Thank you, you too. Talk to you on Monday." }
     ]
   },
   "5": {
@@ -96,8 +116,14 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "Hi Sarah! It's a great conference. I work for a multinational industry leader in IT. What do you do at your firm?" },
       { sender: 'ai', text: "I work in HR, focusing on career development and talent opportunity. Is this your first time at this workshop?" },
       { sender: 'user', text: "Yes, it is! I'm here to expand my professional contact list and learn about new trends in the industry. It's a great opportunity." },
-      { sender: 'ai', text: "Absolutely. Here is my business card. We should stay in touch regarding future projects." },
-      { sender: 'user', text: "Thank you. It was nice talking to you, Sarah. Enjoy the rest of the event!" }
+      { sender: 'ai', text: "Absolutely. I've heard your company is doing some amazing things with cloud infrastructure lately. Are you involved in that?" },
+      { sender: 'user', text: "Yes, I am. I'm currently working on a project to optimize our data center efficiency. It's been quite a challenge!" },
+      { sender: 'ai', text: "I can imagine. We're also looking to improve our tech stack in the coming months. Perhaps we could share some insights?" },
+      { sender: 'user', text: "I'd love that. It's always beneficial to see how others in the industry are tackling similar issues." },
+      { sender: 'ai', text: "Definitely. Here is my business card. We should stay in touch regarding future projects." },
+      { sender: 'user', text: "Thank you. I'll make sure to reach out to you on LinkedIn as well." },
+      { sender: 'ai', text: "Great! It was nice talking to you, Sarah. Enjoy the rest of the event!" },
+      { sender: 'user', text: "It was a pleasure meeting you too. Have a great time at the remaining workshops!" }
     ]
   },
   "6": {
@@ -113,8 +139,14 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "Sorry about that! Can you hear me now? I was having a minor audio issue with my headset." },
       { sender: 'ai', text: "Yes, much better. I'll share my screen now to show you the latest project metrics. Can you see the camera feed as well?" },
       { sender: 'user', text: "I can see your screen, but the connection seems a bit slow. Could you repeat that last part, please? You cut out for a second." },
-      { sender: 'ai', text: "Sure. I said the internet issue might be on my end. I'll try to turn off my camera to save bandwidth." },
-      { sender: 'user', text: "Good idea. I can still hear the audio clearly. Let's continue with the screen sharing part of the call." }
+      { sender: 'ai', text: "Sure. I said the internet issue might be on my end. I'll try to turn off my camera to save bandwidth. Better now?" },
+      { sender: 'user', text: "Yes, the audio is much clearer now. Thank you for making that adjustment." },
+      { sender: 'ai', text: "No problem. Now, looking at the graph on the screen, do you see the dip in engagement for Q3?" },
+      { sender: 'user', text: "I see it. I think we need to look into the external factors that might have caused that." },
+      { sender: 'ai', text: "Agreed. I'll send you the detailed report after this call so you can analyze it further." },
+      { sender: 'user', text: "That would be very helpful. I'll also share my thoughts on it during our next call." },
+      { sender: 'ai', text: "Perfect. Let's continue with the rest of the slides. Oh, wait, I think I'm having another connection issue..." },
+      { sender: 'user', text: "Don't worry, I can still hear you. Let's keep going, and if it gets worse, we can switch to an audio-only call." }
     ]
   }
 };
