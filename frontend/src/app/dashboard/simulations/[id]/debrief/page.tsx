@@ -12,6 +12,15 @@ import {
 import Link from 'next/link';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 
+const lessonsMetadata: Record<string, any> = {
+  "1": { title: "Small Talks & Presentations", summary: "You successfully initiated a conversation with a new colleague. Your tone was friendly and professional." },
+  "2": { title: "Meetings & Communication", summary: "Great job handling the agenda. You were clear about the status of your tasks." },
+  "3": { title: "Interviews & HR", summary: "You presented your achievements effectively using the STAR method. Very professional." },
+  "4": { title: "Professional Emails", summary: "The email response was polite and correctly used formal attachments phrases." },
+  "5": { title: "Networking & Events", summary: "You kept the conversation flowing and asked relevant industry questions." },
+  "6": { title: "Teams & Online Calls", summary: "You handled the technical issues with patience and used the correct terminology for troubleshooting." }
+};
+
 const data = [
   { name: 'Diplomacy', score: 85, fill: '#10B981' },
   { name: 'Tech Terms', score: 92, fill: '#D97706' },
@@ -19,6 +28,8 @@ const data = [
 ];
 
 export default function DebriefScreen({ params }: { params: { id: string } }) {
+  const lesson = lessonsMetadata[params.id] || lessonsMetadata["1"];
+
   return (
     <div className="flex flex-col max-w-4xl mx-auto py-8">
       
@@ -28,7 +39,7 @@ export default function DebriefScreen({ params }: { params: { id: string } }) {
         </Link>
         <div>
           <h1 className="font-serif text-3xl font-bold text-[#F8FAFC]">Executive Debrief</h1>
-          <p className="text-gray-400 text-sm mt-1">Mission 01: Supplier Negotiation</p>
+          <p className="text-gray-400 text-sm mt-1">Lesson {params.id}: {lesson.title}</p>
         </div>
       </div>
 
@@ -82,7 +93,7 @@ export default function DebriefScreen({ params }: { params: { id: string } }) {
               <h3 className="font-serif text-xl font-bold text-white">Executive Summary</h3>
             </div>
             <p className="text-gray-300 font-sans leading-relaxed text-sm">
-              You handled the pressure well. Your negotiation tactics were grounded in facts rather than emotions, which is excellent for dealing with strict suppliers. However, your clarity dipped slightly when explaining the alternative timelines.
+              {lesson.summary}
             </p>
           </motion.div>
 
@@ -97,8 +108,8 @@ export default function DebriefScreen({ params }: { params: { id: string } }) {
                 <CheckCircle2 size={16} className="mr-2" /> What went well
               </h4>
               <ul className="text-sm text-gray-400 space-y-2">
-                <li>• Used "Push back" naturally.</li>
-                <li>• Maintained a polite tone despite aggressive AI prompts.</li>
+                <li>• Natural use of target vocabulary.</li>
+                <li>• Maintained professional composure.</li>
               </ul>
             </motion.div>
 
@@ -112,14 +123,14 @@ export default function DebriefScreen({ params }: { params: { id: string } }) {
                 <AlertTriangle size={16} className="mr-2" /> Areas for Growth
               </h4>
               <ul className="text-sm text-gray-400 space-y-2">
-                <li>• Avoid using "I want". Use "We require".</li>
-                <li>• Work on transitional phrases for smoother topic shifts.</li>
+                <li>• Try using more diverse phrasal verbs.</li>
+                <li>• Work on transitions between topics.</li>
               </ul>
             </motion.div>
           </div>
 
           <Link href="/dashboard" className="block w-full text-center bg-[#D97706] text-white font-bold py-4 rounded-xl hover:bg-[#B45309] transition-colors shadow-lg">
-            Return to Mission Control
+            Return to Lesson Control
           </Link>
 
         </div>
