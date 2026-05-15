@@ -24,7 +24,7 @@ interface Question {
 
 const moduleContent: Record<string, { title: string, questions: Question[] }> = {
   'lesson-1': {
-    title: 'Small Talk Practice',
+    title: 'Small Talk Mastery',
     questions: [
       {
         id: 1,
@@ -45,6 +45,39 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'It\'s a pleasure to finally meet you _______ person!',
         correctAnswer: 'in',
         explanation: '"In person" is the correct prepositional phrase for meeting someone physically after online contact.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What is a good "icebreaker" question for a colleague you just met?',
+        options: [
+          'How much do you earn?',
+          'Why are you late?',
+          'How long have you been with the company?',
+          'What is your political opinion?'
+        ],
+        correctAnswer: 'How long have you been with the company?',
+        explanation: 'Work-related history is a safe and professional topic for initial small talk.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'I\'ve heard so much _______ you! It\'s nice to finally connect.',
+        correctAnswer: 'about',
+        explanation: '"Heard about you" is used when you know of someone\'s reputation or work before meeting.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'If a conversation is ending, what is a polite way to "wrap it up"?',
+        options: [
+          'I have to go now. Bye.',
+          'It was great catching up. I should probably head to the next session. Let\'s talk soon!',
+          'Stop talking, I am bored.',
+          'Silence.'
+        ],
+        correctAnswer: 'It was great catching up. I should probably head to the next session. Let\'s talk soon!',
+        explanation: 'Acknowledging the value of the talk before stating a reason to leave is professional.'
       }
     ]
   },
@@ -70,11 +103,44 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'Could you _______ that last point? I didn\'t quite catch it.',
         correctAnswer: 'repeat',
         explanation: 'Asking for repetition is a vital skill in international meetings.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What does "AOB" usually stand for at the end of an agenda?',
+        options: [
+          'All On Board',
+          'Any Other Business',
+          'Action Oriented Behavior',
+          'Annual Office Budget'
+        ],
+        correctAnswer: 'Any Other Business',
+        explanation: 'AOB is the time for participants to raise minor points not on the main agenda.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'Let\'s _______ to the next item on the list.',
+        correctAnswer: 'move',
+        explanation: '"Move to" or "Move on to" is the standard phrase for changing topics in a meeting.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'How do you politely interrupt to ask a question?',
+        options: [
+          'Shut up, I have a question.',
+          'Sorry to jump in, but could I just clarify one thing?',
+          'I am talking now.',
+          'Wait!'
+        ],
+        correctAnswer: 'Sorry to jump in, but could I just clarify one thing?',
+        explanation: '"Sorry to jump in" or "May I just add..." are polite ways to interrupt.'
       }
     ]
   },
   'lesson-3': {
-    title: 'Interview Skills',
+    title: 'Interview Excellence',
     questions: [
       {
         id: 1,
@@ -95,11 +161,44 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'I have over five years of _______ in this field.',
         correctAnswer: 'experience',
         explanation: '"Experience" is the most common term for professional time spent in a role.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What does a recruiter mean by "walk me through your CV"?',
+        options: [
+          'Literally walk on the paper.',
+          'Give a brief summary of your professional history and key achievements.',
+          'Read every single line out loud.',
+          'Explain why you left your first job only.'
+        ],
+        correctAnswer: 'Give a brief summary of your professional history and key achievements.',
+        explanation: 'This is an invitation to highlight your most relevant career points.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'I am looking for a new _______ that allows me to grow professionally.',
+        correctAnswer: 'challenge',
+        explanation: '"Challenge" is a positive way to describe a new job opportunity.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'How should you answer "Why should we hire you?"',
+        options: [
+          'Because I need the money.',
+          'Because I am the best person in the world.',
+          'By matching your skills and experience to the specific needs of the company.',
+          'I don\'t know, you tell me.'
+        ],
+        correctAnswer: 'By matching your skills and experience to the specific needs of the company.',
+        explanation: 'Showing alignment between your profile and their problems is the key to success.'
       }
     ]
   },
   'lesson-4': {
-    title: 'Email Etiquette',
+    title: 'Email Correspondence',
     questions: [
       {
         id: 1,
@@ -120,11 +219,44 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'Please find _______ the document you requested.',
         correctAnswer: 'attached',
         explanation: '"Please find attached" is the standard phrase for sending files via email.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What does "CC" stand for in an email?',
+        options: [
+          'Company Contact',
+          'Carbon Copy',
+          'Chief Coordinator',
+          'Confirmed Communication'
+        ],
+        correctAnswer: 'Carbon Copy',
+        explanation: 'CC is used to send a copy of the email to someone who needs to be informed but not necessarily reply.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'I look forward _______ hearing from you soon.',
+        correctAnswer: 'to',
+        explanation: 'The full phrase is "look forward to + [verb-ing/noun]".'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'When should you use "To whom it may concern"?',
+        options: [
+          'When writing to your boss.',
+          'When you don\'t know the specific name of the recipient.',
+          'In every email.',
+          'When you are angry.'
+        ],
+        correctAnswer: 'When you don\'t know the specific name of the recipient.',
+        explanation: 'It is a formal way to address an unknown person or department.'
       }
     ]
   },
   'lesson-5': {
-    title: 'Networking Phrases',
+    title: 'Networking Dynamics',
     questions: [
       {
         id: 1,
@@ -145,11 +277,44 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'Do you have a business _______? I\'d like to stay in touch.',
         correctAnswer: 'card',
         explanation: 'Exchanging business cards is a traditional but still common networking practice.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What is an "Elevator Pitch"?',
+        options: [
+          'A pitch made while falling in an elevator.',
+          'A very short summary of who you are and what you do (30-60 seconds).',
+          'A long presentation with 50 slides.',
+          'A way to fix an elevator.'
+        ],
+        correctAnswer: 'A very short summary of who you are and what you do (30-60 seconds).',
+        explanation: 'It\'s called an elevator pitch because it should be short enough to deliver during an elevator ride.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'I\'d love to _______ up with you on LinkedIn.',
+        correctAnswer: 'connect',
+        explanation: '"Connect on LinkedIn" is the standard phrase for professional social networking.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What is the primary goal of "Networking"?',
+        options: [
+          'To get as many free pens as possible.',
+          'To build mutually beneficial professional relationships.',
+          'To sell your product to everyone immediately.',
+          'To collect business cards and never look at them.'
+        ],
+        correctAnswer: 'To build mutually beneficial professional relationships.',
+        explanation: 'Networking is about long-term value and connection, not just immediate sales.'
       }
     ]
   },
   'lesson-6': {
-    title: 'Technical Call Vocab',
+    title: 'Technical Call Proficiency',
     questions: [
       {
         id: 1,
@@ -170,11 +335,44 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'The connection is _______; your video is freezing.',
         correctAnswer: 'unstable',
         explanation: '"Unstable" describes a poor or fluctuating internet connection.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What does "screen sharing" allow you to do?',
+        options: [
+          'Give your monitor to a colleague.',
+          'Let others see what is on your computer screen during a call.',
+          'Take a screenshot of the meeting.',
+          'Split the screen into two parts.'
+        ],
+        correctAnswer: 'Let others see what is on your computer screen during a call.',
+        explanation: 'Screen sharing is essential for presentations and collaborative work.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'Can you _______ up? I can barely hear you.',
+        correctAnswer: 'speak',
+        explanation: '"Speak up" means to talk louder.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What should you do if your background is very noisy during a call?',
+        options: [
+          'Keep talking louder.',
+          'Mute yourself when you are not speaking.',
+          'Ask everyone else to be quiet.',
+          'Leave the meeting.'
+        ],
+        correctAnswer: 'Mute yourself when you are not speaking.',
+        explanation: 'Muting helps maintain clear audio for other participants when you have background noise.'
       }
     ]
   },
   'lesson-7': {
-    title: 'Travel Prepositions',
+    title: 'Travel & Prepositions',
     questions: [
       {
         id: 1,
@@ -195,6 +393,39 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         question: 'My passport is _______ my pocket.',
         correctAnswer: 'in',
         explanation: '"In" is used for items inside a contained space (like a pocket or bag).'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'Where is the baggage claim usually located?',
+        options: [
+          'On the airplane.',
+          'Inside the pharmacy.',
+          'In the arrivals area.',
+          'At the duty-free shop.'
+        ],
+        correctAnswer: 'In the arrivals area.',
+        explanation: 'Baggage claim is where you collect your luggage after landing.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'The hotel is right _______ to the conference center.',
+        correctAnswer: 'next',
+        explanation: '"Next to" indicates proximity or being beside something.'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What is a "layover"?',
+        options: [
+          'A type of blanket.',
+          'A period of time between connecting flights.',
+          'The person who cleans the airplane.',
+          'A special type of ticket.'
+        ],
+        correctAnswer: 'A period of time between connecting flights.',
+        explanation: 'Layovers can range from a few hours to a whole day depending on the route.'
       }
     ]
   }
@@ -202,7 +433,7 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
 
 export default function PracticeExercise({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const module = moduleContent[id] || moduleContent['grammar-1'];
+  const module = moduleContent[id] || moduleContent['lesson-1'];
   
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -274,8 +505,8 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/dashboard/practice" className="flex-1 px-8 py-4 bg-[#D97706] text-white rounded-xl font-bold hover:bg-[#B45309] transition-all flex items-center justify-center">
-              Back to Lab
+            <Link href="/dashboard" className="flex-1 px-8 py-4 bg-[#D97706] text-white rounded-xl font-bold hover:bg-[#B45309] transition-all flex items-center justify-center">
+              Back to Dashboard
             </Link>
             <button 
               onClick={resetModule}
@@ -296,11 +527,11 @@ export default function PracticeExercise({ params }: { params: Promise<{ id: str
     <div className="flex flex-col max-w-3xl mx-auto py-8">
       {/* Header */}
       <div className="flex items-center mb-8">
-        <Link href="/dashboard/practice" className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1E293B] transition-colors mr-4">
+        <Link href="/dashboard" className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1E293B] transition-colors mr-4">
           <ArrowLeft size={24} />
         </Link>
         <div>
-          <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-widest block">Practice Module</span>
+          <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-widest block">Practice Lab</span>
           <h1 className="font-serif text-2xl font-bold text-[#F8FAFC]">{module.title}</h1>
         </div>
       </div>
