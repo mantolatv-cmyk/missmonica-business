@@ -86,6 +86,16 @@ const lessons = [
     icon: <Sparkles className="text-[#F59E0B]" size={20} />,
     image: "/lessons/lesson_8.png",
     href: "/dashboard/simulations/8"
+  },
+  {
+    id: 9,
+    title: "Lesson 9: Present To Be",
+    difficulty: "Beginner",
+    objective: "Como usar o verbo 'to be' corretamente em viagens e rotina.",
+    vocab: "Am, Is, Are, Ready, Tired, Vacation, Airport",
+    icon: <Users className="text-[#A78BFA]" size={20} />,
+    image: "/lessons/lesson_9.png",
+    href: "/dashboard/simulations/9"
   }
 ];
 

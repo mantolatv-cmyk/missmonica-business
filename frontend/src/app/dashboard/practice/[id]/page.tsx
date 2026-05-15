@@ -760,6 +760,82 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         explanation: 'The correct phrase for arrivals is "Welcome to [place]".'
       }
     ]
+  },
+  'lesson-9': {
+    title: 'Present To Be',
+    questions: [
+      {
+        id: 1,
+        type: 'fill-in-the-blank',
+        question: 'I _______ Brazilian.',
+        correctAnswer: 'am',
+        explanation: 'Always use "am" with the pronoun "I".'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'She _______ a police officer.',
+        correctAnswer: 'is',
+        explanation: 'Use "is" with singular third-person pronouns (he, she, it).'
+      },
+      {
+        id: 3,
+        type: 'fill-in-the-blank',
+        question: 'We _______ at the airport.',
+        correctAnswer: 'are',
+        explanation: 'Use "are" with plural pronouns (we, you, they).'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'He _______ tired.',
+        correctAnswer: 'is',
+        explanation: 'Use "is" with the pronoun "he".'
+      },
+      {
+        id: 5,
+        type: 'fill-in-the-blank',
+        question: 'They _______ ready.',
+        correctAnswer: 'are',
+        explanation: 'Use "are" with the pronoun "they".'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a sentence about your location:',
+        scrambledWords: ['am', 'I', 'the', 'airport', 'at'],
+        correctAnswer: 'I am at the airport',
+        explanation: '"I am" followed by the prepositional phrase of location.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the verb mistake and correct it:',
+        sentenceWords: ['You', 'is', 'very', 'kind.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'are',
+        correctAnswer: 'are',
+        explanation: 'The correct form of the verb "to be" for "You" is "are".'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a negative sentence:',
+        scrambledWords: ['tired', 'not', 'am', 'I'],
+        correctAnswer: 'I am not tired',
+        explanation: 'The negative word "not" comes immediately after the verb "am".'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the verb mistake and correct it:',
+        sentenceWords: ['We', 'is', 'on', 'vacation.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'are',
+        correctAnswer: 'are',
+        explanation: 'The correct form for "We" is "are".'
+      }
+    ]
   }
 };
 

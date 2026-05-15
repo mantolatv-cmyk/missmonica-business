@@ -251,6 +251,36 @@ const lessonsData: Record<string, any> = {
       { sender: 'ai', text: "Welcome to the United States.", translation: "Bem-vindo aos Estados Unidos." },
       { sender: 'user', text: "Thank you.", translation: "Obrigado." }
     ]
+  },
+  "9": {
+    title: "Present To Be",
+    aiRole: "Travel Contacts",
+    contextTip: "Remember to use the correct form of the verb 'to be' (am, is, are) depending on the person.",
+    introduction: {
+      scenario: "You will practice answering questions with the verb 'to be' in various travel situations like immigration, socializing, and boarding a flight.",
+      scenarioTranslation: "Você vai praticar responder a perguntas com o verbo 'to be' em várias situações de viagem, como imigração, socialização e embarque em um voo.",
+      goal: "Use 'I am', 'He is', 'We are' naturally in conversation and short answers.",
+      goalTranslation: "Usar 'I am', 'He is', 'We are' naturalmente na conversação e em respostas curtas.",
+      keyVocabulary: ["Brazil", "Husband", "Ready", "Tired"]
+    },
+    phrasalVerbs: [
+      { verb: "Board a flight", meaning: "To get on an airplane." },
+      { verb: "Be from", meaning: "To originate from a place." }
+    ],
+    dialogue: [
+      { sender: 'ai', text: "Hello there. Are you from Brazil?", translation: "Olá. Você é do Brasil?" },
+      { sender: 'user', text: "Yes, I am. I am from Brazil.", translation: "Sim, eu sou. Eu sou do Brasil." },
+      { sender: 'ai', text: "Nice to meet you. Is this your husband?", translation: "Prazer em conhecê-la. Este é o seu marido?" },
+      { sender: 'user', text: "Yes, he is. He is my husband.", translation: "Sim, ele é. Ele é meu marido." },
+      { sender: 'ai', text: "Are you both on vacation?", translation: "Vocês dois estão de férias?" },
+      { sender: 'user', text: "Yes, we are on vacation. We are very excited.", translation: "Sim, nós estamos de férias. Estamos muito animados." },
+      { sender: 'ai', text: "That's great. Are you tired from the trip?", translation: "Isso é ótimo. Vocês estão cansados da viagem?" },
+      { sender: 'user', text: "I am not tired. I am ready to explore the city.", translation: "Eu não estou cansada. Estou pronta para explorar a cidade." },
+      { sender: 'ai', text: "(Later at the boarding gate...) Excuse me, are you ready to board?", translation: "(Mais tarde no portão de embarque...) Com licença, vocês estão prontos para embarcar?" },
+      { sender: 'user', text: "Yes, we are. We are ready.", translation: "Sim, nós estamos. Estamos prontos." },
+      { sender: 'ai', text: "Perfect. Enjoy your trip!", translation: "Perfeito. Aproveite a sua viagem!" },
+      { sender: 'user', text: "Thank you!", translation: "Obrigada!" }
+    ]
   }
 };
 
