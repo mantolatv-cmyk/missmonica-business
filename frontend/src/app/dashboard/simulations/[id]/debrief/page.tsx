@@ -18,7 +18,8 @@ const lessonsMetadata: Record<string, any> = {
   "3": { title: "Interviews & HR", summary: "You presented your achievements effectively using the STAR method. Very professional." },
   "4": { title: "Professional Emails", summary: "The email response was polite and correctly used formal attachments phrases." },
   "5": { title: "Networking & Events", summary: "You kept the conversation flowing and asked relevant industry questions." },
-  "6": { title: "Teams & Online Calls", summary: "You handled the technical issues with patience and used the correct terminology for troubleshooting." }
+  "6": { title: "Teams & Online Calls", summary: "You handled the technical issues with patience and used the correct terminology for troubleshooting." },
+  "7": { title: "Prepositions & Travel", summary: "You demonstrated a clear understanding of spatial relationships and prepositions in a travel context." }
 };
 
 const data = [

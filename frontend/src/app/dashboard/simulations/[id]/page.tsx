@@ -148,6 +148,29 @@ const lessonsData: Record<string, any> = {
       { sender: 'ai', text: "Perfect. Let's continue with the rest of the slides. Oh, wait, I think I'm having another connection issue..." },
       { sender: 'user', text: "Don't worry, I can still hear you. Let's keep going, and if it gets worse, we can switch to an audio-only call." }
     ]
+  },
+  "7": {
+    title: "Prepositions & Travel",
+    aiRole: "Airport Agent",
+    contextTip: "Use prepositions like 'in', 'on', 'next to' and 'between' to describe locations accurately.",
+    phrasalVerbs: [
+      { verb: "Check in", meaning: "To register at an airport or hotel." },
+      { verb: "Go through", meaning: "To pass through security or a gate." }
+    ],
+    dialogue: [
+      { sender: 'ai', text: "Welcome to the airport. To proceed with your check-in, where is your passport?" },
+      { sender: 'user', text: "It is in my bag. Let me get it for you." },
+      { sender: 'ai', text: "Thank you. Please place your suitcase on the scale next to the counter." },
+      { sender: 'user', text: "Okay, it is on the scale now. Is the weight acceptable?" },
+      { sender: 'ai', text: "Yes, it's perfect. Now, please stand in front of the camera for the identification photo." },
+      { sender: 'user', text: "I am in front of the camera. Should I look directly at the lens?" },
+      { sender: 'ai', text: "Yes, please. Thank you. Your gate is number 12. It is next to the restaurant, between the pharmacy and the café." },
+      { sender: 'user', text: "Thank you. Is the restaurant behind the security check area?" },
+      { sender: 'ai', text: "Exactly, it is behind security. The coffee shop is also right next to it." },
+      { sender: 'user', text: "I see it. Oh, I think my phone is under the chair. Let me grab it before I go." },
+      { sender: 'ai', text: "No problem. Once you have it, you can go through gate 12. Have a safe flight!" },
+      { sender: 'user', text: "Thank you for your help. Have a great day!" }
+    ]
   }
 };
 

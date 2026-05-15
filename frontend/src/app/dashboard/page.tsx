@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageSquare, Users, Briefcase, Mail, Radio, Video } from 'lucide-react';
+import { ArrowRight, MessageSquare, Users, Briefcase, Mail, Radio, Video, Plane } from 'lucide-react';
 import Link from 'next/link';
 
 const lessons = [
@@ -59,6 +59,15 @@ const lessons = [
     vocab: "Microphone, Camera, Connection, Screen sharing, Mute, Internet issue",
     icon: <Video className="text-[#EC4899]" size={24} />,
     href: "/dashboard/simulations/6"
+  },
+  {
+    id: 7,
+    title: "Lesson 7: Prepositions & Travel",
+    difficulty: "Beginner",
+    objective: "Entender posições e localização no contexto de aeroporto e viagens.",
+    vocab: "At, In, On, Under, Behind, In front of, Between, Next to",
+    icon: <Plane className="text-[#38BDF8]" size={24} />,
+    href: "/dashboard/simulations/7"
   }
 ];
 
