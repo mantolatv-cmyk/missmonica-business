@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageSquare, Users, Briefcase, Mail, Radio, Video, Plane, Sparkles } from 'lucide-react';
+import { ArrowRight, MessageSquare, Users, Briefcase, Mail, Radio, Video, Plane, Sparkles, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -170,13 +170,19 @@ export default function LessonControl() {
                     </p>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between gap-2">
-                    <Link href={lesson.href} className="flex-1 text-center bg-[#D97706]/10 border border-[#D97706]/30 text-[#D97706] py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-[#D97706] hover:text-white transition-all">
+                  <div className="mt-4 flex flex-col gap-2">
+                    <Link href={lesson.href} className="w-full text-center bg-[#D97706]/10 border border-[#D97706]/30 text-[#D97706] py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-[#D97706] hover:text-white transition-all">
                       Simulation
                     </Link>
-                    <Link href={`/dashboard/practice/lesson-${lesson.id}`} className="flex-1 text-center bg-[#1E293B] border border-[#334155] text-gray-400 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#D97706]/50 hover:text-white transition-all">
-                      Practice Lab
-                    </Link>
+                    <div className="flex gap-2">
+                      <Link href={`/dashboard/vocabulary/${lesson.id}`} className="flex-1 text-center bg-[#0F172A] border border-[#334155] text-[#D97706] py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#D97706]/50 transition-all flex items-center justify-center gap-1">
+                        <BookOpen size={12} />
+                        Vocabulary
+                      </Link>
+                      <Link href={`/dashboard/practice/lesson-${lesson.id}`} className="flex-1 text-center bg-[#1E293B] border border-[#334155] text-gray-400 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#D97706]/50 hover:text-white transition-all">
+                        Practice Lab
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
