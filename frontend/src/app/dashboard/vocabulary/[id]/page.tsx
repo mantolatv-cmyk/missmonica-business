@@ -207,10 +207,10 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B1120] pb-20 -m-8">
-      {/* Premium Header - Fixed at the top */}
-      <div className="bg-[#0F172A] border-b border-[#1E293B] sticky top-0 z-50 shadow-xl">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div className="flex flex-col h-[calc(100vh-80px)] -m-8 bg-[#0B1120] relative overflow-hidden">
+      {/* Premium Header - Truly Fixed */}
+      <div className="h-20 bg-[#0F172A] border-b border-[#1E293B] shrink-0 z-10 shadow-xl">
+        <div className="max-w-5xl mx-auto px-6 h-full flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link href="/dashboard" className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1E293B] transition-colors">
               <ArrowLeft size={20} />
@@ -235,131 +235,134 @@ export default function VocabularyModule({ params }: { params: Promise<{ id: str
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-10 w-full">
-        {/* Intro Section */}
-        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-2 mb-3">
-              <BookOpen className="text-[#D97706]" size={18} />
-              <h2 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Vocabulary Lab</h2>
+      {/* Scrollable Content Area */}
+      <div className="flex-1 overflow-y-auto px-6 py-10">
+        <div className="max-w-5xl mx-auto w-full pb-20">
+          {/* Intro Section */}
+          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-xl">
+              <div className="flex items-center gap-2 mb-3">
+                <BookOpen className="text-[#D97706]" size={18} />
+                <h2 className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Vocabulary Lab</h2>
+              </div>
+              <h3 className="font-serif text-3xl font-bold text-white mb-4">Master Essential Phrasing</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Explore the key terminology and professional expressions used in this lesson. 
+                Click on the cards to reveal the translation and master the context.
+              </p>
             </div>
-            <h3 className="font-serif text-3xl font-bold text-white mb-4">Master Essential Phrasing</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Explore the key terminology and professional expressions used in this lesson. 
-              Click on the cards to reveal the translation and master the context.
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <div className="px-4 py-2 bg-[#D97706]/10 border border-[#D97706]/30 rounded-lg">
-              <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-widest block">Total Words</span>
-              <span className="text-xl font-bold text-white">{lesson.items.length}</span>
+            <div className="flex gap-2">
+              <div className="px-4 py-2 bg-[#D97706]/10 border border-[#D97706]/30 rounded-lg">
+                <span className="text-[10px] font-bold text-[#D97706] uppercase tracking-widest block">Total Words</span>
+                <span className="text-xl font-bold text-white">{lesson.items.length}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Vocabulary Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <AnimatePresence mode="popLayout">
-            {filteredItems.map((item, index) => (
-              <motion.div
-                key={item.english}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.03 }}
-                onClick={() => toggleReveal(index)}
-                className="group cursor-pointer"
-              >
-                <div className="bg-[#0F172A] border border-[#1E293B] rounded-2xl p-6 hover:border-[#D97706]/50 transition-all relative overflow-hidden shadow-lg h-full flex flex-col">
-                  {/* Category Badge */}
-                  <div className="flex justify-between items-start mb-4">
-                    <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter border
-                      ${item.category === 'Business' ? 'text-blue-400 border-blue-400/30 bg-blue-400/5' : 
-                        item.category === 'Action' ? 'text-emerald-400 border-emerald-400/30 bg-emerald-400/5' : 
-                        item.category === 'Grammar' ? 'text-violet-400 border-violet-400/30 bg-violet-400/5' :
-                        item.category === 'Travel' ? 'text-amber-400 border-amber-400/30 bg-amber-400/5' :
-                        'text-gray-400 border-gray-400/30 bg-gray-400/5'}`}
-                    >
-                      {item.category}
-                    </span>
-                    <Volume2 size={16} className="text-gray-600 group-hover:text-[#D97706] transition-colors" />
-                  </div>
-
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#D97706] transition-colors">
-                      {item.english}
-                    </h4>
-                    
-                    <div className="min-h-[40px] flex flex-col justify-center">
-                      <AnimatePresence mode="wait">
-                        {revealedIds.includes(index) ? (
-                          <motion.div
-                            key="translation"
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="flex items-center gap-2 text-[#D97706] font-medium"
-                          >
-                            <Languages size={14} />
-                            <span>{item.portuguese}</span>
-                          </motion.div>
-                        ) : (
-                          <motion.div
-                            key="hidden"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="text-gray-600 text-sm italic flex items-center gap-2"
-                          >
-                            <ChevronRight size={14} />
-                            <span>Click to reveal translation</span>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+          {/* Vocabulary Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <AnimatePresence mode="popLayout">
+              {filteredItems.map((item, index) => (
+                <motion.div
+                  key={item.english}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.03 }}
+                  onClick={() => toggleReveal(index)}
+                  className="group cursor-pointer"
+                >
+                  <div className="bg-[#0F172A] border border-[#1E293B] rounded-2xl p-6 hover:border-[#D97706]/50 transition-all relative overflow-hidden shadow-lg h-full flex flex-col">
+                    {/* Category Badge */}
+                    <div className="flex justify-between items-start mb-4">
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-tighter border
+                        ${item.category === 'Business' ? 'text-blue-400 border-blue-400/30 bg-blue-400/5' : 
+                          item.category === 'Action' ? 'text-emerald-400 border-emerald-400/30 bg-emerald-400/5' : 
+                          item.category === 'Grammar' ? 'text-violet-400 border-violet-400/30 bg-violet-400/5' :
+                          item.category === 'Travel' ? 'text-amber-400 border-amber-400/30 bg-amber-400/5' :
+                          'text-gray-400 border-gray-400/30 bg-gray-400/5'}`}
+                      >
+                        {item.category}
+                      </span>
+                      <Volume2 size={16} className="text-gray-600 group-hover:text-[#D97706] transition-colors" />
                     </div>
+
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#D97706] transition-colors">
+                        {item.english}
+                      </h4>
+                      
+                      <div className="min-h-[40px] flex flex-col justify-center">
+                        <AnimatePresence mode="wait">
+                          {revealedIds.includes(index) ? (
+                            <motion.div
+                              key="translation"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              className="flex items-center gap-2 text-[#D97706] font-medium"
+                            >
+                              <Languages size={14} />
+                              <span>{item.portuguese}</span>
+                            </motion.div>
+                          ) : (
+                            <motion.div
+                              key="hidden"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              className="text-gray-600 text-sm italic flex items-center gap-2"
+                            >
+                              <ChevronRight size={14} />
+                              <span>Click to reveal translation</span>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+
+                    {/* Example sentence */}
+                    <div className="mt-6 pt-4 border-t border-[#1E293B]">
+                      <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Practical Usage</span>
+                      <p className="text-xs text-gray-400 italic leading-relaxed">
+                        "{item.example}"
+                      </p>
+                    </div>
+
+                    {/* Accent Line */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D97706] opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_#D97706]"></div>
                   </div>
-
-                  {/* Example sentence */}
-                  <div className="mt-6 pt-4 border-t border-[#1E293B]">
-                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-2">Practical Usage</span>
-                    <p className="text-xs text-gray-400 italic leading-relaxed">
-                      "{item.example}"
-                    </p>
-                  </div>
-
-                  {/* Accent Line */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#D97706] opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_0_10px_#D97706]"></div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Empty State */}
-        {filteredItems.length === 0 && (
-          <div className="py-20 text-center">
-            <Search size={48} className="text-gray-700 mx-auto mb-4 opacity-20" />
-            <p className="text-gray-500 font-serif text-xl italic">No vocabulary found for your search.</p>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
-        )}
 
-        {/* Footer Navigation */}
-        <div className="mt-16 pt-8 border-t border-[#1E293B] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <Sparkles size={16} className="text-[#D97706]" />
-            <span>Ready to practice these words?</span>
-          </div>
-          <div className="flex gap-4">
-            <Link 
-              href={`/dashboard/simulations/${lessonId}`}
-              className="px-6 py-3 bg-[#1E293B] border border-[#334155] text-white rounded-xl font-bold text-sm hover:border-[#D97706]/50 transition-all"
-            >
-              Start Simulation
-            </Link>
-            <Link 
-              href={`/dashboard/practice/lesson-${lessonId}`}
-              className="px-6 py-3 bg-[#D97706] text-white rounded-xl font-bold text-sm hover:bg-[#B45309] transition-all shadow-lg shadow-[#D97706]/10"
-            >
-              Go to Practice Lab
-            </Link>
+          {/* Empty State */}
+          {filteredItems.length === 0 && (
+            <div className="py-20 text-center">
+              <Search size={48} className="text-gray-700 mx-auto mb-4 opacity-20" />
+              <p className="text-gray-500 font-serif text-xl italic">No vocabulary found for your search.</p>
+            </div>
+          )}
+
+          {/* Footer Navigation */}
+          <div className="mt-16 pt-8 border-t border-[#1E293B] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2 text-gray-500 text-sm">
+              <Sparkles size={16} className="text-[#D97706]" />
+              <span>Ready to practice these words?</span>
+            </div>
+            <div className="flex gap-4">
+              <Link 
+                href={`/dashboard/simulations/${lessonId}`}
+                className="px-6 py-3 bg-[#1E293B] border border-[#334155] text-white rounded-xl font-bold text-sm hover:border-[#D97706]/50 transition-all"
+              >
+                Start Simulation
+              </Link>
+              <Link 
+                href={`/dashboard/practice/lesson-${lessonId}`}
+                className="px-6 py-3 bg-[#D97706] text-white rounded-xl font-bold text-sm hover:bg-[#B45309] transition-all shadow-lg shadow-[#D97706]/10"
+              >
+                Go to Practice Lab
+              </Link>
+            </div>
           </div>
         </div>
       </div>
