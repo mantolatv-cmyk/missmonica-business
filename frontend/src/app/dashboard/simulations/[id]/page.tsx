@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Sparkles, AlertCircle, CheckCircle2, ChevronRight, Play, Languages } from 'lucide-react';
+import { ArrowLeft, Sparkles, AlertCircle, CheckCircle2, ChevronRight, Play, Languages, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface DialogueTurn {
