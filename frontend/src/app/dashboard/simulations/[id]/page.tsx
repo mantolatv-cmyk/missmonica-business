@@ -16,6 +16,11 @@ const lessonsData: Record<string, any> = {
     title: "Small Talks & Presentations",
     aiRole: "International Colleague",
     contextTip: "Focus on using 'Nice to meet you' and 'Working on'. Maintain a polite and friendly tone.",
+    introduction: {
+      scenario: "You are joining an online meeting a few minutes early. You meet John, a colleague from the London office, whom you've never spoken to before.",
+      goal: "Build rapport through casual conversation (small talk) before the official meeting begins.",
+      keyVocabulary: ["Catch up", "Remote work", "Schedule", "Multinational"]
+    },
     phrasalVerbs: [
       { verb: "Catch up", meaning: "To exchange the latest news." },
       { verb: "Work on", meaning: "To be engaged in a project." }
@@ -39,6 +44,11 @@ const lessonsData: Record<string, any> = {
     title: "Meetings & Communication",
     aiRole: "Project Manager",
     contextTip: "Use 'I agree' or 'I see your point' before expressing a different opinion.",
+    introduction: {
+      scenario: "You are in a weekly alignment meeting. The Project Manager is reviewing the Q3 release schedule and needs status updates.",
+      goal: "Communicate task progress, request feedback, and handle schedule changes professionally.",
+      keyVocabulary: ["Deadline", "Feedback", "Agenda", "Push back"]
+    },
     phrasalVerbs: [
       { verb: "Follow up", meaning: "To take further action on a task." },
       { verb: "Push back", meaning: "To delay a deadline." }
@@ -62,6 +72,11 @@ const lessonsData: Record<string, any> = {
     title: "Interviews & HR",
     aiRole: "HR Recruiter",
     contextTip: "Talk about your 'Strengths' and 'Experience' clearly and confidently.",
+    introduction: {
+      scenario: "You are being interviewed for a senior position at a global technology company. The recruiter wants to hear about your experience with multinational teams.",
+      goal: "Present your professional background confidently and answer competency-based questions.",
+      keyVocabulary: ["Resume", "Background", "Strengths", "Leadership"]
+    },
     phrasalVerbs: [
       { verb: "Walk through", meaning: "To explain something step by step." },
       { verb: "Take on", meaning: "To accept a responsibility." }
@@ -85,6 +100,11 @@ const lessonsData: Record<string, any> = {
     title: "Professional Emails",
     aiRole: "Enterprise Client",
     contextTip: "Use formal phrases like 'Please find attached' and 'Thank you for your time'.",
+    introduction: {
+      scenario: "A client is asking for missing documentation from a previous email thread. You need to provide the files and schedule a follow-up call.",
+      goal: "Practice formal email language, apologies for oversights, and professional scheduling.",
+      keyVocabulary: ["Attached", "Oversight", "Availability", "Shortly"]
+    },
     phrasalVerbs: [
       { verb: "Send over", meaning: "To transfer a document to someone." },
       { verb: "Look into", meaning: "To investigate an issue." }
@@ -108,6 +128,11 @@ const lessonsData: Record<string, any> = {
     title: "Networking & Events",
     aiRole: "Conference Attendee",
     contextTip: "Use 'What do you do?' to learn more about people you meet. Mention your industry and career goals.",
+    introduction: {
+      scenario: "You are at an international industry conference during a coffee break. You meet Sarah, a professional from another tech firm.",
+      goal: "Practice networking, introducing your company, and exchanging business contact information.",
+      keyVocabulary: ["Firm", "Trends", "Insights", "LinkedIn"]
+    },
     phrasalVerbs: [
       { verb: "Set up", meaning: "To establish a company or project." },
       { verb: "Reach out", meaning: "To contact someone for networking." }
@@ -131,6 +156,11 @@ const lessonsData: Record<string, any> = {
     title: "Teams & Online Calls",
     aiRole: "Remote Colleague",
     contextTip: "Troubleshoot common audio/video issues with phrases like 'Your microphone is muted' and 'I'll share my screen'.",
+    introduction: {
+      scenario: "You are on a video call with a remote colleague. There are some technical issues with the connection and microphone.",
+      goal: "Practice technical troubleshooting language and maintaining professional communication during disruptions.",
+      keyVocabulary: ["Unstable", "Muted", "Headset", "Bandwidth"]
+    },
     phrasalVerbs: [
       { verb: "Cut out", meaning: "When audio/video suddenly stops working." },
       { verb: "Speak up", meaning: "To talk louder." }
@@ -154,6 +184,11 @@ const lessonsData: Record<string, any> = {
     title: "Prepositions & Travel",
     aiRole: "Airport Agent",
     contextTip: "Use prepositions like 'in', 'on', 'next to' and 'between' to describe locations accurately.",
+    introduction: {
+      scenario: "You are at the airport check-in counter for an international business trip. The agent is helping you with your suitcase and boarding details.",
+      goal: "Practice using spatial prepositions (in, on, next to) correctly in a real-world travel context.",
+      keyVocabulary: ["Suitcase", "Scale", "Pharmacy", "Identification"]
+    },
     phrasalVerbs: [
       { verb: "Check in", meaning: "To register at an airport or hotel." },
       { verb: "Go through", meaning: "To pass through security or a gate." }
@@ -180,6 +215,7 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
   const lesson = lessonsData[lessonId] || lessonsData["1"];
 
   const [visibleStep, setVisibleStep] = useState(1);
+  const [showBriefing, setShowBriefing] = useState(true);
   const [showTranslations, setShowTranslations] = useState<Record<number, boolean>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -207,7 +243,67 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
   const isFinished = visibleStep >= lesson.dialogue.length;
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)] -m-8 bg-[#0B1120]">
+    <div className="flex flex-col h-[calc(100vh-80px)] -m-8 bg-[#0B1120] relative">
+      <AnimatePresence>
+        {showBriefing && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-50 bg-[#0B1120]/95 backdrop-blur-sm flex items-center justify-center p-8"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              className="max-w-2xl w-full bg-[#0F172A] border border-[#1E293B] rounded-3xl p-10 shadow-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#D97706] rounded-full blur-3xl opacity-5 -mr-32 -mt-32"></div>
+              
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl bg-[#D97706]/10 flex items-center justify-center text-[#D97706]">
+                  <Sparkles size={24} />
+                </div>
+                <div>
+                  <h2 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Mission Briefing</h2>
+                  <h3 className="font-serif text-2xl font-bold text-white">{lesson.title}</h3>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <section>
+                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-2">The Scenario</h4>
+                  <p className="text-gray-300 leading-relaxed italic">"{lesson.introduction.scenario}"</p>
+                </section>
+
+                <section>
+                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-2">Primary Goal</h4>
+                  <p className="text-gray-300 leading-relaxed">{lesson.introduction.goal}</p>
+                </section>
+
+                <section>
+                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-3">Key Vocabulary</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {lesson.introduction.keyVocabulary.map((word: string, i: number) => (
+                      <span key={i} className="px-3 py-1 bg-[#1E293B] border border-[#334155] rounded-lg text-xs text-gray-300 font-medium">
+                        {word}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+
+                <button 
+                  onClick={() => setShowBriefing(false)}
+                  className="w-full py-4 bg-[#D97706] text-white rounded-xl font-bold hover:bg-[#B45309] transition-all flex items-center justify-center group"
+                >
+                  Accept Mission & Start Simulation
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Simulation Header */}
       <div className="h-16 border-b border-[#1E293B] bg-[#0F172A] px-8 flex items-center justify-between shrink-0">
         <div className="flex items-center">
