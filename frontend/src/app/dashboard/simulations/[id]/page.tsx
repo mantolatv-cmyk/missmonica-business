@@ -37,12 +37,14 @@ const lessonsData: Record<string, any> = {
       { verb: "Push back", meaning: "To delay a deadline." }
     ],
     dialogue: [
-      { sender: 'ai', text: "Alright team, let's look at the agenda. We need to push back the deadline for the Q3 release. What's the status on the backend update?" },
-      { sender: 'user', text: "I understand the urgency. I've been working on the API integration, and I expect it to be ready by Friday." },
-      { sender: 'ai', text: "Friday? That's cutting it close. Is there any way we can speed up the process?" },
-      { sender: 'user', text: "Let me check with the team. I agree that we need to stay on schedule, but we must ensure the quality is not compromised." },
-      { sender: 'ai', text: "Fair enough. I'll follow up with you tomorrow morning for a final update." },
-      { sender: 'user', text: "I'll send you an update as soon as I have more information." }
+      { sender: 'ai', text: "Alright team, let's look at the agenda for today's meeting. First item: we need to discuss the project deadline for the Q3 release. What's the current status?" },
+      { sender: 'user', text: "I agree that we need to review the timeline. Regarding the update on my tasks, I've completed the initial phase, but I need more feedback from the design team." },
+      { sender: 'ai', text: "I see. The design team is currently focused on the mobile layout. Can you repeat the part about the feedback you need?" },
+      { sender: 'user', text: "Certainly. I need clarification on the brand guidelines before I can finalize the backend integration. Can you repeat that last part about the mobile layout?" },
+      { sender: 'ai', text: "Yes, they are finalizing the mobile assets today. We might need to push back the team alignment session to Thursday." },
+      { sender: 'user', text: "Let me check my schedule for Thursday. I think I have a follow-up meeting with the client then, but I can make it work." },
+      { sender: 'ai', text: "Great. Please ensure the project update is shared with everyone before the meeting ends. Do you have any other points for the agenda?" },
+      { sender: 'user', text: "I'll send you an update via email with the task breakdown. I'll also follow up with the design team right after this call." }
     ]
   },
   "3": {
