@@ -76,6 +76,16 @@ const lessons = [
     icon: <Plane className="text-[#38BDF8]" size={20} />,
     image: "/lessons/lesson_7.png",
     href: "/dashboard/simulations/7"
+  },
+  {
+    id: 8,
+    title: "Lesson 8: DO / CAN / TO",
+    difficulty: "Beginner",
+    objective: "Aprenda quando usar DO, CAN e TO em perguntas e pedidos.",
+    vocab: "Do, Can, To, Passport, Speak, Help, Water",
+    icon: <Sparkles className="text-[#F59E0B]" size={20} />,
+    image: "/lessons/lesson_8.png",
+    href: "/dashboard/simulations/8"
   }
 ];
 

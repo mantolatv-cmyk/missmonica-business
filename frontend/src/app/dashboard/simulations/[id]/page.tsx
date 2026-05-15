@@ -221,6 +221,36 @@ const lessonsData: Record<string, any> = {
       { sender: 'ai', text: "No problem. Once you have it, you can go through gate 12. Have a safe flight!", translation: "Sem problemas. Assim que o tiver, você pode passar pelo portão 12. Tenha um voo seguro!" },
       { sender: 'user', text: "Thank you for your help. Have a great day!", translation: "Obrigado pela sua ajuda. Tenha um ótimo dia!" }
     ]
+  },
+  "8": {
+    title: "DO / CAN / TO",
+    aiRole: "Various Contacts",
+    contextTip: "Use DO for present questions, CAN for requests, and TO for directions/destinations.",
+    introduction: {
+      scenario: "You will practice short interactions using DO, CAN, and TO in everyday travel situations like the airport, restaurant, and immigration.",
+      scenarioTranslation: "Você vai praticar interações curtas usando DO, CAN e TO em situações cotidianas de viagem como aeroporto, restaurante e imigração.",
+      goal: "Answer naturally to questions, make polite requests, and understand basic directions.",
+      goalTranslation: "Responder naturalmente a perguntas, fazer pedidos educados e entender direções básicas.",
+      keyVocabulary: ["Passport", "Water", "Help", "Speak"]
+    },
+    phrasalVerbs: [
+      { verb: "Sit down", meaning: "To take a seat." },
+      { verb: "Get to", meaning: "To arrive at a destination." }
+    ],
+    dialogue: [
+      { sender: 'ai', text: "Do you have your passport?", translation: "Você tem seu passaporte?" },
+      { sender: 'user', text: "Yes, I do. It's in my bag.", translation: "Sim, eu tenho. Está na minha bolsa." },
+      { sender: 'ai', text: "Do you have checked baggage?", translation: "Você tem bagagem despachada?" },
+      { sender: 'user', text: "Yes, two bags. Can I have a window seat?", translation: "Sim, duas malas. Posso ter um assento na janela?" },
+      { sender: 'ai', text: "Sure. Here is your boarding pass. Go to gate 15.", translation: "Claro. Aqui está seu cartão de embarque. Vá para o portão 15." },
+      { sender: 'user', text: "Thank you. (Now at the restaurant...) Hello, can I get a coffee, please?", translation: "Obrigado. (Agora no restaurante...) Olá, posso pedir um café, por favor?" },
+      { sender: 'ai', text: "Sure. Do you want sugar?", translation: "Claro. Você quer açúcar?" },
+      { sender: 'user', text: "Yes, please.", translation: "Sim, por favor." },
+      { sender: 'ai', text: "Here you go. (Now at immigration...) Do you have medical insurance?", translation: "Aqui está. (Agora na imigração...) Você tem seguro médico?" },
+      { sender: 'user', text: "Yes, I do.", translation: "Sim, eu tenho." },
+      { sender: 'ai', text: "Welcome to the United States.", translation: "Bem-vindo aos Estados Unidos." },
+      { sender: 'user', text: "Thank you.", translation: "Obrigado." }
+    ]
   }
 };
 

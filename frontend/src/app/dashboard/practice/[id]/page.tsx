@@ -684,6 +684,82 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         explanation: 'The correct spatial phrase is "to the right of".'
       }
     ]
+  },
+  'lesson-8': {
+    title: 'DO / CAN / TO',
+    questions: [
+      {
+        id: 1,
+        type: 'fill-in-the-blank',
+        question: 'Do you have a passport? -> Yes, I _______',
+        correctAnswer: 'do',
+        explanation: 'For questions starting with "Do you...", the short affirmative answer is "Yes, I do".'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Do you need help? -> No, I\'m _______',
+        correctAnswer: 'okay',
+        explanation: 'A natural way to decline help politely is "No, I\'m okay" or "No, thank you".'
+      },
+      {
+        id: 3,
+        type: 'fill-in-the-blank',
+        question: 'Can I get some water? -> Yes, of _______',
+        correctAnswer: 'course',
+        explanation: '"Of course" is a very common and polite way to agree to a request.'
+      },
+      {
+        id: 4,
+        type: 'fill-in-the-blank',
+        question: 'Can you help me? -> Sure, no _______',
+        correctAnswer: 'problem',
+        explanation: '"No problem" is a natural response when agreeing to help someone.'
+      },
+      {
+        id: 5,
+        type: 'fill-in-the-blank',
+        question: 'Welcome _______ the United States.',
+        correctAnswer: 'to',
+        explanation: 'We use the preposition "to" to indicate direction or destination.'
+      },
+      {
+        id: 6,
+        type: 'unscramble',
+        question: 'Form a question asking about English skills:',
+        scrambledWords: ['speak', 'you', 'Do', 'English'],
+        correctAnswer: 'Do you speak English',
+        explanation: 'Start with the auxiliary DO, followed by subject and base verb.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Find the grammatical mistake and correct it:',
+        sentenceWords: ['Do', 'you', 'has', 'your', 'passport?'],
+        incorrectWordIndex: 2,
+        correctedWord: 'have',
+        correctAnswer: 'have',
+        explanation: 'After "Do you", always use the base form of the verb ("have").'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a polite request:',
+        scrambledWords: ['get', 'I', 'Can', 'some', 'water'],
+        correctAnswer: 'Can I get some water',
+        explanation: '"Can I get..." is a very natural way to order or request something.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['Welcome', 'in', 'the', 'United', 'States.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'to',
+        correctAnswer: 'to',
+        explanation: 'The correct phrase for arrivals is "Welcome to [place]".'
+      }
+    ]
   }
 };
 
