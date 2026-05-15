@@ -151,8 +151,8 @@ const lessonsData: Record<string, any> = {
   }
 };
 
-export default function ConversationalSimulator({ params }: { params: { id: string } }) {
-  const lessonId = params.id;
+export default function ConversationalSimulator({ params }: { params: Promise<{ id: string }> }) {
+  const { id: lessonId } = React.use(params);
   const lesson = lessonsData[lessonId] || lessonsData["1"];
 
   const [visibleStep, setVisibleStep] = useState(1);
@@ -191,7 +191,7 @@ export default function ConversationalSimulator({ params }: { params: { id: stri
           </h1>
         </div>
         
-        <Link href={`/dashboard/simulations/${params.id}/debrief`} className={`text-sm font-semibold text-[#F8FAFC] bg-[#1E293B] px-4 py-2 rounded-lg hover:bg-[#334155] transition-colors border border-[#334155] ${!isFinished ? 'opacity-50 pointer-events-none' : ''}`}>
+        <Link href={`/dashboard/simulations/${lessonId}/debrief`} className={`text-sm font-semibold text-[#F8FAFC] bg-[#1E293B] px-4 py-2 rounded-lg hover:bg-[#334155] transition-colors border border-[#334155] ${!isFinished ? 'opacity-50 pointer-events-none' : ''}`}>
           {isFinished ? 'View Debrief' : 'Finish Dialogue first'}
         </Link>
       </div>
@@ -247,7 +247,7 @@ export default function ConversationalSimulator({ params }: { params: { id: stri
                 <p className="text-[#10B981] font-serif text-xl font-bold mb-4 flex items-center justify-center">
                   <CheckCircle2 className="mr-2" /> Role Play Completed
                 </p>
-                <Link href={`/dashboard/simulations/${params.id}/debrief`} className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                <Link href={`/dashboard/simulations/${lessonId}/debrief`} className="inline-flex items-center bg-white text-[#0F172A] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors">
                   <Play className="mr-2" size={20} /> Get Executive Feedback
                 </Link>
               </div>

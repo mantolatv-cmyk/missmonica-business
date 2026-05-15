@@ -27,8 +27,9 @@ const data = [
   { name: 'Clarity', score: 78, fill: '#3B82F6' },
 ];
 
-export default function DebriefScreen({ params }: { params: { id: string } }) {
-  const lesson = lessonsMetadata[params.id] || lessonsMetadata["1"];
+export default function DebriefScreen({ params }: { params: Promise<{ id: string }> }) {
+  const { id: lessonId } = React.use(params);
+  const lesson = lessonsMetadata[lessonId] || lessonsMetadata["1"];
 
   return (
     <div className="flex flex-col max-w-4xl mx-auto py-8">
@@ -39,7 +40,7 @@ export default function DebriefScreen({ params }: { params: { id: string } }) {
         </Link>
         <div>
           <h1 className="font-serif text-3xl font-bold text-[#F8FAFC]">Executive Debrief</h1>
-          <p className="text-gray-400 text-sm mt-1">Lesson {params.id}: {lesson.title}</p>
+          <p className="text-gray-400 text-sm mt-1">Lesson {lessonId}: {lesson.title}</p>
         </div>
       </div>
 
