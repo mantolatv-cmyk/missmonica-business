@@ -24,6 +24,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Nice to meet you', portuguese: 'Prazer em conhecê-lo', example: 'Hi John, nice to meet you in person.', category: 'Business' },
       { english: 'Hectic', portuguese: 'Agitado / Caótico', example: 'It\'s always a bit hectic during a launch.', category: 'Business' },
       { english: 'Multinational', portuguese: 'Multinacional', example: 'She works for a large multinational company.', category: 'Business' },
+      { english: 'Rapport', portuguese: 'Sintonia / Rapport', example: 'It\'s important to build rapport with clients.', category: 'Business' },
+      { english: 'Break the ice', portuguese: 'Quebrar o gelo', example: 'A joke can help to break the ice.', category: 'Action' },
+      { english: 'Stakeholder', portuguese: 'Parte interessada / Stakeholder', example: 'We need to update all stakeholders.', category: 'Business' },
+      { english: 'Keynote', portuguese: 'Palestra principal / Keynote', example: 'He will deliver the keynote speech.', category: 'Business' },
+      { english: 'Background', portuguese: 'Contexto / Histórico', example: 'Can you provide some background on this?', category: 'Business' },
+      { english: 'Insight', portuguese: 'Ideia / Percepção / Insight', example: 'That was a very valuable insight.', category: 'Business' },
     ]
   },
   '2': {
@@ -37,6 +43,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Agree', portuguese: 'Concordar', example: 'I agree with your point about the timeline.', category: 'Action' },
       { english: 'Clarify', portuguese: 'Esclarecer', example: 'Could you clarify that last point?', category: 'Action' },
       { english: 'Asset', portuguese: 'Recurso / Ativo', example: 'They are finalizing the mobile assets.', category: 'Tool' },
+      { english: 'Minutes', portuguese: 'Ata de reunião', example: 'Who is taking the minutes today?', category: 'Tool' },
+      { english: 'Wrap up', portuguese: 'Encerrar / Finalizar', example: 'Let\'s wrap up the meeting now.', category: 'Action' },
+      { english: 'Circle back', portuguese: 'Retomar / Voltar a falar', example: 'Let\'s circle back to this later.', category: 'Action' },
+      { english: 'Action item', portuguese: 'Tarefa / Item de ação', example: 'I have three action items from this call.', category: 'Business' },
+      { english: 'On the same page', portuguese: 'Em sintonia / Alinhados', example: 'Are we all on the same page?', category: 'Business' },
+      { english: 'Brainstorm', portuguese: 'Brainstorming / Chuva de ideias', example: 'We need to brainstorm some new ideas.', category: 'Action' },
     ]
   },
   '3': {
@@ -50,6 +62,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Take on', portuguese: 'Assumir (responsabilidade)', example: 'I am ready to take on more responsibilities.', category: 'Action' },
       { english: 'Competency', portuguese: 'Competência', example: 'The interview includes competency-based questions.', category: 'Business' },
       { english: 'Exposure', portuguese: 'Exposição / Experiência', example: 'I\'m looking for international exposure.', category: 'Business' },
+      { english: 'Soft skills', portuguese: 'Habilidades interpessoais', example: 'Soft skills are vital for managers.', category: 'Business' },
+      { english: 'Hard skills', portuguese: 'Habilidades técnicas', example: 'My hard skills include Python and SQL.', category: 'Business' },
+      { english: 'Candidate', portuguese: 'Candidato', example: 'He is a very strong candidate.', category: 'Business' },
+      { english: 'Headhunter', portuguese: 'Recrutador de executivos', example: 'A headhunter contacted me yesterday.', category: 'Business' },
+      { english: 'Benefits package', portuguese: 'Pacote de benefícios', example: 'The company offers a great benefits package.', category: 'Business' },
+      { english: 'Performance review', portuguese: 'Avaliação de desempenho', example: 'I have my performance review tomorrow.', category: 'Business' },
     ]
   },
   '4': {
@@ -63,6 +81,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Look into', portuguese: 'Investigar / Verificar', example: 'I will look into this issue immediately.', category: 'Action' },
       { english: 'Request', portuguese: 'Pedido / Solicitação', example: 'I received your request for information.', category: 'Business' },
       { english: 'Thread', portuguese: 'Conversa / Fio (de e-mail)', example: 'The document is missing from the thread.', category: 'Tool' },
+      { english: 'Forward', portuguese: 'Encaminhar', example: 'I will forward this email to the team.', category: 'Action' },
+      { english: 'CC', portuguese: 'Com cópia', example: 'Please CC me on that email.', category: 'Tool' },
+      { english: 'BCC', portuguese: 'Com cópia oculta', example: 'Use BCC for the large mailing list.', category: 'Tool' },
+      { english: 'Best regards', portuguese: 'Atenciosamente / Melhores cumprimentos', example: 'Best regards, Monica.', category: 'Business' },
+      { english: 'ASAP', portuguese: 'O mais rápido possível', example: 'I need the confirmation ASAP.', category: 'Business' },
+      { english: 'Subject line', portuguese: 'Assunto (do e-mail)', example: 'The subject line should be clear.', category: 'Tool' },
     ]
   },
   '5': {
@@ -76,6 +100,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Reach out', portuguese: 'Entrar em contato', example: 'I\'ll reach out to you next week.', category: 'Action' },
       { english: 'Networking', portuguese: 'Networking / Rede de contatos', example: 'Networking is essential for career growth.', category: 'Business' },
       { english: 'Workshop', portuguese: 'Workshop / Oficina', example: 'Is this your first time at this workshop?', category: 'Business' },
+      { english: 'Business card', portuguese: 'Cartão de visitas', example: 'Do you have a business card?', category: 'Tool' },
+      { english: 'Elevator pitch', portuguese: 'Apresentação rápida / Pitch', example: 'I need to polish my elevator pitch.', category: 'Business' },
+      { english: 'Partnership', portuguese: 'Parceria', example: 'We are looking for a new partnership.', category: 'Business' },
+      { english: 'Trade show', portuguese: 'Feira de negócios', example: 'Are you attending the trade show?', category: 'Business' },
+      { english: 'Referral', portuguese: 'Indicação', example: 'He got the job through a referral.', category: 'Business' },
+      { english: 'Industry', portuguese: 'Indústria / Setor', example: 'The tech industry is evolving fast.', category: 'Business' },
     ]
   },
   '6': {
@@ -89,6 +119,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Speak up', portuguese: 'Falar mais alto', example: 'Could you please speak up?', category: 'Action' },
       { english: 'Screen sharing', portuguese: 'Compartilhamento de tela', example: 'I\'ll start screen sharing now.', category: 'Tool' },
       { english: 'Troubleshoot', portuguese: 'Resolver problemas', example: 'Let\'s troubleshoot this connection issue.', category: 'Action' },
+      { english: 'Lag', portuguese: 'Atraso / Lentidão', example: 'There is a lot of lag on this call.', category: 'Tool' },
+      { english: 'Echo', portuguese: 'Eco', example: 'I can hear an echo on your end.', category: 'Tool' },
+      { english: 'Background noise', portuguese: 'Ruído de fundo', example: 'Sorry for the background noise.', category: 'Tool' },
+      { english: 'Host', portuguese: 'Anfitrião / Organizador', example: 'The host will start the meeting soon.', category: 'Tool' },
+      { english: 'Join', portuguese: 'Entrar / Participar', example: 'Click the link to join the meeting.', category: 'Action' },
+      { english: 'Breakout room', portuguese: 'Sala de apoio / Sala simultânea', example: 'We will move to breakout rooms now.', category: 'Tool' },
     ]
   },
   '7': {
@@ -102,6 +138,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Go through', portuguese: 'Passar por', example: 'You need to go through security.', category: 'Action' },
       { english: 'Boarding pass', portuguese: 'Cartão de embarque', example: 'Here is your boarding pass.', category: 'Travel' },
       { english: 'Gate', portuguese: 'Portão', example: 'Your flight departs from gate 12.', category: 'Travel' },
+      { english: 'Layover', portuguese: 'Conexão / Escala', example: 'I have a three-hour layover in Paris.', category: 'Travel' },
+      { english: 'Terminal', portuguese: 'Terminal', example: 'Go to terminal 3 for international flights.', category: 'Travel' },
+      { english: 'Departure', portuguese: 'Partida', example: 'What is the departure time?', category: 'Travel' },
+      { english: 'Arrival', portuguese: 'Chegada', example: 'The arrival area is on the first floor.', category: 'Travel' },
+      { english: 'Customs', portuguese: 'Alfândega', example: 'You need to clear customs first.', category: 'Travel' },
+      { english: 'Duty-free', portuguese: 'Livre de impostos / Duty-free', example: 'I bought this at the duty-free shop.', category: 'Travel' },
     ]
   },
   '8': {
@@ -115,6 +157,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Medical insurance', portuguese: 'Seguro médico', example: 'Do you have medical insurance?', category: 'Travel' },
       { english: 'Window seat', portuguese: 'Assento na janela', example: 'Can I have a window seat?', category: 'Travel' },
       { english: 'Ready', portuguese: 'Pronto / Preparado', example: 'Are you ready to board?', category: 'Grammar' },
+      { english: 'Order', portuguese: 'Pedir / Encomendar', example: 'Can I order a sandwich?', category: 'Action' },
+      { english: 'Receipt', portuguese: 'Recibo', example: 'Do you need a receipt?', category: 'Tool' },
+      { english: 'Change', portuguese: 'Troco', example: 'Here is your change.', category: 'Tool' },
+      { english: 'Book', portuguese: 'Reservar', example: 'Can you book a taxi for me?', category: 'Action' },
+      { english: 'Direct flight', portuguese: 'Voo direto', example: 'Is it a direct flight?', category: 'Travel' },
+      { english: 'Carry-on', portuguese: 'Bagagem de mão', example: 'This is my carry-on bag.', category: 'Travel' },
     ]
   },
   '9': {
@@ -128,6 +176,12 @@ const vocabularyData: Record<string, { title: string, items: VocabItem[] }> = {
       { english: 'Airport', portuguese: 'Aeroporto', example: 'They are at the airport.', category: 'Travel' },
       { english: 'Excited', portuguese: 'Animado / Empolgado', example: 'We are very excited about the trip.', category: 'Grammar' },
       { english: 'Lens', portuguese: 'Lente', example: 'Look directly at the lens.', category: 'Travel' },
+      { english: 'Late', portuguese: 'Atrasado', example: 'Is the flight late?', category: 'Grammar' },
+      { english: 'Early', portuguese: 'Adiantado / Cedo', example: 'We are early for the meeting.', category: 'Grammar' },
+      { english: 'Safe', portuguese: 'Seguro', example: 'The city is very safe.', category: 'Grammar' },
+      { english: 'Busy', portuguese: 'Ocupado / Movimentado', example: 'The airport is very busy today.', category: 'Grammar' },
+      { english: 'Hungry', portuguese: 'Com fome', example: 'Are you hungry after the trip?', category: 'Grammar' },
+      { english: 'Thirsty', portuguese: 'Com sede', example: 'I am very thirsty.', category: 'Grammar' },
     ]
   }
 };
