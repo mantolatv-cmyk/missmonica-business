@@ -18,7 +18,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Focus on using 'Nice to meet you' and 'Working on'. Maintain a polite and friendly tone.",
     introduction: {
       scenario: "You are joining an online meeting a few minutes early. You meet John, a colleague from the London office, whom you've never spoken to before.",
+      scenarioTranslation: "Você está entrando em uma reunião online alguns minutos mais cedo. Você encontra John, um colega do escritório de Londres, com quem você nunca falou antes.",
       goal: "Build rapport through casual conversation (small talk) before the official meeting begins.",
+      goalTranslation: "Estabelecer rapport através de uma conversa casual (small talk) antes da reunião oficial começar.",
       keyVocabulary: ["Catch up", "Remote work", "Schedule", "Multinational"]
     },
     phrasalVerbs: [
@@ -46,7 +48,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Use 'I agree' or 'I see your point' before expressing a different opinion.",
     introduction: {
       scenario: "You are in a weekly alignment meeting. The Project Manager is reviewing the Q3 release schedule and needs status updates.",
+      scenarioTranslation: "Você está em uma reunião semanal de alinhamento. O Gerente de Projeto está revisando o cronograma de lançamento do terceiro trimestre e precisa de atualizações de status.",
       goal: "Communicate task progress, request feedback, and handle schedule changes professionally.",
+      goalTranslation: "Comunicar o progresso das tarefas, solicitar feedback e lidar com mudanças no cronograma de forma profissional.",
       keyVocabulary: ["Deadline", "Feedback", "Agenda", "Push back"]
     },
     phrasalVerbs: [
@@ -74,7 +78,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Talk about your 'Strengths' and 'Experience' clearly and confidently.",
     introduction: {
       scenario: "You are being interviewed for a senior position at a global technology company. The recruiter wants to hear about your experience with multinational teams.",
+      scenarioTranslation: "Você está sendo entrevistado para um cargo sênior em uma empresa global de tecnologia. O recrutador quer ouvir sobre sua experiência com equipes multinacionais.",
       goal: "Present your professional background confidently and answer competency-based questions.",
+      goalTranslation: "Apresentar sua trajetória profissional com confiança e responder a perguntas baseadas em competências.",
       keyVocabulary: ["Resume", "Background", "Strengths", "Leadership"]
     },
     phrasalVerbs: [
@@ -102,7 +108,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Use formal phrases like 'Please find attached' and 'Thank you for your time'.",
     introduction: {
       scenario: "A client is asking for missing documentation from a previous email thread. You need to provide the files and schedule a follow-up call.",
+      scenarioTranslation: "Um cliente está pedindo documentos que faltaram em uma conversa anterior por e-mail. Você precisa fornecer os arquivos e agendar uma chamada de acompanhamento.",
       goal: "Practice formal email language, apologies for oversights, and professional scheduling.",
+      goalTranslation: "Praticar a linguagem formal de e-mail, pedidos de desculpas por descuidos e agendamento profissional.",
       keyVocabulary: ["Attached", "Oversight", "Availability", "Shortly"]
     },
     phrasalVerbs: [
@@ -130,7 +138,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Use 'What do you do?' to learn more about people you meet. Mention your industry and career goals.",
     introduction: {
       scenario: "You are at an international industry conference during a coffee break. You meet Sarah, a professional from another tech firm.",
+      scenarioTranslation: "Você está em uma conferência internacional do setor durante um intervalo para o café. Você conhece Sarah, uma profissional de outra empresa de tecnologia.",
       goal: "Practice networking, introducing your company, and exchanging business contact information.",
+      goalTranslation: "Praticar networking, apresentar sua empresa e trocar informações de contato profissional.",
       keyVocabulary: ["Firm", "Trends", "Insights", "LinkedIn"]
     },
     phrasalVerbs: [
@@ -158,7 +168,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Troubleshoot common audio/video issues with phrases like 'Your microphone is muted' and 'I'll share my screen'.",
     introduction: {
       scenario: "You are on a video call with a remote colleague. There are some technical issues with the connection and microphone.",
+      scenarioTranslation: "Você está em uma chamada de vídeo com um colega remoto. Há alguns problemas técnicos com a conexão e o microfone.",
       goal: "Practice technical troubleshooting language and maintaining professional communication during disruptions.",
+      goalTranslation: "Praticar a linguagem de resolução de problemas técnicos e manter uma comunicação profissional durante interrupções.",
       keyVocabulary: ["Unstable", "Muted", "Headset", "Bandwidth"]
     },
     phrasalVerbs: [
@@ -186,7 +198,9 @@ const lessonsData: Record<string, any> = {
     contextTip: "Use prepositions like 'in', 'on', 'next to' and 'between' to describe locations accurately.",
     introduction: {
       scenario: "You are at the airport check-in counter for an international business trip. The agent is helping you with your suitcase and boarding details.",
+      scenarioTranslation: "Você está no balcão de check-in do aeroporto para uma viagem de negócios internacional. O agente está ajudando você com sua mala e detalhes de embarque.",
       goal: "Practice using spatial prepositions (in, on, next to) correctly in a real-world travel context.",
+      goalTranslation: "Praticar o uso correto de preposições espaciais (in, on, next to) em um contexto real de viagem.",
       keyVocabulary: ["Suitcase", "Scale", "Pharmacy", "Identification"]
     },
     phrasalVerbs: [
@@ -216,6 +230,7 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
 
   const [visibleStep, setVisibleStep] = useState(1);
   const [showBriefing, setShowBriefing] = useState(true);
+  const [briefingTranslations, setBriefingTranslations] = useState<Record<string, boolean>>({});
   const [showTranslations, setShowTranslations] = useState<Record<number, boolean>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -271,13 +286,56 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
 
               <div className="space-y-8">
                 <section>
-                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-2">The Scenario</h4>
-                  <p className="text-gray-300 leading-relaxed italic">"{lesson.introduction.scenario}"</p>
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">The Scenario</h4>
+                    <span className="text-[10px] text-gray-500 italic">Click text to translate</span>
+                  </div>
+                  <div 
+                    onClick={() => setBriefingTranslations(prev => ({ ...prev, scenario: !prev.scenario }))}
+                    className="cursor-pointer group"
+                  >
+                    <p className="text-gray-300 leading-relaxed italic transition-colors group-hover:text-white">
+                      "{lesson.introduction.scenario}"
+                    </p>
+                    <AnimatePresence>
+                      {briefingTranslations.scenario && (
+                        <motion.p 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="text-[#D97706] text-sm mt-2 italic border-t border-[#D97706]/20 pt-2"
+                        >
+                          "{lesson.introduction.scenarioTranslation}"
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </section>
 
                 <section>
-                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-2">Primary Goal</h4>
-                  <p className="text-gray-300 leading-relaxed">{lesson.introduction.goal}</p>
+                  <div className="flex justify-between items-center mb-2">
+                    <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">Primary Goal</h4>
+                  </div>
+                  <div 
+                    onClick={() => setBriefingTranslations(prev => ({ ...prev, goal: !prev.goal }))}
+                    className="cursor-pointer group"
+                  >
+                    <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-white">
+                      {lesson.introduction.goal}
+                    </p>
+                    <AnimatePresence>
+                      {briefingTranslations.goal && (
+                        <motion.p 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="text-[#D97706] text-sm mt-2 border-t border-[#D97706]/20 pt-2"
+                        >
+                          {lesson.introduction.goalTranslation}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </section>
 
                 <section>
