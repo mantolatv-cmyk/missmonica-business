@@ -100,6 +100,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'looking',
         correctAnswer: 'looking',
         explanation: 'After "look forward to", the verb must be in the -ing form (gerund).'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a common small talk question:',
+        scrambledWords: ['long', 'have', 'you', 'been', 'with', 'the', 'company', 'How'],
+        correctAnswer: 'How long have you been with the company',
+        explanation: 'A standard professional icebreaker to ask about tenure.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['I', 'am', 'very', 'good', 'in', 'my', 'job.'],
+        incorrectWordIndex: 4,
+        correctedWord: 'at',
+        correctAnswer: 'at',
+        explanation: 'We use "good at" when referring to skills or jobs, not "good in".'
       }
     ]
   },
@@ -176,6 +194,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'on',
         correctAnswer: 'on',
         explanation: 'The correct phrase is "agree on this point", not "in this point".'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a phrase to politely ask for clarification:',
+        scrambledWords: ['you', 'repeat', 'that', 'last', 'point', 'please', 'Could'],
+        correctAnswer: 'Could you repeat that last point please',
+        explanation: 'A highly professional way to ask someone to say something again.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['We', 'need', 'to', 'focus', 'in', 'the', 'agenda.'],
+        incorrectWordIndex: 4,
+        correctedWord: 'on',
+        correctAnswer: 'on',
+        explanation: 'The verb focus is always followed by the preposition "on".'
       }
     ]
   },
@@ -252,6 +288,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'ago',
         correctAnswer: 'ago',
         explanation: 'We use "ago" for a specific point in the past measured back from the present.'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a sentence about your career goals:',
+        scrambledWords: ['looking', 'for', 'a', 'new', 'challenge', 'I', 'am'],
+        correctAnswer: 'I am looking for a new challenge',
+        explanation: 'A standard phrase to indicate readiness for growth and new opportunities.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the grammatical mistake and correct it:',
+        sentenceWords: ['I', 'have', 'a', 'lot', 'of', 'experiences', 'in', 'sales.'],
+        incorrectWordIndex: 5,
+        correctedWord: 'experience',
+        correctAnswer: 'experience',
+        explanation: 'When talking about accumulated knowledge from a job, "experience" is uncountable.'
       }
     ]
   },
@@ -328,6 +382,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'attached',
         correctAnswer: 'attached',
         explanation: 'It must be the adjective "attached", not the verb "attach".'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a common email closing phrase:',
+        scrambledWords: ['look', 'forward', 'to', 'hearing', 'from', 'you', 'I'],
+        correctAnswer: 'I look forward to hearing from you',
+        explanation: 'The most standard formal closing line to anticipate a response.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the grammatical mistake and correct it:',
+        sentenceWords: ['Let', 'me', 'know', 'if', 'you', 'need', 'any', 'informations.'],
+        incorrectWordIndex: 7,
+        correctedWord: 'information',
+        correctAnswer: 'information',
+        explanation: 'The word "information" is uncountable in English and never takes an "s".'
       }
     ]
   },
@@ -404,6 +476,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'meet',
         correctAnswer: 'meet',
         explanation: 'After the infinitive "to", use the base form of the verb ("meet").'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a phrase to ask about someone\'s job:',
+        scrambledWords: ['What', 'do', 'you', 'do', 'at', 'your', 'firm'],
+        correctAnswer: 'What do you do at your firm',
+        explanation: 'A great open-ended networking question.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the grammatical mistake and correct it:',
+        sentenceWords: ['Let', 'us', 'keeping', 'in', 'touch.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'keep',
+        correctAnswer: 'keep',
+        explanation: 'After "Let us" (Let\'s), use the base verb form.'
       }
     ]
   },
@@ -480,6 +570,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'on',
         correctAnswer: 'on',
         explanation: 'The correct phrase is "on mute".'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a phrase to introduce a presentation:',
+        scrambledWords: ['will', 'share', 'my', 'screen', 'with', 'you', 'I'],
+        correctAnswer: 'I will share my screen with you',
+        explanation: 'A clear declaration before starting to broadcast your monitor.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the grammatical mistake and correct it:',
+        sentenceWords: ['My', 'connection', 'is', 'very', 'badly', 'today.'],
+        incorrectWordIndex: 4,
+        correctedWord: 'bad',
+        correctAnswer: 'bad',
+        explanation: 'Use the adjective "bad" to describe the noun "connection", not the adverb "badly".'
       }
     ]
   },
@@ -556,6 +664,24 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         correctedWord: 'at',
         correctAnswer: 'at',
         explanation: 'We use the preposition "at" for specific times on the clock.'
+      },
+      {
+        id: 8,
+        type: 'unscramble',
+        question: 'Form a phrase to ask for directions at the airport:',
+        scrambledWords: ['Where', 'is', 'the', 'baggage', 'claim', 'area', 'located'],
+        correctAnswer: 'Where is the baggage claim area located',
+        explanation: 'A formal and direct way to ask where to pick up luggage.'
+      },
+      {
+        id: 9,
+        type: 'find-the-mistake',
+        question: 'Find the preposition mistake and correct it:',
+        sentenceWords: ['The', 'hotel', 'is', 'at', 'the', 'right', 'of', 'the', 'station.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'to',
+        correctAnswer: 'to',
+        explanation: 'The correct spatial phrase is "to the right of".'
       }
     ]
   }
