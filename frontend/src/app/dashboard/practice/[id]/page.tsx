@@ -23,155 +23,178 @@ interface Question {
 }
 
 const moduleContent: Record<string, { title: string, questions: Question[] }> = {
-  'grammar-1': {
-    title: 'Polite Requests',
+  'lesson-1': {
+    title: 'Small Talk Practice',
     questions: [
       {
         id: 1,
         type: 'multiple-choice',
-        question: 'Which of these is the most polite way to ask a colleague for a report?',
+        question: 'How do you respond to "How have you been?" in a professional but friendly way?',
         options: [
-          'Send me the report now.',
-          'I need the report by 5 PM.',
-          'I was wondering if you could send me the report by 5 PM?',
-          'Can you send the report?'
+          'I am working.',
+          'Great, thanks! Busy with the new launch, but things are going well. And you?',
+          'None of your business.',
+          'I am fine.'
         ],
-        correctAnswer: 'I was wondering if you could send me the report by 5 PM?',
-        explanation: '"I was wondering if you could..." is a standard indirect and very polite way to make a request in business contexts.'
+        correctAnswer: 'Great, thanks! Busy with the new launch, but things are going well. And you?',
+        explanation: 'Providing a brief positive update and asking back is the standard for business small talk.'
       },
       {
         id: 2,
         type: 'fill-in-the-blank',
-        question: 'Would you _______ checking the schedule for next week?',
-        correctAnswer: 'mind',
-        explanation: '"Would you mind + [verb-ing]" is a common structure for polite requests.'
-      },
-      {
-        id: 3,
-        type: 'multiple-choice',
-        question: 'How would you politely disagree with a suggestion in a meeting?',
-        options: [
-          'That is a bad idea.',
-          'I see your point, but I have some concerns about the timeline.',
-          'No, we cannot do that.',
-          'I disagree entirely.'
-        ],
-        correctAnswer: 'I see your point, but I have some concerns about the timeline.',
-        explanation: 'Acknowledging the other person\'s perspective before disagreeing is a key part of professional diplomacy.'
+        question: 'It\'s a pleasure to finally meet you _______ person!',
+        correctAnswer: 'in',
+        explanation: '"In person" is the correct prepositional phrase for meeting someone physically after online contact.'
       }
     ]
   },
-  'vocab-1': {
-    title: 'Corporate Idioms',
+  'lesson-2': {
+    title: 'Meeting Terminology',
     questions: [
       {
         id: 1,
         type: 'multiple-choice',
-        question: 'What does it mean to "touch base" with someone?',
+        question: 'What is the "agenda" of a meeting?',
         options: [
-          'To hit them with a ball.',
-          'To contact them briefly to discuss something.',
-          'To physically meet at a specific base.',
-          'To finish a project.'
+          'The person leading the meeting.',
+          'The list of items to be discussed.',
+          'The room where the meeting is held.',
+          'The minutes of the previous meeting.'
         ],
-        correctAnswer: 'To contact them briefly to discuss something.',
-        explanation: '"Touch base" is a very common idiom meaning to make contact or get an update.'
+        correctAnswer: 'The list of items to be discussed.',
+        explanation: 'An agenda ensures the meeting stays focused on specific topics.'
       },
       {
         id: 2,
         type: 'fill-in-the-blank',
-        question: 'We need to think outside the _______ to find a creative solution.',
-        correctAnswer: 'box',
-        explanation: '"Thinking outside the box" means thinking creatively or unconventionally.'
-      },
-      {
-        id: 3,
-        type: 'multiple-choice',
-        question: 'If everyone is "on the same page", it means:',
-        options: [
-          'Everyone is reading the same book.',
-          'Everyone is working in the same office.',
-          'Everyone has the same understanding or agreement.',
-          'Everyone is writing on the same document.'
-        ],
-        correctAnswer: 'Everyone has the same understanding or agreement.',
-        explanation: 'Being "on the same page" ensures alignment and common understanding in a team.'
+        question: 'Could you _______ that last point? I didn\'t quite catch it.',
+        correctAnswer: 'repeat',
+        explanation: 'Asking for repetition is a vital skill in international meetings.'
       }
     ]
   },
-  'grammar-2': {
-    title: 'Business Conditionals',
+  'lesson-3': {
+    title: 'Interview Skills',
     questions: [
       {
         id: 1,
         type: 'multiple-choice',
-        question: 'Complete the sentence for a negotiation: "If you _______ the price by 10%, we will sign the contract today."',
+        question: 'When asked about a "weakness", what is the best strategy?',
         options: [
-          'lowering',
-          'lowered',
-          'lower',
-          'will lower'
+          'Say you have no weaknesses.',
+          'Mention a real weakness and explain how you are working to improve it.',
+          'Mention a weakness that is actually a strength (e.g., "I work too hard").',
+          'Avoid the question.'
         ],
-        correctAnswer: 'lower',
-        explanation: 'In the first conditional (possible future), we use "if + present simple" for the condition and "will + verb" for the result.'
+        correctAnswer: 'Mention a real weakness and explain how you are working to improve it.',
+        explanation: 'Authenticity and a growth mindset are highly valued by recruiters.'
       },
       {
         id: 2,
         type: 'fill-in-the-blank',
-        question: 'We won\'t be able to finish the project _______ we hire more developers.',
-        correctAnswer: 'unless',
-        explanation: '"Unless" means "if not". It is used to state a necessary condition.'
-      },
-      {
-        id: 3,
-        type: 'multiple-choice',
-        question: 'Which sentence describes a hypothetical (unlikely) negotiation scenario?',
-        options: [
-          'If you give us a discount, we buy more.',
-          'If you gave us a 50% discount, we would double our order.',
-          'If you give us a discount, we will buy more.',
-          'If you are giving a discount, we buy more.'
-        ],
-        correctAnswer: 'If you gave us a 50% discount, we would double our order.',
-        explanation: 'The second conditional (if + past simple, would + verb) is used for hypothetical or unlikely situations.'
+        question: 'I have over five years of _______ in this field.',
+        correctAnswer: 'experience',
+        explanation: '"Experience" is the most common term for professional time spent in a role.'
       }
     ]
   },
-  'vocab-2': {
-    title: 'Financial Vocabulary',
+  'lesson-4': {
+    title: 'Email Etiquette',
     questions: [
       {
         id: 1,
         type: 'multiple-choice',
-        question: 'What does ROI stand for?',
+        question: 'Which closing is appropriate for a formal business email to a new client?',
         options: [
-          'Rate of Interest',
-          'Return on Investment',
-          'Revenue over Income',
-          'Risk of Inflation'
+          'See ya!',
+          'Cheers,',
+          'Sincerely,',
+          'Sent from my iPhone'
         ],
-        correctAnswer: 'Return on Investment',
-        explanation: 'ROI is a measure used to evaluate the efficiency or profitability of an investment.'
+        correctAnswer: 'Sincerely,',
+        explanation: '"Sincerely" or "Best regards" are standard formal closings.'
       },
       {
         id: 2,
         type: 'fill-in-the-blank',
-        question: 'Rent and utilities are examples of _______ costs.',
-        correctAnswer: 'overhead',
-        explanation: 'Overhead costs refer to the ongoing expenses of operating a business that are not directly linked to creating a product or service.'
+        question: 'Please find _______ the document you requested.',
+        correctAnswer: 'attached',
+        explanation: '"Please find attached" is the standard phrase for sending files via email.'
+      }
+    ]
+  },
+  'lesson-5': {
+    title: 'Networking Phrases',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'What is a "soft skill" often used in networking?',
+        options: [
+          'Python programming.',
+          'Financial modeling.',
+          'Active listening.',
+          'Database management.'
+        ],
+        correctAnswer: 'Active listening.',
+        explanation: 'Active listening helps build trust and meaningful connections during networking.'
       },
       {
-        id: 3,
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Do you have a business _______? I\'d like to stay in touch.',
+        correctAnswer: 'card',
+        explanation: 'Exchanging business cards is a traditional but still common networking practice.'
+      }
+    ]
+  },
+  'lesson-6': {
+    title: 'Technical Call Vocab',
+    questions: [
+      {
+        id: 1,
         type: 'multiple-choice',
-        question: 'What is the difference between revenue and profit?',
+        question: 'What do you say when you can see a colleague but cannot hear them?',
         options: [
-          'There is no difference.',
-          'Profit is total money received, revenue is what remains after expenses.',
-          'Revenue is total money received, profit is what remains after expenses.',
-          'Revenue is only from sales, profit is from investments.'
+          'You are invisible.',
+          'You are on mute.',
+          'Your camera is off.',
+          'Speak louder.'
         ],
-        correctAnswer: 'Revenue is total money received, profit is what remains after expenses.',
-        explanation: 'Revenue (Top Line) is the total income, while Profit (Bottom Line) is the income minus all costs and expenses.'
+        correctAnswer: 'You are on mute.',
+        explanation: '"You are on mute" is the standard way to tell someone their microphone is disabled.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'The connection is _______; your video is freezing.',
+        correctAnswer: 'unstable',
+        explanation: '"Unstable" describes a poor or fluctuating internet connection.'
+      }
+    ]
+  },
+  'lesson-7': {
+    title: 'Travel Prepositions',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Where do you wait for your plane?',
+        options: [
+          'On the gate.',
+          'At the gate.',
+          'In the gate.',
+          'Under the gate.'
+        ],
+        correctAnswer: 'At the gate.',
+        explanation: 'We use "at" for specific points or locations in a building.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'My passport is _______ my pocket.',
+        correctAnswer: 'in',
+        explanation: '"In" is used for items inside a contained space (like a pocket or bag).'
       }
     ]
   }

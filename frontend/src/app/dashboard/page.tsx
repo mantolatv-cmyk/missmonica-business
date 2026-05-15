@@ -98,7 +98,7 @@ export default function LessonControl() {
       {/* Grid of Lessons */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {lessons.map((lesson, index) => (
-          <Link href={lesson.href} key={lesson.id} className="h-full">
+          <div key={lesson.id} className="h-full">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -150,11 +150,13 @@ export default function LessonControl() {
                     </p>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between text-xs font-bold text-[#D97706]">
-                    <span className="uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Start Mission</span>
-                    <div className="flex items-center group-hover:translate-x-1 transition-transform">
-                      <ArrowRight size={16} />
-                    </div>
+                  <div className="mt-4 flex items-center justify-between gap-2">
+                    <Link href={lesson.href} className="flex-1 text-center bg-[#D97706]/10 border border-[#D97706]/30 text-[#D97706] py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-[#D97706] hover:text-white transition-all">
+                      Simulation
+                    </Link>
+                    <Link href={`/dashboard/practice/lesson-${lesson.id}`} className="flex-1 text-center bg-[#1E293B] border border-[#334155] text-gray-400 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#D97706]/50 hover:text-white transition-all">
+                      Practice Lab
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -162,7 +164,7 @@ export default function LessonControl() {
               {/* Neon Glow Footer Line */}
               <div className="h-1 w-0 group-hover:w-full bg-[#D97706] transition-all duration-500 shadow-[0_0_10px_#D97706]"></div>
             </motion.div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
