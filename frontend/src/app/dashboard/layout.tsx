@@ -5,8 +5,7 @@ import {
   Target, 
   Settings,
   Search,
-  UserCircle,
-  Sparkles
+  UserCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -30,7 +29,6 @@ export default function DashboardLayout({
 
         <nav className="flex-1 w-full space-y-4">
           <NavItem icon={<Target size={20} />} label="Lesson Control" href="/dashboard" active={true} />
-          <NavItem icon={<Sparkles size={20} />} label="Practice Lab" href="/dashboard/practice" />
         </nav>
 
         <div className="w-full mt-auto">
