@@ -56,12 +56,14 @@ const lessonsData: Record<string, any> = {
       { verb: "Take on", meaning: "To accept a responsibility." }
     ],
     dialogue: [
-      { sender: 'ai', text: "Thank you for joining us today. Looking at your CV, you have strong experience. Can you walk me through your biggest professional achievement?" },
-      { sender: 'user', text: "Certainly. At my previous company, I led a team that optimized our logistics process, which reduced costs by 15%." },
-      { sender: 'ai', text: "That's impressive. What would you say is your biggest weakness when working in a team?" },
-      { sender: 'user', text: "I sometimes take on too much responsibility myself, but I'm learning to delegate more effectively to my team members." },
-      { sender: 'ai', text: "Great self-awareness. Why do you want to join our multinational company specifically?" },
-      { sender: 'user', text: "I'm looking for a position that offers international exposure and the chance to contribute my skills to global projects." }
+      { sender: 'ai', text: "Thank you for joining this interview session today. We are looking for a candidate with strong international experience for this position. Can you walk me through your professional background?" },
+      { sender: 'user', text: "Thank you for the opportunity. As you can see on my Resume, I have over five years of experience in project management, specifically working with multinational teams." },
+      { sender: 'ai', text: "That's a solid foundation. In this position, you'll need to handle high-pressure skills. What would you say are your main strengths and weaknesses?" },
+      { sender: 'user', text: "My main strength is my ability to adapt to new environments quickly. As for a weakness, I sometimes focus too much on details, but I'm working on balancing that with the bigger picture." },
+      { sender: 'ai', text: "I appreciate the honesty. How do you handle conflict within a remote team?" },
+      { sender: 'user', text: "I believe in clear communication and setting expectations early. My experience has taught me that most issues can be resolved with a quick alignment call." },
+      { sender: 'ai', text: "Excellent. We will be in touch soon regarding the next steps of the recruitment process." },
+      { sender: 'user', text: "Thank you for your time. I look forward to hearing from you." }
     ]
   },
   "4": {
@@ -73,12 +75,12 @@ const lessonsData: Record<string, any> = {
       { verb: "Look into", meaning: "To investigate an issue." }
     ],
     dialogue: [
-      { sender: 'ai', text: "Hi, I received the draft, but the schedule document seems to be missing. Could you please send it over as soon as possible?" },
-      { sender: 'user', text: "I apologize for the oversight. Please find the schedule attached to this email." },
-      { sender: 'ai', text: "Thank you. Also, could you confirm your availability for a brief call tomorrow to discuss the next steps?" },
-      { sender: 'user', text: "I am available between 2 PM and 4 PM. Please let me know which time works best for you." },
-      { sender: 'ai', text: "2 PM works for me. I'll send a meeting invite shortly. Thank you for your time." },
-      { sender: 'user', text: "You're welcome. I look forward to our call." }
+      { sender: 'ai', text: "Hi, I received your request for the Q4 information, but the schedule document seems to be missing from the thread. Could you please send it over?" },
+      { sender: 'user', text: "I apologize for the oversight. Please find attached the updated schedule and the budget confirmation document you requested." },
+      { sender: 'ai', text: "Thank you. I see the attachment now. Also, I need to check your availability for a brief meeting next week. Does Monday work for you?" },
+      { sender: 'user', text: "Could you help me with the specific time? I have some availability in the afternoon. Thank you for your time and for looking into this so quickly." },
+      { sender: 'ai', text: "Monday at 3 PM would be perfect. I'll send a calendar invite shortly to confirm the schedule." },
+      { sender: 'user', text: "That works for me. Thank you for your time. I look forward to our discussion." }
     ]
   },
   "5": {
@@ -90,12 +92,12 @@ const lessonsData: Record<string, any> = {
       { verb: "Reach out", meaning: "To contact someone for networking." }
     ],
     dialogue: [
-      { sender: 'ai', text: "Great keynote, wasn't it? Hi, I'm Sarah from TechCorp. What industry are you in?" },
-      { sender: 'user', text: "It was indeed! I'm in the IT sector, specifically focusing on cloud infrastructure. And you?" },
-      { sender: 'ai', text: "I work in HR for a multinational firm. We're looking to expand our remote workforce. Do you have a business card?" },
-      { sender: 'user', text: "Yes, here it is. I'd love to reach out and discuss how my skills might align with your company's needs." },
-      { sender: 'ai', text: "Perfect. It was nice talking to you, let's stay in touch!" },
-      { sender: 'user', text: "It was a pleasure meeting you too. Enjoy the rest of the conference!" }
+      { sender: 'ai', text: "The networking session is quite busy today! Hi, I'm Sarah from an international tech firm. Which company do you work for?" },
+      { sender: 'user', text: "Hi Sarah! It's a great conference. I work for a multinational industry leader in IT. What do you do at your firm?" },
+      { sender: 'ai', text: "I work in HR, focusing on career development and talent opportunity. Is this your first time at this workshop?" },
+      { sender: 'user', text: "Yes, it is! I'm here to expand my professional contact list and learn about new trends in the industry. It's a great opportunity." },
+      { sender: 'ai', text: "Absolutely. Here is my business card. We should stay in touch regarding future projects." },
+      { sender: 'user', text: "Thank you. It was nice talking to you, Sarah. Enjoy the rest of the event!" }
     ]
   },
   "6": {
@@ -107,12 +109,12 @@ const lessonsData: Record<string, any> = {
       { verb: "Speak up", meaning: "To talk louder." }
     ],
     dialogue: [
-      { sender: 'ai', text: "Hello? Can you hear me? I think my connection is a bit unstable. Let me try to share my screen..." },
-      { sender: 'user', text: "Yes, I can hear you, but your audio is cutting out occasionally. I can see your screen now." },
-      { sender: 'ai', text: "Sorry about that. Is my microphone muted? I'm having some internet issues today." },
-      { sender: 'user', text: "No, your microphone is on, but you might need to speak up a bit. Should I repeat what I just said?" },
-      { sender: 'ai', text: "Yes, please. I missed the last part about the Q4 projections." },
-      { sender: 'user', text: "Of course. I'll share my screen and go over the projections one more time." }
+      { sender: 'ai', text: "Hello? Can you hear me? I think my connection is a bit unstable today. Wait, I think your microphone is muted." },
+      { sender: 'user', text: "Sorry about that! Can you hear me now? I was having a minor audio issue with my headset." },
+      { sender: 'ai', text: "Yes, much better. I'll share my screen now to show you the latest project metrics. Can you see the camera feed as well?" },
+      { sender: 'user', text: "I can see your screen, but the connection seems a bit slow. Could you repeat that last part, please? You cut out for a second." },
+      { sender: 'ai', text: "Sure. I said the internet issue might be on my end. I'll try to turn off my camera to save bandwidth." },
+      { sender: 'user', text: "Good idea. I can still hear the audio clearly. Let's continue with the screen sharing part of the call." }
     ]
   }
 };
