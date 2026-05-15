@@ -98,6 +98,82 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         explanation: 'Being "on the same page" ensures alignment and common understanding in a team.'
       }
     ]
+  },
+  'grammar-2': {
+    title: 'Business Conditionals',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Complete the sentence for a negotiation: "If you _______ the price by 10%, we will sign the contract today."',
+        options: [
+          'lowering',
+          'lowered',
+          'lower',
+          'will lower'
+        ],
+        correctAnswer: 'lower',
+        explanation: 'In the first conditional (possible future), we use "if + present simple" for the condition and "will + verb" for the result.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'We won\'t be able to finish the project _______ we hire more developers.',
+        correctAnswer: 'unless',
+        explanation: '"Unless" means "if not". It is used to state a necessary condition.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'Which sentence describes a hypothetical (unlikely) negotiation scenario?',
+        options: [
+          'If you give us a discount, we buy more.',
+          'If you gave us a 50% discount, we would double our order.',
+          'If you give us a discount, we will buy more.',
+          'If you are giving a discount, we buy more.'
+        ],
+        correctAnswer: 'If you gave us a 50% discount, we would double our order.',
+        explanation: 'The second conditional (if + past simple, would + verb) is used for hypothetical or unlikely situations.'
+      }
+    ]
+  },
+  'vocab-2': {
+    title: 'Financial Vocabulary',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'What does ROI stand for?',
+        options: [
+          'Rate of Interest',
+          'Return on Investment',
+          'Revenue over Income',
+          'Risk of Inflation'
+        ],
+        correctAnswer: 'Return on Investment',
+        explanation: 'ROI is a measure used to evaluate the efficiency or profitability of an investment.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Rent and utilities are examples of _______ costs.',
+        correctAnswer: 'overhead',
+        explanation: 'Overhead costs refer to the ongoing expenses of operating a business that are not directly linked to creating a product or service.'
+      },
+      {
+        id: 3,
+        type: 'multiple-choice',
+        question: 'What is the difference between revenue and profit?',
+        options: [
+          'There is no difference.',
+          'Profit is total money received, revenue is what remains after expenses.',
+          'Revenue is total money received, profit is what remains after expenses.',
+          'Revenue is only from sales, profit is from investments.'
+        ],
+        correctAnswer: 'Revenue is total money received, profit is what remains after expenses.',
+        explanation: 'Revenue (Top Line) is the total income, while Profit (Bottom Line) is the income minus all costs and expenses.'
+      }
+    ]
   }
 };
 
