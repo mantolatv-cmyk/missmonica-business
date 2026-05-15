@@ -5,7 +5,8 @@ import {
   Target, 
   Settings,
   Search,
-  UserCircle
+  UserCircle,
+  Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +29,8 @@ export default function DashboardLayout({
         </div>
 
         <nav className="flex-1 w-full space-y-4">
-          <NavItem icon={<Target size={20} />} label="Lesson Control" active />
+          <NavItem icon={<Target size={20} />} label="Lesson Control" href="/dashboard" active={true} />
+          <NavItem icon={<Sparkles size={20} />} label="Practice Lab" href="/dashboard/practice" />
         </nav>
 
         <div className="w-full mt-auto">
@@ -72,9 +74,9 @@ export default function DashboardLayout({
   );
 }
 
-function NavItem({ icon, label, active = false }: { icon: React.ReactNode, label: string, active?: boolean }) {
+function NavItem({ icon, label, href = "/dashboard", active = false }: { icon: React.ReactNode, label: string, href?: string, active?: boolean }) {
   return (
-    <Link href="/dashboard" className={`flex items-center justify-center lg:justify-start w-full p-3 rounded-lg transition-colors duration-200 group ${active ? 'bg-[#1E293B] text-[#D97706]' : 'text-gray-500 hover:bg-[#1E293B] hover:text-white'}`}>
+    <Link href={href} className={`flex items-center justify-center lg:justify-start w-full p-3 rounded-lg transition-colors duration-200 group ${active ? 'bg-[#1E293B] text-[#D97706]' : 'text-gray-500 hover:bg-[#1E293B] hover:text-white'}`}>
       <span className={`${active ? 'text-[#D97706]' : 'text-gray-500 group-hover:text-white'}`}>{icon}</span>
       <span className="hidden lg:block ml-3 text-sm font-medium">{label}</span>
     </Link>
