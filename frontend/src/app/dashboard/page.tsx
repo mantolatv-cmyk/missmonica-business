@@ -117,17 +117,6 @@ export default function LessonControl() {
             Select a business lesson to initiate your immersive conversational simulation.
           </p>
         </div>
-
-        <div className="flex gap-4 w-full md:w-auto">
-          <div className="flex-1 md:flex-none bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-2">
-            <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest block">Focus Score</span>
-            <span className="text-lg font-bold text-white">840 <span className="text-[10px] text-emerald-400 font-medium">+12%</span></span>
-          </div>
-          <div className="flex-1 md:flex-none bg-[#0F172A] border border-[#1E293B] rounded-xl px-4 py-2">
-            <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest block">Study Streak</span>
-            <span className="text-lg font-bold text-white">5 Days</span>
-          </div>
-        </div>
       </div>
 
       {/* Grid of Lessons */}
