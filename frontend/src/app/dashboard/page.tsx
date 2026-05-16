@@ -100,6 +100,10 @@ const lessons = [
 ];
 
 export default function LessonControl() {
+  const [selectedDifficulties, setSelectedDifficulties] = React.useState<Record<number, string>>(
+    lessons.reduce((acc, lesson) => ({ ...acc, [lesson.id]: lesson.difficulty }), {})
+  );
+
   return (
     <div className="flex flex-col gap-8 pb-12">
       {/* Header Section */}
@@ -125,8 +129,6 @@ export default function LessonControl() {
           </div>
         </div>
       </div>
-
-
 
       {/* Grid of Lessons */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -154,23 +156,35 @@ export default function LessonControl() {
                   {lesson.icon}
                 </div>
 
-                {/* Difficulty Badge */}
-                <div className="absolute top-4 right-4">
-                   <span className={`px-2 py-1 rounded text-[9px] font-black uppercase tracking-tighter border
-                    ${lesson.difficulty === 'Advanced' ? 'text-[#D97706] border-[#D97706]/50 bg-[#D97706]/20' : 
-                      lesson.difficulty === 'Intermediate' ? 'text-[#10B981] border-[#10B981]/50 bg-[#10B981]/20' : 
-                      'text-gray-400 border-gray-700 bg-gray-900/50'}`}
-                  >
-                    {lesson.difficulty}
-                  </span>
+                {/* Difficulty Selector Overlay */}
+                <div className="absolute top-4 right-4 flex gap-1">
+                  {['Beginner', 'Intermediate', 'Advanced'].map((diff) => (
+                    <button
+                      key={diff}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedDifficulties(prev => ({ ...prev, [lesson.id]: diff }));
+                      }}
+                      className={`px-2 py-1 rounded text-[8px] font-black uppercase tracking-tighter border transition-all
+                        ${selectedDifficulties[lesson.id] === diff 
+                          ? (diff === 'Advanced' ? 'text-white border-[#D97706] bg-[#D97706]' : 
+                             diff === 'Intermediate' ? 'text-white border-[#10B981] bg-[#10B981]' : 
+                             'text-white border-blue-500 bg-blue-500')
+                          : 'text-gray-500 border-gray-800 bg-[#0F172A]/80 hover:border-gray-600'}`}
+                    >
+                      {diff[0]}
+                    </button>
+                  ))}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
-                <h2 className="font-serif text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#D97706] transition-colors line-clamp-1">
-                  {lesson.title}
-                </h2>
+                <div className="flex justify-between items-start mb-2">
+                  <h2 className="font-serif text-lg font-bold text-[#F8FAFC] group-hover:text-[#D97706] transition-colors line-clamp-1">
+                    {lesson.title}
+                  </h2>
+                </div>
                 <p className="font-sans text-xs text-gray-400 leading-relaxed mb-4 line-clamp-2 h-8">
                   {lesson.objective}
                 </p>
@@ -184,8 +198,14 @@ export default function LessonControl() {
                   </div>
 
                   <div className="mt-4 flex flex-col gap-2">
-                    <Link href={lesson.href} className="w-full text-center bg-[#D97706]/10 border border-[#D97706]/30 text-[#D97706] py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-[#D97706] hover:text-white transition-all">
-                      Simulation
+                    <Link 
+                      href={`/dashboard/simulations/${lesson.id}?difficulty=${selectedDifficulties[lesson.id]}`} 
+                      className={`w-full text-center py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest text-white transition-all shadow-lg
+                        ${selectedDifficulties[lesson.id] === 'Advanced' ? 'bg-[#D97706] hover:bg-[#B45309]' : 
+                          selectedDifficulties[lesson.id] === 'Intermediate' ? 'bg-[#10B981] hover:bg-[#059669]' : 
+                          'bg-blue-600 hover:bg-blue-700'}`}
+                    >
+                      Start {selectedDifficulties[lesson.id]} Simulation
                     </Link>
                     <div className="flex gap-2">
                       <Link href={`/dashboard/vocabulary/${lesson.id}`} className="flex-1 text-center bg-[#0F172A] border border-[#334155] text-[#D97706] py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#D97706]/50 transition-all flex items-center justify-center gap-1">
@@ -201,7 +221,11 @@ export default function LessonControl() {
               </div>
 
               {/* Neon Glow Footer Line */}
-              <div className="h-1 w-0 group-hover:w-full bg-[#D97706] transition-all duration-500 shadow-[0_0_10px_#D97706]"></div>
+              <div className={`h-1 w-0 group-hover:w-full transition-all duration-500 shadow-lg
+                ${selectedDifficulties[lesson.id] === 'Advanced' ? 'bg-[#D97706] shadow-[#D97706]/50' : 
+                  selectedDifficulties[lesson.id] === 'Intermediate' ? 'bg-[#10B981] shadow-[#10B981]/50' : 
+                  'bg-blue-600 shadow-blue-600/50'}`}
+              ></div>
             </motion.div>
           </div>
         ))}

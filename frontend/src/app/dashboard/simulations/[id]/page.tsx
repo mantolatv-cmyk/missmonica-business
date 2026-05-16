@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Sparkles, AlertCircle, CheckCircle2, ChevronRight, Play, Languages, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 interface DialogueTurn {
   sender: 'ai' | 'user';
@@ -15,13 +16,26 @@ const lessonsData: Record<string, any> = {
   "1": {
     title: "Small Talks & Presentations",
     aiRole: "International Colleague",
-    contextTip: "Focus on using 'Nice to meet you' and 'Working on'. Maintain a polite and friendly tone.",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Focus on basic greetings. Use 'Hi', 'Hello', and 'How are you?'.",
+        goal: "Introduce yourself simply and mention your city.",
+        keyVocabulary: ["Hi", "Meeting", "Office", "Name"]
+      },
+      Intermediate: {
+        contextTip: "Focus on building rapport. Use 'Nice to meet you' and ask about their work.",
+        goal: "Engage in small talk about remote work and team dynamics.",
+        keyVocabulary: ["Catch up", "Remote work", "Schedule", "Multinational"]
+      },
+      Advanced: {
+        contextTip: "Focus on executive nuances. Use 'Rapport', 'Stakeholder', and lead the transition to business.",
+        goal: "Manage a complex professional introduction and set the agenda for the meeting.",
+        keyVocabulary: ["Stakeholder", "Rapport", "Strategic", "Keynote"]
+      }
+    },
     introduction: {
       scenario: "You are joining an online meeting a few minutes early. You meet John, a colleague from the London office, whom you've never spoken to before.",
       scenarioTranslation: "Você está entrando em uma reunião online alguns minutos mais cedo. Você encontra John, um colega do escritório de Londres, com quem você nunca falou antes.",
-      goal: "Build rapport through casual conversation (small talk) before the official meeting begins.",
-      goalTranslation: "Estabelecer rapport através de uma conversa casual (small talk) antes da reunião oficial começar.",
-      keyVocabulary: ["Catch up", "Remote work", "Schedule", "Multinational"]
     },
     phrasalVerbs: [
       { verb: "Catch up", meaning: "To exchange the latest news." },
@@ -45,13 +59,26 @@ const lessonsData: Record<string, any> = {
   "2": {
     title: "Meetings & Communication",
     aiRole: "Project Manager",
-    contextTip: "Use 'I agree' or 'I see your point' before expressing a different opinion.",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Use 'Yes' and 'No' clearly. Practice 'I can' and 'I will'.",
+        goal: "Confirm your attendance and mention your current task.",
+        keyVocabulary: ["Meeting", "Task", "Yes", "Now"]
+      },
+      Intermediate: {
+        contextTip: "Use 'I agree' or 'I see your point' before expressing a different opinion.",
+        goal: "Communicate task progress, request feedback, and handle schedule changes professionally.",
+        keyVocabulary: ["Deadline", "Feedback", "Agenda", "Push back"]
+      },
+      Advanced: {
+        contextTip: "Focus on strategic alignment. Use 'Prioritize', 'Bandwidth', and 'Bottleneck'.",
+        goal: "Lead the meeting discussion, address resource bottlenecks, and redefine project milestones.",
+        keyVocabulary: ["Prioritize", "Milestone", "Bottleneck", "Stakeholder"]
+      }
+    },
     introduction: {
       scenario: "You are in a weekly alignment meeting. The Project Manager is reviewing the Q3 release schedule and needs status updates.",
       scenarioTranslation: "Você está em uma reunião semanal de alinhamento. O Gerente de Projeto está revisando o cronograma de lançamento do terceiro trimestre e precisa de atualizações de status.",
-      goal: "Communicate task progress, request feedback, and handle schedule changes professionally.",
-      goalTranslation: "Comunicar o progresso das tarefas, solicitar feedback e lidar com mudanças no cronograma de forma profissional.",
-      keyVocabulary: ["Deadline", "Feedback", "Agenda", "Push back"]
     },
     phrasalVerbs: [
       { verb: "Follow up", meaning: "To take further action on a task." },
@@ -72,221 +99,22 @@ const lessonsData: Record<string, any> = {
       { sender: 'user', text: "No other points from my side. I'll also follow up with the design team right after this call.", translation: "Sem outros pontos da minha parte. Também vou fazer o acompanhamento com a equipe de design logo após esta chamada." }
     ]
   },
-  "3": {
-    title: "Interviews & HR",
-    aiRole: "HR Recruiter",
-    contextTip: "Talk about your 'Strengths' and 'Experience' clearly and confidently.",
-    introduction: {
-      scenario: "You are being interviewed for a senior position at a global technology company. The recruiter wants to hear about your experience with multinational teams.",
-      scenarioTranslation: "Você está sendo entrevistado para um cargo sênior em uma empresa global de tecnologia. O recrutador quer ouvir sobre sua experiência com equipes multinacionais.",
-      goal: "Present your professional background confidently and answer competency-based questions.",
-      goalTranslation: "Apresentar sua trajetória profissional com confiança e responder a perguntas baseadas em competências.",
-      keyVocabulary: ["Resume", "Background", "Strengths", "Leadership"]
-    },
-    phrasalVerbs: [
-      { verb: "Walk through", meaning: "To explain something step by step." },
-      { verb: "Take on", meaning: "To accept a responsibility." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Thank you for joining this interview session today. We are looking for a candidate with strong international experience for this position. Can you walk me through your professional background?", translation: "Obrigado por participar desta sessão de entrevista hoje. Estamos procurando um candidato com forte experiência internacional para esta posição. Você pode me contar sobre sua trajetória profissional?" },
-      { sender: 'user', text: "Thank you for the opportunity. As you can see on my Resume, I have over five years of experience in project management, specifically working with multinational teams.", translation: "Obrigado pela oportunidade. Como você pode ver no meu currículo, tenho mais de cinco anos de experiência em gestão de projetos, trabalhando especificamente com equipes multinacionais." },
-      { sender: 'ai', text: "That's a solid foundation. In this position, you'll need to handle high-pressure skills. What would you say are your main strengths and weaknesses?", translation: "Essa é uma base sólida. Nesta posição, você precisará lidar com habilidades sob alta pressão. Quais você diria que são seus principais pontos fortes e fracos?" },
-      { sender: 'user', text: "My main strength is my ability to adapt to new environments quickly. As for a weakness, I sometimes focus too much on details, but I'm working on balancing that with the bigger picture.", translation: "Meu principal ponto forte é minha habilidade de me adaptar a novos ambientes rapidamente. Quanto a um ponto fraco, às vezes foco demais nos detalhes, mas estou trabalhando para equilibrar isso com a visão geral." },
-      { sender: 'ai', text: "I appreciate the honesty. How do you handle conflict within a remote team?", translation: "Agradeço a honestidade. Como você lida com conflitos dentro de uma equipe remota?" },
-      { sender: 'user', text: "I believe in clear communication and setting expectations early. My experience has taught me that most issues can be resolved with a quick alignment call.", translation: "Acredito em uma comunicação clara e em definir expectativas cedo. Minha experiência me ensinou que a maioria dos problemas pode ser resolvida com uma rápida chamada de alinhamento." },
-      { sender: 'ai', text: "That's a good approach. Can you give me an example of a time you had to take on a task outside of your usual scope?", translation: "Essa é uma boa abordagem. Você pode me dar um exemplo de uma vez em que teve que assumir uma tarefa fora do seu escopo habitual?" },
-      { sender: 'user', text: "Certainly. Last year, I stepped in to lead the client presentation when our supervisor was unavailable. It was a challenging but rewarding experience.", translation: "Com certeza. No ano passado, assumi a liderança da apresentação para o cliente quando nosso supervisor estava indisponível. Foi uma experiência desafiadora, mas gratificante." },
-      { sender: 'ai', text: "Impressive. And what are your expectations for your career growth within our company?", translation: "Impressionante. E quais são suas expectativas para o crescimento da sua carreira dentro da nossa empresa?" },
-      { sender: 'user', text: "I'm looking for a position that offers international exposure and the chance to contribute my skills to global projects while growing into a leadership role.", translation: "Estou procurando uma posição que ofereça exposição internacional e a chance de contribuir com minhas habilidades em projetos globais, crescendo para um papel de liderança." },
-      { sender: 'ai', text: "Excellent. We will be in touch soon regarding the next steps of the recruitment process.", translation: "Excelente. Entraremos em contato em breve sobre os próximos passos do processo de recrutamento." },
-      { sender: 'user', text: "Thank you for your time. I look forward to hearing from you.", translation: "Obrigado pelo seu tempo. Estou ansioso para ouvir de você." }
-    ]
-  },
-  "4": {
-    title: "Professional Emails",
-    aiRole: "Enterprise Client",
-    contextTip: "Use formal phrases like 'Please find attached' and 'Thank you for your time'.",
-    introduction: {
-      scenario: "A client is asking for missing documentation from a previous email thread. You need to provide the files and schedule a follow-up call.",
-      scenarioTranslation: "Um cliente está pedindo documentos que faltaram em uma conversa anterior por e-mail. Você precisa fornecer os arquivos e agendar uma chamada de acompanhamento.",
-      goal: "Practice formal email language, apologies for oversights, and professional scheduling.",
-      goalTranslation: "Praticar a linguagem formal de e-mail, pedidos de desculpas por descuidos e agendamento profissional.",
-      keyVocabulary: ["Attached", "Oversight", "Availability", "Shortly"]
-    },
-    phrasalVerbs: [
-      { verb: "Send over", meaning: "To transfer a document to someone." },
-      { verb: "Look into", meaning: "To investigate an issue." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Hi, I received your request for the Q4 information, but the schedule document seems to be missing from the thread. Could you please send it over?", translation: "Oi, recebi seu pedido para as informações do quarto trimestre, mas o documento de cronograma parece estar faltando na conversa. Você poderia enviá-lo?" },
-      { sender: 'user', text: "I apologize for the oversight. Please find attached the updated schedule and the budget confirmation document you requested.", translation: "Peço desculpas pelo descuido. Por favor, encontre em anexo o cronograma atualizado e o documento de confirmação do orçamento que você solicitou." },
-      { sender: 'ai', text: "Thank you. I see the attachment now. Also, I need to check your availability for a brief meeting next week. Does Monday work for you?", translation: "Obrigado. Vejo o anexo agora. Além disso, preciso verificar sua disponibilidade para uma breve reunião na próxima semana. Segunda-feira funciona para você?" },
-      { sender: 'user', text: "Could you help me with the specific time? I have some availability in the afternoon. Thank you for your time and for looking into this so quickly.", translation: "Você poderia me ajudar com o horário específico? Tenho alguma disponibilidade à tarde. Obrigado pelo seu tempo e por verificar isso tão rapidamente." },
-      { sender: 'ai', text: "Monday at 3 PM would be perfect. I'll send a calendar invite shortly to confirm the schedule.", translation: "Segunda-feira às 15h seria perfeito. Vou enviar um convite de calendário em breve para confirmar o cronograma." },
-      { sender: 'user', text: "That works for me. By the way, did you receive the confirmation for the last payment?", translation: "Isso funciona para mim. Aliás, você recebeu a confirmação do último pagamento?" },
-      { sender: 'ai', text: "Let me check... Yes, it was processed yesterday. We'll send the official receipt by the end of the week.", translation: "Deixe-me verificar... Sim, foi processado ontem. Enviaremos o recibo oficial até o final da semana." },
-      { sender: 'user', text: "That's great to hear. Is there anything else you need from my side before our meeting?", translation: "Que bom ouvir isso. Tem mais alguma coisa que você precisa da minha parte antes da nossa reunião?" },
-      { sender: 'ai', text: "Not for now. I'll review the documents you sent and we can discuss them in detail on Monday.", translation: "Por enquanto não. Vou revisar os documentos que você enviou e podemos discuti-los em detalhes na segunda-feira." },
-      { sender: 'user', text: "Understood. I'll make sure to have all the necessary information ready.", translation: "Entendido. Vou garantir que todas as informações necessárias estejam prontas." },
-      { sender: 'ai', text: "Perfect. Have a great weekend!", translation: "Perfeito. Tenha um ótimo final de semana!" },
-      { sender: 'user', text: "Thank you, you too. Talk to you on Monday.", translation: "Obrigado, você também. Falamos na segunda-feira." }
-    ]
-  },
-  "5": {
-    title: "Networking & Events",
-    aiRole: "Conference Attendee",
-    contextTip: "Use 'What do you do?' to learn more about people you meet. Mention your industry and career goals.",
-    introduction: {
-      scenario: "You are at an international industry conference during a coffee break. You meet Sarah, a professional from another tech firm.",
-      scenarioTranslation: "Você está em uma conferência internacional do setor durante um intervalo para o café. Você conhece Sarah, uma profissional de outra empresa de tecnologia.",
-      goal: "Practice networking, introducing your company, and exchanging business contact information.",
-      goalTranslation: "Praticar networking, apresentar sua empresa e trocar informações de contato profissional.",
-      keyVocabulary: ["Firm", "Trends", "Insights", "LinkedIn"]
-    },
-    phrasalVerbs: [
-      { verb: "Set up", meaning: "To establish a company or project." },
-      { verb: "Reach out", meaning: "To contact someone for networking." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "The networking session is quite busy today! Hi, I'm Sarah from an international tech firm. Which company do you work for?", translation: "A sessão de networking está bem movimentada hoje! Oi, eu sou a Sarah de uma empresa de tecnologia internacional. Para qual empresa você trabalha?" },
-      { sender: 'user', text: "Hi Sarah! It's a great conference. I work for a multinational industry leader in IT. What do you do at your firm?", translation: "Oi Sarah! É uma ótima conferência. Trabalho para uma líder multinacional da indústria de TI. O que você faz na sua empresa?" },
-      { sender: 'ai', text: "I work in HR, focusing on career development and talent opportunity. Is this your first time at this workshop?", translation: "Trabalho no RH, com foco em desenvolvimento de carreira e oportunidades de talentos. É sua primeira vez neste workshop?" },
-      { sender: 'user', text: "Yes, it is! I'm here to expand my professional contact list and learn about new trends in the industry. It's a great opportunity.", translation: "Sim, é! Estou aqui para expandir minha lista de contatos profissionais e aprender sobre novas tendências no setor. É uma ótima oportunidade." },
-      { sender: 'ai', text: "Absolutely. I've heard your company is doing some amazing things with cloud infrastructure lately. Are you involved in that?", translation: "Com certeza. Ouvi dizer que sua empresa está fazendo coisas incríveis com infraestrutura de nuvem ultimamente. Você está envolvido nisso?" },
-      { sender: 'user', text: "Yes, I am. I'm currently working on a project to optimize our data center efficiency. It's been quite a challenge!", translation: "Sim, estou. No momento, estou trabalhando em um projeto para otimizar a eficiência do nosso data center. Tem sido um grande desafio!" },
-      { sender: 'ai', text: "I can imagine. We're also looking to improve our tech stack in the coming months. Perhaps we could share some insights?", translation: "Eu imagino. Também estamos procurando melhorar nossa stack tecnológica nos próximos meses. Talvez pudéssemos compartilhar algumas ideias?" },
-      { sender: 'user', text: "I'd love that. It's always beneficial to see how others in the industry are tackling similar issues.", translation: "Eu adoraria. É sempre benéfico ver como outros na indústria estão lidando com problemas semelhantes." },
-      { sender: 'ai', text: "Definitely. Here is my business card. We should stay in touch regarding future projects.", translation: "Definitivamente. Aqui está meu cartão de visitas. Devemos manter contato sobre projetos futuros." },
-      { sender: 'user', text: "Thank you. I'll make sure to reach out to you on LinkedIn as well.", translation: "Obrigado. Vou garantir de entrar em contato com você no LinkedIn também." },
-      { sender: 'ai', text: "Great! It was nice talking to you, Sarah. Enjoy the rest of the event!", translation: "Ótimo! Foi bom conversar com você, Sarah. Aproveite o resto do evento!" },
-      { sender: 'user', text: "It was a pleasure meeting you too. Have a great time at the remaining workshops!", translation: "Foi um prazer conhecê-la também. Divirta-se nos workshops restantes!" }
-    ]
-  },
-  "6": {
-    title: "Teams & Online Calls",
-    aiRole: "Remote Colleague",
-    contextTip: "Troubleshoot common audio/video issues with phrases like 'Your microphone is muted' and 'I'll share my screen'.",
-    introduction: {
-      scenario: "You are on a video call with a remote colleague. There are some technical issues with the connection and microphone.",
-      scenarioTranslation: "Você está em uma chamada de vídeo com um colega remoto. Há alguns problemas técnicos com a conexão e o microfone.",
-      goal: "Practice technical troubleshooting language and maintaining professional communication during disruptions.",
-      goalTranslation: "Praticar a linguagem de resolução de problemas técnicos e manter uma comunicação profissional durante interrupções.",
-      keyVocabulary: ["Unstable", "Muted", "Headset", "Bandwidth"]
-    },
-    phrasalVerbs: [
-      { verb: "Cut out", meaning: "When audio/video suddenly stops working." },
-      { verb: "Speak up", meaning: "To talk louder." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Hello? Can you hear me? I think my connection is a bit unstable today. Wait, I think your microphone is muted.", translation: "Alô? Você pode me ouvir? Acho que minha conexão está um pouco instável hoje. Espere, acho que seu microfone está silenciado." },
-      { sender: 'user', text: "Sorry about that! Can you hear me now? I was having a minor audio issue with my headset.", translation: "Desculpe por isso! Pode me ouvir agora? Eu estava tendo um pequeno problema de áudio com meu headset." },
-      { sender: 'ai', text: "Yes, much better. I'll share my screen now to show you the latest project metrics. Can you see the camera feed as well?", translation: "Sim, muito melhor. Vou compartilhar minha tela agora para mostrar as últimas métricas do projeto. Você consegue ver o feed da câmera também?" },
-      { sender: 'user', text: "I can see your screen, but the connection seems a bit slow. Could you repeat that last part, please? You cut out for a second.", translation: "Consigo ver sua tela, mas a conexão parece um pouco lenta. Você poderia repetir aquela última parte, por favor? Você falhou por um segundo." },
-      { sender: 'ai', text: "Sure. I said the internet issue might be on my end. I'll try to turn off my camera to save bandwidth. Better now?", translation: "Claro. Eu disse que o problema de internet pode ser do meu lado. Vou tentar desligar minha câmera para economizar largura de banda. Melhor agora?" },
-      { sender: 'user', text: "Yes, the audio is much clearer now. Thank you for making that adjustment.", translation: "Sim, o áudio está muito mais claro agora. Obrigado por fazer esse ajuste." },
-      { sender: 'ai', text: "No problem. Now, looking at the graph on the screen, do you see the dip in engagement for Q3?", translation: "Sem problemas. Agora, olhando para o gráfico na tela, você vê a queda no engajamento no terceiro trimestre?" },
-      { sender: 'user', text: "I see it. I think we need to look into the external factors that might have caused that.", translation: "Eu vejo. Acho que precisamos investigar os fatores externos que podem ter causado isso." },
-      { sender: 'ai', text: "Agreed. I'll send you the detailed report after this call so you can analyze it further.", translation: "Concordo. Vou enviar o relatório detalhado após esta chamada para que você possa analisá-lo melhor." },
-      { sender: 'user', text: "That would be very helpful. I'll also share my thoughts on it during our next call.", translation: "Isso seria muito útil. Também compartilharei meus pensamentos sobre isso durante nossa próxima chamada." },
-      { sender: 'ai', text: "Perfect. Let's continue with the rest of the slides. Oh, wait, I think I'm having another connection issue...", translation: "Perfeito. Vamos continuar com o resto dos slides. Ah, espere, acho que estou tendo outro problema de conexão..." },
-      { sender: 'user', text: "Don't worry, I can still hear you. Let's keep going, and if it gets worse, we can switch to an audio-only call.", translation: "Não se preocupe, ainda consigo te ouvir. Vamos continuar, e se piorar, podemos mudar para uma chamada apenas de áudio." }
-    ]
-  },
-  "7": {
-    title: "Prepositions & Travel",
-    aiRole: "Airport Agent",
-    contextTip: "Use prepositions like 'in', 'on', 'next to' and 'between' to describe locations accurately.",
-    introduction: {
-      scenario: "You are at the airport check-in counter for an international business trip. The agent is helping you with your suitcase and boarding details.",
-      scenarioTranslation: "Você está no balcão de check-in do aeroporto para uma viagem de negócios internacional. O agente está ajudando você com sua mala e detalhes de embarque.",
-      goal: "Practice using spatial prepositions (in, on, next to) correctly in a real-world travel context.",
-      goalTranslation: "Praticar o uso correto de preposições espaciais (in, on, next to) em um contexto real de viagem.",
-      keyVocabulary: ["Suitcase", "Scale", "Pharmacy", "Identification"]
-    },
-    phrasalVerbs: [
-      { verb: "Check in", meaning: "To register at an airport or hotel." },
-      { verb: "Go through", meaning: "To pass through security or a gate." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Welcome to the airport. To proceed with your check-in, where is your passport?", translation: "Bem-vindo ao aeroporto. Para prosseguir com seu check-in, onde está seu passaporte?" },
-      { sender: 'user', text: "It is in my bag. Let me get it for you.", translation: "Está na minha bolsa. Deixe-me pegá-lo para você." },
-      { sender: 'ai', text: "Thank you. Please place your suitcase on the scale next to the counter.", translation: "Obrigado. Por favor, coloque sua mala na balança ao lado do balcão." },
-      { sender: 'user', text: "Okay, it is on the scale now. Is the weight acceptable?", translation: "Ok, está na balança agora. O peso está aceitável?" },
-      { sender: 'ai', text: "Yes, it's perfect. Now, please stand in front of the camera for the identification photo.", translation: "Sim, está perfeito. Agora, por favor, fique na frente da câmera para a foto de identificação." },
-      { sender: 'user', text: "I am in front of the camera. Should I look directly at the lens?", translation: "Estou na frente da câmera. Devo olhar diretamente para a lente?" },
-      { sender: 'ai', text: "Yes, please. Thank you. Your gate is number 12. It is next to the restaurant, between the pharmacy and the café.", translation: "Sim, por favor. Obrigado. Seu portão é o número 12. Fica ao lado do restaurante, entre a farmácia e o café." },
-      { sender: 'user', text: "Thank you. Is the restaurant behind the security check area?", translation: "Obrigado. O restaurante fica atrás da área de controle de segurança?" },
-      { sender: 'ai', text: "Exactly, it is behind security. The coffee shop is also right next to it.", translation: "Exatamente, fica atrás da segurança. A cafeteria também fica bem ao lado dele." },
-      { sender: 'user', text: "I see it. Oh, I think my phone is under the chair. Let me grab it before I go.", translation: "Eu vejo. Ah, acho que meu celular está embaixo da cadeira. Deixe-me pegá-lo antes de ir." },
-      { sender: 'ai', text: "No problem. Once you have it, you can go through gate 12. Have a safe flight!", translation: "Sem problemas. Assim que o tiver, você pode passar pelo portão 12. Tenha um voo seguro!" },
-      { sender: 'user', text: "Thank you for your help. Have a great day!", translation: "Obrigado pela sua ajuda. Tenha um ótimo dia!" }
-    ]
-  },
-  "8": {
-    title: "DO / CAN / TO",
-    aiRole: "Various Contacts",
-    contextTip: "Use DO for present questions, CAN for requests, and TO for directions/destinations.",
-    introduction: {
-      scenario: "You will practice short interactions using DO, CAN, and TO in everyday travel situations like the airport, restaurant, and immigration.",
-      scenarioTranslation: "Você vai praticar interações curtas usando DO, CAN e TO em situações cotidianas de viagem como aeroporto, restaurante e imigração.",
-      goal: "Answer naturally to questions, make polite requests, and understand basic directions.",
-      goalTranslation: "Responder naturalmente a perguntas, fazer pedidos educados e entender direções básicas.",
-      keyVocabulary: ["Passport", "Water", "Help", "Speak"]
-    },
-    phrasalVerbs: [
-      { verb: "Sit down", meaning: "To take a seat." },
-      { verb: "Get to", meaning: "To arrive at a destination." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Do you have your passport?", translation: "Você tem seu passaporte?" },
-      { sender: 'user', text: "Yes, I do. It's in my bag.", translation: "Sim, eu tenho. Está na minha bolsa." },
-      { sender: 'ai', text: "Do you have checked baggage?", translation: "Você tem bagagem despachada?" },
-      { sender: 'user', text: "Yes, two bags. Can I have a window seat?", translation: "Sim, duas malas. Posso ter um assento na janela?" },
-      { sender: 'ai', text: "Sure. Here is your boarding pass. Go to gate 15.", translation: "Claro. Aqui está seu cartão de embarque. Vá para o portão 15." },
-      { sender: 'user', text: "Thank you. (Now at the restaurant...) Hello, can I get a coffee, please?", translation: "Obrigado. (Agora no restaurante...) Olá, posso pedir um café, por favor?" },
-      { sender: 'ai', text: "Sure. Do you want sugar?", translation: "Claro. Você quer açúcar?" },
-      { sender: 'user', text: "Yes, please.", translation: "Sim, por favor." },
-      { sender: 'ai', text: "Here you go. (Now at immigration...) Do you have medical insurance?", translation: "Aqui está. (Agora na imigração...) Você tem seguro médico?" },
-      { sender: 'user', text: "Yes, I do.", translation: "Sim, eu tenho." },
-      { sender: 'ai', text: "Welcome to the United States.", translation: "Bem-vindo aos Estados Unidos." },
-      { sender: 'user', text: "Thank you.", translation: "Obrigado." }
-    ]
-  },
-  "9": {
-    title: "Present To Be",
-    aiRole: "Travel Contacts",
-    contextTip: "Remember to use the correct form of the verb 'to be' (am, is, are) depending on the person.",
-    introduction: {
-      scenario: "You will practice answering questions with the verb 'to be' in various travel situations like immigration, socializing, and boarding a flight.",
-      scenarioTranslation: "Você vai praticar responder a perguntas com o verbo 'to be' em várias situações de viagem, como imigração, socialização e embarque em um voo.",
-      goal: "Use 'I am', 'He is', 'We are' naturally in conversation and short answers.",
-      goalTranslation: "Usar 'I am', 'He is', 'We are' naturalmente na conversação e em respostas curtas.",
-      keyVocabulary: ["Brazil", "Husband", "Ready", "Tired"]
-    },
-    phrasalVerbs: [
-      { verb: "Board a flight", meaning: "To get on an airplane." },
-      { verb: "Be from", meaning: "To originate from a place." }
-    ],
-    dialogue: [
-      { sender: 'ai', text: "Hello there. Are you from Brazil?", translation: "Olá. Você é do Brasil?" },
-      { sender: 'user', text: "Yes, I am. I am from Brazil.", translation: "Sim, eu sou. Eu sou do Brasil." },
-      { sender: 'ai', text: "Nice to meet you. Is this your husband?", translation: "Prazer em conhecê-la. Este é o seu marido?" },
-      { sender: 'user', text: "Yes, he is. He is my husband.", translation: "Sim, ele é. Ele é meu marido." },
-      { sender: 'ai', text: "Are you both on vacation?", translation: "Vocês dois estão de férias?" },
-      { sender: 'user', text: "Yes, we are on vacation. We are very excited.", translation: "Sim, nós estamos de férias. Estamos muito animados." },
-      { sender: 'ai', text: "That's great. Are you tired from the trip?", translation: "Isso é ótimo. Vocês estão cansados da viagem?" },
-      { sender: 'user', text: "I am not tired. I am ready to explore the city.", translation: "Eu não estou cansada. Estou pronta para explorar a cidade." },
-      { sender: 'ai', text: "(Later at the boarding gate...) Excuse me, are you ready to board?", translation: "(Mais tarde no portão de embarque...) Com licença, vocês estão prontos para embarcar?" },
-      { sender: 'user', text: "Yes, we are. We are ready.", translation: "Sim, nós estamos. Estamos prontos." },
-      { sender: 'ai', text: "Perfect. Enjoy your trip!", translation: "Perfeito. Aproveite a sua viagem!" },
-      { sender: 'user', text: "Thank you!", translation: "Obrigada!" }
-    ]
-  }
+  "3": { title: "Interviews & HR", aiRole: "HR Recruiter", difficultySettings: { Beginner: { contextTip: "Practice your name and role.", goal: "Introduce yourself.", keyVocabulary: ["Name", "Job"] }, Intermediate: { contextTip: "Talk about strengths.", goal: "Explain experience.", keyVocabulary: ["Resume", "Skills"] }, Advanced: { contextTip: "Focus on STAR method.", goal: "Demonstrate leadership.", keyVocabulary: ["Leadership", "Stakeholder"] } }, introduction: { scenario: "HR Interview.", scenarioTranslation: "Entrevista de RH." }, phrasalVerbs: [], dialogue: [] },
+  "4": { title: "Professional Emails", aiRole: "Client", difficultySettings: { Beginner: { contextTip: "Use 'Hi' and 'Thanks'.", goal: "Send a short note.", keyVocabulary: ["Email", "File"] }, Intermediate: { contextTip: "Use 'Please find attached'.", goal: "Send a formal request.", keyVocabulary: ["Attached", "Request"] }, Advanced: { contextTip: "Focus on tone and clarity.", goal: "Handle a complex dispute.", keyVocabulary: ["Oversight", "Clarify"] } }, introduction: { scenario: "Email exchange.", scenarioTranslation: "Troca de e-mails." }, phrasalVerbs: [], dialogue: [] },
+  "5": { title: "Networking & Events", aiRole: "Sarah", difficultySettings: { Beginner: { contextTip: "Practice 'What do you do?'.", goal: "Exchange names.", keyVocabulary: ["Company", "Meet"] }, Intermediate: { contextTip: "Ask about their industry.", goal: "Connect on LinkedIn.", keyVocabulary: ["Network", "LinkedIn"] }, Advanced: { contextTip: "Focus on value proposition.", goal: "Pitch your services.", keyVocabulary: ["Insight", "Strategy"] } }, introduction: { scenario: "Networking event.", scenarioTranslation: "Evento de networking." }, phrasalVerbs: [], dialogue: [] },
+  "6": { title: "Teams & Online Calls", aiRole: "Alex", difficultySettings: { Beginner: { contextTip: "Say 'I can't hear you'.", goal: "Fix audio issues.", keyVocabulary: ["Audio", "Video"] }, Intermediate: { contextTip: "Say 'Your mic is muted'.", goal: "Manage technical glitches.", keyVocabulary: ["Muted", "Connection"] }, Advanced: { contextTip: "Focus on collaborative tools.", goal: "Lead a virtual workshop.", keyVocabulary: ["Bandwidth", "Screen"] } }, introduction: { scenario: "Video call.", scenarioTranslation: "Chamada de vídeo." }, phrasalVerbs: [], dialogue: [] },
+  "7": { title: "Prepositions & Travel", aiRole: "Agent", difficultySettings: { Beginner: { contextTip: "Use 'on' and 'in'.", goal: "Find your bag.", keyVocabulary: ["Bag", "Scale"] }, Intermediate: { contextTip: "Use 'between' and 'next to'.", goal: "Navigate the airport.", keyVocabulary: ["Between", "Gate"] }, Advanced: { contextTip: "Use complex spatial terms.", goal: "Explain a lost item location.", keyVocabulary: ["Identification", "Behind"] } }, introduction: { scenario: "Airport check-in.", scenarioTranslation: "Check-in no aeroporto." }, phrasalVerbs: [], dialogue: [] },
+  "8": { title: "DO / CAN / TO", aiRole: "Agent", difficultySettings: { Beginner: { contextTip: "Answer with 'Yes, I do'.", goal: "Respond to basic questions.", keyVocabulary: ["Yes", "Passport"] }, Intermediate: { contextTip: "Ask 'Can I have...?'.", goal: "Make polite requests.", keyVocabulary: ["Can", "Water"] }, Advanced: { contextTip: "Focus on conditional usage.", goal: "Negotiate a travel change.", keyVocabulary: ["Could", "If"] } }, introduction: { scenario: "Travel interactions.", scenarioTranslation: "Interações de viagem." }, phrasalVerbs: [], dialogue: [] },
+  "9": { title: "Present To Be", aiRole: "Social Contact", difficultySettings: { Beginner: { contextTip: "Use 'I am' and 'She is'.", goal: "Introduce family.", keyVocabulary: ["Brazil", "Wife"] }, Intermediate: { contextTip: "Use 'We are' and 'They are'.", goal: "Talk about groups.", keyVocabulary: ["Vacation", "Excited"] }, Advanced: { contextTip: "Use 'To be' in states.", goal: "Describe professional roles.", keyVocabulary: ["Ready", "Expert"] } }, introduction: { scenario: "Social interactions.", scenarioTranslation: "Interações sociais." }, phrasalVerbs: [], dialogue: [] }
 };
 
 export default function ConversationalSimulator({ params }: { params: Promise<{ id: string }> }) {
   const { id: lessonId } = React.use(params);
+  const searchParams = useSearchParams();
+  const difficulty = (searchParams.get('difficulty') || 'Beginner') as 'Beginner' | 'Intermediate' | 'Advanced';
+  
   const lesson = lessonsData[lessonId] || lessonsData["1"];
+  const diffSettings = lesson.difficultySettings[difficulty] || lesson.difficultySettings['Beginner'];
 
   const [visibleStep, setVisibleStep] = useState(1);
   const [showBriefing, setShowBriefing] = useState(true);
@@ -334,14 +162,23 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#D97706] rounded-full blur-3xl opacity-5 -mr-32 -mt-32"></div>
               
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-[#D97706]/10 flex items-center justify-center text-[#D97706]">
-                  <Sparkles size={24} />
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#D97706]/10 flex items-center justify-center text-[#D97706]">
+                    <Sparkles size={24} />
+                  </div>
+                  <div>
+                    <h2 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Mission Briefing</h2>
+                    <h3 className="font-serif text-2xl font-bold text-white">{lesson.title}</h3>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Mission Briefing</h2>
-                  <h3 className="font-serif text-2xl font-bold text-white">{lesson.title}</h3>
-                </div>
+                <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest border
+                  ${difficulty === 'Advanced' ? 'text-[#D97706] border-[#D97706]/50 bg-[#D97706]/10' : 
+                    difficulty === 'Intermediate' ? 'text-[#10B981] border-[#10B981]/50 bg-[#10B981]/10' : 
+                    'text-blue-500 border-blue-500/50 bg-blue-500/10'}`}
+                >
+                  {difficulty}
+                </span>
               </div>
 
               <div className="space-y-8">
@@ -374,34 +211,17 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
 
                 <section>
                   <div className="flex justify-between items-center mb-2">
-                    <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">Primary Goal</h4>
+                    <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">Primary Goal ({difficulty})</h4>
                   </div>
-                  <div 
-                    onClick={() => setBriefingTranslations(prev => ({ ...prev, goal: !prev.goal }))}
-                    className="cursor-pointer group"
-                  >
-                    <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-white">
-                      {lesson.introduction.goal}
-                    </p>
-                    <AnimatePresence>
-                      {briefingTranslations.goal && (
-                        <motion.p 
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          className="text-[#D97706] text-sm mt-2 border-t border-[#D97706]/20 pt-2"
-                        >
-                          {lesson.introduction.goalTranslation}
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
-                  </div>
+                  <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-white">
+                    {diffSettings.goal}
+                  </p>
                 </section>
 
                 <section>
                   <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-3">Key Vocabulary</h4>
                   <div className="flex flex-wrap gap-2">
-                    {lesson.introduction.keyVocabulary.map((word: string, i: number) => (
+                    {diffSettings.keyVocabulary.map((word: string, i: number) => (
                       <span key={i} className="px-3 py-1 bg-[#1E293B] border border-[#334155] rounded-lg text-xs text-gray-300 font-medium">
                         {word}
                       </span>
@@ -429,8 +249,12 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
             <ArrowLeft size={20} />
           </Link>
           <div className="h-4 w-px bg-[#1E293B] mr-4"></div>
-          <span className="px-2.5 py-0.5 bg-[#D97706]/10 border border-[#D97706]/30 rounded text-[10px] font-bold text-[#D97706] uppercase tracking-widest mr-3">
-            Lesson {lessonId}
+          <span className={`px-2.5 py-0.5 border rounded text-[10px] font-bold uppercase tracking-widest mr-3
+            ${difficulty === 'Advanced' ? 'text-[#D97706] border-[#D97706]/30 bg-[#D97706]/10' : 
+              difficulty === 'Intermediate' ? 'text-[#10B981] border-[#10B981]/30 bg-[#10B981]/10' : 
+              'text-blue-500 border-blue-500/30 bg-blue-500/10'}`}
+          >
+            {difficulty} Level
           </span>
           <h1 className="font-serif font-bold text-[#F8FAFC] text-lg">
             {lesson.title}
@@ -448,75 +272,85 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
           {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-8 space-y-6">
             <AnimatePresence>
-              {lesson.dialogue.slice(0, visibleStep).map((turn: DialogueTurn, index: number) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: turn.sender === 'user' ? 20 : -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className={`flex ${turn.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-                >
-                  <div className={`group max-w-2xl p-5 rounded-2xl text-[15px] font-sans leading-relaxed shadow-sm transition-all duration-300 relative
-                    ${turn.sender === 'user' 
-                      ? 'bg-[#1E293B] text-[#F8FAFC] rounded-br-sm border border-[#334155]' 
-                      : 'bg-[#0F172A] text-gray-200 rounded-bl-sm border border-[#1E293B]'}`}
+              {lesson.dialogue.length > 0 ? (
+                lesson.dialogue.slice(0, visibleStep).map((turn: DialogueTurn, index: number) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: turn.sender === 'user' ? 20 : -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className={`flex ${turn.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
-                    <div className="flex justify-between items-start mb-2">
-                      <div className="flex items-center">
-                        <div className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold mr-2 ${turn.sender === 'user' ? 'bg-[#334155] text-white' : 'bg-[#D97706] text-white'}`}>
-                          {turn.sender === 'user' ? 'YOU' : 'AI'}
+                    <div className={`group max-w-2xl p-5 rounded-2xl text-[15px] font-sans leading-relaxed shadow-sm transition-all duration-300 relative
+                      ${turn.sender === 'user' 
+                        ? 'bg-[#1E293B] text-[#F8FAFC] rounded-br-sm border border-[#334155]' 
+                        : 'bg-[#0F172A] text-gray-200 rounded-bl-sm border border-[#1E293B]'}`}
+                    >
+                      <div className="flex justify-between items-start mb-2">
+                        <div className="flex items-center">
+                          <div className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold mr-2 ${turn.sender === 'user' ? 'bg-[#334155] text-white' : 'bg-[#D97706] text-white'}`}>
+                            {turn.sender === 'user' ? 'YOU' : 'AI'}
+                          </div>
+                          <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                            {turn.sender === 'user' ? 'Professional' : lesson.aiRole}
+                          </span>
                         </div>
-                        <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          {turn.sender === 'user' ? 'Professional' : lesson.aiRole}
-                        </span>
+                        
+                        <button 
+                          onClick={() => toggleTranslation(index)}
+                          className="opacity-0 group-hover:opacity-100 p-1 text-gray-500 hover:text-[#D97706] transition-all"
+                          title="Ver tradução"
+                        >
+                          <Languages size={16} />
+                        </button>
                       </div>
-                      
-                      <button 
-                        onClick={() => toggleTranslation(index)}
-                        className="opacity-0 group-hover:opacity-100 p-1 text-gray-500 hover:text-[#D97706] transition-all"
-                        title="Ver tradução"
-                      >
-                        <Languages size={16} />
-                      </button>
-                    </div>
 
-                    <div className="relative">
-                      <p>{turn.text}</p>
-                      
-                      <AnimatePresence>
-                        {showTranslations[index] && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="mt-3 pt-3 border-t border-dashed border-[#334155] text-sm text-[#D97706] italic">
-                              {turn.translation}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <div className="relative">
+                        <p>{turn.text}</p>
+                        
+                        <AnimatePresence>
+                          {showTranslations[index] && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-3 pt-3 border-t border-dashed border-[#334155] text-sm text-[#D97706] italic">
+                                {turn.translation}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))
+              ) : (
+                <div className="h-full flex flex-col items-center justify-center text-gray-500 italic">
+                  <Sparkles className="mb-4 opacity-20" size={48} />
+                  <p>Dialogue variation for {difficulty} is being generated...</p>
+                </div>
+              )}
             </AnimatePresence>
             <div ref={messagesEndRef} />
           </div>
 
           {/* Interaction Area */}
           <div className="p-10 bg-[#0F172A] border-t border-[#1E293B] flex flex-col items-center">
-            {!isFinished ? (
+            {!isFinished && lesson.dialogue.length > 0 ? (
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleNext}
-                className="group flex items-center bg-[#D97706] text-white px-8 py-4 rounded-xl font-bold shadow-2xl hover:bg-[#B45309] transition-all"
+                className={`group flex items-center px-8 py-4 rounded-xl font-bold shadow-2xl transition-all text-white
+                  ${difficulty === 'Advanced' ? 'bg-[#D97706] hover:bg-[#B45309]' : 
+                    difficulty === 'Intermediate' ? 'bg-[#10B981] hover:bg-[#059669]' : 
+                    'bg-blue-600 hover:bg-blue-700'}`}
               >
                 <ChevronRight className="mr-2 group-hover:translate-x-1 transition-transform" size={24} />
                 Continue Dialogue
               </motion.button>
-            ) : (
+            ) : isFinished && lesson.dialogue.length > 0 ? (
               <div className="text-center">
                 <p className="text-[#10B981] font-serif text-xl font-bold mb-4 flex items-center justify-center">
                   <CheckCircle2 className="mr-2" /> Role Play Completed
@@ -525,6 +359,10 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
                   <Play className="mr-2" size={20} /> Get Executive Feedback
                 </Link>
               </div>
+            ) : (
+              <Link href="/dashboard" className="text-gray-400 hover:text-white underline text-sm">
+                Return to Dashboard
+              </Link>
             )}
             <p className="mt-4 text-xs text-gray-500 font-sans">
               Click to reveal the next step or hover a message to see translation.
@@ -543,10 +381,10 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
             
             <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-4">
               <h3 className="flex items-center text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-                <CheckCircle2 size={14} className="text-[#10B981] mr-1.5" /> Context Tip
+                <CheckCircle2 size={14} className="text-[#10B981] mr-1.5" /> {difficulty} Tip
               </h3>
               <p className="text-sm text-gray-300 font-sans leading-relaxed">
-                {lesson.contextTip}
+                {diffSettings.contextTip}
               </p>
             </div>
 
@@ -555,12 +393,16 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
                 <AlertCircle size={14} className="text-[#D97706] mr-1.5" /> Suggested Phrasal Verbs
               </h3>
               <ul className="space-y-3">
-                {lesson.phrasalVerbs.map((pv: any, index: number) => (
-                  <li key={index} className="text-sm border-l-2 border-[#D97706] pl-3">
-                    <span className="text-white font-semibold block mb-0.5">{pv.verb}</span>
-                    <span className="text-gray-500 text-xs">{pv.meaning}</span>
-                  </li>
-                ))}
+                {lesson.phrasalVerbs.length > 0 ? (
+                  lesson.phrasalVerbs.map((pv: any, index: number) => (
+                    <li key={index} className="text-sm border-l-2 border-[#D97706] pl-3">
+                      <span className="text-white font-semibold block mb-0.5">{pv.verb}</span>
+                      <span className="text-gray-500 text-xs">{pv.meaning}</span>
+                    </li>
+                  ))
+                ) : (
+                  <li className="text-xs text-gray-500 italic">No specific verbs suggested for this lesson.</li>
+                )}
               </ul>
             </div>
 
