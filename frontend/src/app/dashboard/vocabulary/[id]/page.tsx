@@ -305,6 +305,25 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Pipeline', portuguese: 'Fluxo de trabalho / Funil de projetos', example: 'We will be feeding new leads into our pipeline next month.', category: 'Business' },
       { english: 'Trajectory', portuguese: 'Trajetória', example: 'These strategic decisions will shape our trajectory.', category: 'Business' }
     ]
+  },
+  '16': {
+    title: 'Future Perfect x Future Perfect Continuous',
+    culturalTip: "Use Future Perfect to confidently declare a deadline commitment ('By Q4, we will have integrated the API'), and Future Perfect Continuous to highlight long-term stability and experience ('By next year, our team will have been managing this database for a decade').",
+    items: [
+      { english: 'Will have graduated', portuguese: 'Terá se formado / Terá se graduado', example: 'By 2030, our junior developer will have graduated in Computer Science.', category: 'Grammar' },
+      { english: 'Will have been working', portuguese: 'Estará trabalhando (há um tempo)', example: 'By next month, I will have been working here for 5 years.', category: 'Grammar' },
+      { english: 'By 2030', portuguese: 'Até 2030', example: 'By 2030, we will have established local subsidiaries in five countries.', category: 'Grammar' },
+      { english: 'By next month', portuguese: 'Até o mês que vem', example: 'By next month, we will have migrated all active users to the cloud.', category: 'Grammar' },
+      { english: 'For five years', portuguese: 'Há cinco anos', example: 'Our Lead Architect will have been supporting this stack for five years.', category: 'Grammar' },
+      { english: 'Completed', portuguese: 'Concluído', example: 'Future Perfect indicates that an action will be completed before a certain time.', category: 'Grammar' },
+      { english: 'Duration', portuguese: 'Duração', example: 'Future Perfect Continuous focuses on the duration up to a future point.', category: 'Grammar' },
+      { english: 'Acquisition', portuguese: 'Aquisição / Compra de empresa', example: 'By next quarter, we will have finalized the legal audit of the acquisition.', category: 'Business' },
+      { english: 'Retention', portuguese: 'Retenção', example: 'By next year, our new onboarding workflow will have improved retention by 15%.', category: 'Business' },
+      { english: 'Expansion', portuguese: 'Expansão', example: 'By Q3, our regional sales team will have completed the territory expansion.', category: 'Business' },
+      { english: 'Horizon', portuguese: 'Horizonte / Longo prazo', example: 'These strategic moves will have broadened our horizon by 2028.', category: 'Business' },
+      { english: 'Long-term', portuguese: 'Longo prazo', example: 'By 2030, our long-term investments will have yielded substantial returns.', category: 'Business' },
+      { english: 'Projection', portuguese: 'Projeção', example: 'By next Friday, the financial analysts will have delivered the next projection.', category: 'Business' }
+    ]
   }
 };
 

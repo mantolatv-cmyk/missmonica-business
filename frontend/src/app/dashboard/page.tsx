@@ -156,6 +156,16 @@ const lessons = [
     icon: <Sparkles className="text-[#F59E0B]" size={20} />,
     image: "/lessons/lesson_15.png",
     href: "/dashboard/simulations/15"
+  },
+  {
+    id: 16,
+    title: "Lesson 16: Future Perfect x Future Perfect Continuous",
+    difficulty: "Advanced",
+    objective: "Contrast actions completed in the future with their continuous duration up to a future point.",
+    vocab: "Will have done, Will have been doing, By 2030, By next month, Horizon, Milestone",
+    icon: <Sparkles className="text-[#10B981]" size={20} />,
+    image: "/lessons/lesson_16.png",
+    href: "/dashboard/simulations/16"
   }
 ];
 

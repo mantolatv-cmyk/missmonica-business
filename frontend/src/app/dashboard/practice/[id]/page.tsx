@@ -1274,6 +1274,79 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         explanation: 'After the future auxiliary "will", the verb must be in its base form ("work"), never taking "-s".'
       }
     ]
+  },
+  'lesson-16': {
+    title: 'Future Perfect x Future Perfect Continuous',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which sentence correctly declares a completed future milestone with a specific corporate target?',
+        options: [
+          'By next quarter, we will have been completing the security audit.',
+          'By next quarter, we will have finalized the legal audit of the acquisition.',
+          'By next quarter, we are going to complete the legal audit.',
+          'By next quarter, we would have completed the audit.'
+        ],
+        correctAnswer: 'By next quarter, we will have finalized the legal audit of the acquisition.',
+        explanation: 'Use Future Perfect ("will have finalized") to state that a specific action will be completed before a certain time in the future.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'By next month, I will have _______ working here for five years.',
+        correctAnswer: 'been',
+        explanation: 'Future Perfect Continuous requires the auxiliary "will have been" followed by the present participle (verb-ing).'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form a Future Perfect milestone statement:',
+        scrambledWords: ['By', '2030', 'we', 'will', 'have', 'established', 'five', 'international', 'branches'],
+        correctAnswer: 'By 2030 we will have established five international branches',
+        explanation: 'Future Perfect indicates that a landmark milestone will be finished or achieved before a specified future point ("By 2030").'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the past participle mistake and correct it:',
+        sentenceWords: ['She', 'will', 'have', 'graduates', 'in', 'Computer', 'Science', 'by', '2030.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'graduated',
+        correctAnswer: 'graduated',
+        explanation: 'Future Perfect requires "will have" followed by the past participle of the main verb ("graduated").'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What does Future Perfect Continuous emphasize in comparison to Future Perfect?',
+        options: [
+          'The quick completion of a single future action.',
+          'The ongoing duration of an action up to a specific future point in time.',
+          'A past action that cannot be changed.',
+          'A daily, permanent corporate routine.'
+        ],
+        correctAnswer: 'The ongoing duration of an action up to a specific future point in time.',
+        explanation: 'Future Perfect Continuous focuses on the length of time an ongoing activity will have lasted by a future deadline.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'By Q3, our regional sales team will have _______ the international territory expansion.',
+        correctAnswer: 'completed',
+        explanation: 'The standard past participle "completed" correctly shows the finalization of the expansion milestone in Future Perfect.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the future perfect auxiliary agreement mistake and correct it:',
+        sentenceWords: ['By', 'next', 'year', 'they', 'will', 'has', 'been', 'managing', 'the', 'database', 'for', 'a', 'decade.'],
+        incorrectWordIndex: 5,
+        correctedWord: 'have',
+        correctAnswer: 'have',
+        explanation: 'After "will", the auxiliary verb must always remain in its base form "have", regardless of third-person plural or singular subjects.'
+      }
+    ]
   }
 };
 

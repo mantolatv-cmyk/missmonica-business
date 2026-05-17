@@ -1428,6 +1428,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  '16': {
+    title: "Lesson 16: Future Perfect x Future Perfect Continuous",
+    aiRole: "Executive Partner",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Use Future Perfect ('will have finished') for milestones completed in the future, and Future Perfect Continuous ('will have been working') to show ongoing duration up to that time.",
+        goal: "Outline your long-term career milestones and team longevity goals during a corporate anniversary sync.",
+        goalTranslation: "Esboce suas metas de carreira de longo prazo e objetivos de longevidade na equipe durante uma sincronização de aniversário corporativo.",
+        keyVocabulary: [
+          { word: "Will have graduated", translation: "Terá se graduado" },
+          { word: "Will have been working", translation: "Estará trabalhando (há um tempo)" },
+          { word: "By 2030", translation: "Até 2030" },
+          { word: "By next month", translation: "Até o mês que vem" }
+        ],
+        introduction: {
+          scenario: "Discussing long-term career checkpoints and professional milestones with your supportive coworker Beatriz.",
+          scenarioTranslation: "Discutindo pontos de controle de carreira de longo prazo e marcos profissionais com sua colega de trabalho Beatriz."
+        },
+        phrasalVerbs: [
+          { verb: "Take on", meaning: "Assumir novas tarefas ou responsabilidades." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Beatriz, congratulations on your work anniversary! By next month, how long will you have been working with our team?", translation: "Oi Beatriz, parabéns pelo seu aniversário de trabalho! Até o mês que vem, há quanto tempo você estará trabalhando com a nossa equipe?" },
+          { sender: 'user', text: "By next month, I will have been working here for three years, and I will have completed my tech certification.", translation: "Até o mês que vem, eu estarei trabalhando aqui há três anos e terei concluído minha certificação tecnológica." },
+          { sender: 'ai', text: "Impressive! Will you have graduated in your business management course by next year?", translation: "Impressionante! Você terá se graduado no seu curso de gestão de negócios até o ano que vem?" },
+          { sender: 'user', text: "Yes, by next year, I will have graduated, and I will have taken on more leadership tasks.", translation: "Sim, até o ano que vem eu terei me graduado e terei assumido mais tarefas de liderança." },
+          { sender: 'ai', text: "Great. By 2030, our corporate division will have expanded globally. Where will you be?", translation: "Ótimo. Até 2030, nossa divisão corporativa terá se expandido globalmente. Onde você estará?" },
+          { sender: 'user', text: "By 2030, I will have been living abroad for a year, and I will have established a new branch.", translation: "Até 2030, eu estarei morando no exterior há um ano e terei estabelecido uma nova filial." },
+          { sender: 'ai', text: "Outstanding trajectory! Your long-term future in our company is highly secure.", translation: "Trajetória excepcional! Seu futuro de longo prazo em nossa empresa é altamente seguro." },
+          { sender: 'user', text: "Thank you. By the end of this semester, I will have delivered our complete portfolio upgrade.", translation: "Obrigada. Até o final deste semestre, terei entregue nossa atualização completa de portfólio." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Use 'by + time expression' to anchor Future Perfect and Future Perfect Continuous events in realistic project roadmaps.",
+        goal: "Sync on project delivery deadlines and long-term infrastructure service milestones with your project manager.",
+        goalTranslation: "Sincronize prazos de entrega de projetos e marcos de serviço de infraestrutura de longo prazo com seu gerente de projeto.",
+        keyVocabulary: [
+          { word: "For five years", translation: "Há cinco anos" },
+          { word: "Completed", translation: "Concluído" },
+          { word: "Acquisition", translation: "Aquisição / Compra" },
+          { word: "Retention", translation: "Retenção" }
+        ],
+        introduction: {
+          scenario: "Reviewing the five-year enterprise roadmaps and account longevity benchmarks with Project Manager Leonardo.",
+          scenarioTranslation: "Revisando os roteiros corporativos de cinco anos e as referências de longevidade de conta com o Gerente de Projeto Leonardo."
+        },
+        phrasalVerbs: [
+          { verb: "Sign off on", meaning: "Dar aprovação formal ou assinatura em um documento/projeto." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Leonardo, let's review the five-year client roadmap. By next Friday, what milestones will your team have reached?", translation: "Leonardo, vamos revisar o roteiro de cinco anos do cliente. Até a próxima sexta-feira, quais marcos sua equipe terá alcançado?" },
+          { sender: 'user', text: "By next Friday, we will have deployed the key cloud gateways, and we will have verified all database tokens.", translation: "Até a próxima sexta-feira, teremos implantado os principais gateways de nuvem e verificado todos os tokens do banco de dados." },
+          { sender: 'ai', text: "Excellent. And by next year, how long will our team have been managing this complex enterprise infrastructure?", translation: "Excelente. E até o ano que vem, há quanto tempo nossa equipe estará gerenciando essa infraestrutura corporativa complexa?" },
+          { sender: 'user', text: "By next year, we will have been managing this server cluster for five years without a single outage.", translation: "Até o ano que vem, estaremos gerenciando esse cluster de servidores há cinco anos sem uma única interrupção." },
+          { sender: 'ai', text: "That is a stellar record. Will we have signed the renewal contract before the current one expires?", translation: "Esse é um registro estelar. Nós teremos assinado o contrato de renovação antes que o atual expire?" },
+          { sender: 'user', text: "Yes, we will have finalized the legal reviews of the acquisition by the end of Q3.", translation: "Sim, teremos finalizado as revisões legais da aquisição até o final do terceiro trimestre." },
+          { sender: 'ai', text: "Great. By 2028, what other strategic territories will we have entered?", translation: "Ótimo. Até 2028, em quais outros territórios estratégicos teremos entrado?" },
+          { sender: 'user', text: "By 2028, our sales department will have finished the international market expansion in Europe.", translation: "Até 2028, nosso departamento de vendas terá concluído a expansão do mercado internacional na Europa." },
+          { sender: 'ai', text: "Brilliant projection. Your infrastructure team is shaping our long-term stability.", translation: "Brilhante projeção. Sua equipe de infraestrutura está moldando nossa estabilidade de longo prazo." },
+          { sender: 'user', text: "Thank you. By then, we will have been supporting this enterprise account for a decade.", translation: "Obrigado. Até lá, estaremos oferecendo suporte a esta conta corporativa há uma década." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Master Future Perfect Continuous to communicate deep institutional knowledge and Future Perfect to project definitive ROI markers.",
+        goal: "Negotiate strategic acquisitions, long-term ROI horizons, and continuous development timelines with board directors.",
+        goalTranslation: "Negocie aquisições estratégicas, horizontes de ROI de longo prazo e cronogramas de desenvolvimento contínuo com os diretores do conselho.",
+        keyVocabulary: [
+          { word: "Expansion", translation: "Expansão" },
+          { word: "Horizon", translation: "Horizonte / Prazo" },
+          { word: "Long-term", translation: "Longo prazo" },
+          { word: "Projection", translation: "Projeção" }
+        ],
+        introduction: {
+          scenario: "An executive board room sync with Director Helena to defend high-capital investment horizons and retention metrics.",
+          scenarioTranslation: "Uma sincronização na sala do conselho executivo com a Diretora Helena para defender horizontes de investimento de alto capital e métricas de retenção."
+        },
+        phrasalVerbs: [
+          { verb: "Yield returns", meaning: "Gerar retornos / Produzir lucros financeiros." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Helena, as we look at our ten-year horizon, what financial projections will our firm have met by 2030?", translation: "Helena, ao olharmos para o nosso horizonte de dez anos, quais projeções financeiras nossa empresa terá alcançado até 2030?" },
+          { sender: 'user', text: "By 2030, our strategic acquisitions will have yielded substantial returns, and we will have doubled our capital.", translation: "Até 2030, nossas aquisições estratégicas terão gerado retornos substanciais e teremos dobrado nosso capital." },
+          { sender: 'ai', text: "Impressive. But how long will our product department have been developing the next-gen AI core by then?", translation: "Impressionante. Mas há quanto tempo nosso departamento de produto estará desenvolvendo o núcleo de IA de próxima geração até lá?" },
+          { sender: 'user', text: "By 2030, our core engineers will have been developing and refining that AI system for eight consecutive years.", translation: "Até 2030, nossos engenheiros principais estarão desenvolvendo e refinando esse sistema de IA por oito anos consecutivos." },
+          { sender: 'ai', text: "Outstanding dedication. What milestones will the customer retention department have cleared by next quarter?", translation: "Dedicação excepcional. Quais marcos o departamento de retenção de clientes terá superado até o próximo trimestre?" },
+          { sender: 'user', text: "By next quarter, the team will have launched the automated onboarding funnel, improving retention by twenty percent.", translation: "Até o próximo trimestre, a equipe terá lançado o funil de integração automatizado, melhorando a retenção em vinte por cento." },
+          { sender: 'ai', text: "And will you have presented the revised investment pipeline before the annual shareholder summit?", translation: "E você terá apresentado o pipeline de investimentos revisado antes do summit anual de acionistas?" },
+          { sender: 'user', text: "Yes, I will have delivered the detailed financial projection to the board prior to the summit kickoff.", translation: "Sim, terei entregue a projeção financeira detalhada ao conselho antes do início do summit." },
+          { sender: 'ai', text: "Excellent. These actions will ensure our competitors do not surpass us.", translation: "Excelente. Essas ações garantirão que nossos concorrentes não nos superem." },
+          { sender: 'user', text: "Indeed. By next year, our company will have been leading the global fintech trajectory for fifteen years.", translation: "De fato. Até o ano que vem, nossa empresa estará liderando a trajetória global de fintech há quinze anos." }
+        ]
+      }
+    }
   }
 };
 
