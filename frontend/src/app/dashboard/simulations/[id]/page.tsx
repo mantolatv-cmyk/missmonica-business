@@ -1240,6 +1240,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  "14": {
+    title: "Past Perfect Continuous",
+    aiRole: "Auditor",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Contrast past actions that were continuous up to a point in the past ('had been waiting') with completed single past events ('arrived').",
+        goal: "Describe what you had been doing before a specific past event.",
+        goalTranslation: "Descreva o que você vinha fazendo antes de um evento passado específico.",
+        keyVocabulary: [
+          { word: "Had been", translation: "Tinha estado / Vinha (auxiliar)" },
+          { word: "Waiting", translation: "Esperando" },
+          { word: "Studying", translation: "Estudando" },
+          { word: "Before", translation: "Antes" }
+        ],
+        introduction: {
+          scenario: "A coworker is apologizing for making you wait before a scheduled lunch meeting.",
+          scenarioTranslation: "Um colega de trabalho está se desculpando por fazer você esperar antes de uma reunião de almoço agendada."
+        },
+        phrasalVerbs: [
+          { verb: "Show up", meaning: "Aparecer / Chegar." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica! I am so sorry for being late. Had you been waiting for a long time?", translation: "Oi Monica! Sinto muito pelo atraso. Você estava esperando há muito tempo?" },
+          { sender: 'user', text: "Hi! Yes, I had been waiting for almost an hour before you showed up.", translation: "Oi! Sim, eu estava esperando por quase uma hora antes de você aparecer." },
+          { sender: 'ai', text: "Oh no! What had you been doing to pass the time while waiting?", translation: "Ah não! O que você estava fazendo para passar o tempo enquanto esperava?" },
+          { sender: 'user', text: "I had been studying our training slides before the waiter brought my water.", translation: "Eu estava estudando nossos slides de treinamento antes de o garçom trazer minha água." },
+          { sender: 'ai', text: "Good idea. Had you been reviewing the grammar rules for our corporate course?", translation: "Boa ideia. Você estava revisando as regras de gramática para o nosso curso corporativo?" },
+          { sender: 'user', text: "Yes, I had been reading the lesson tips before I checked my work emails.", translation: "Sim, eu estava lendo as dicas da lição antes de verificar meus e-mails de trabalho." },
+          { sender: 'ai', text: "Excellent. Let's order our lunch now so we don't waste any more precious time.", translation: "Excelente. Vamos pedir nosso almoço agora para não perdermos mais tempo precioso." },
+          { sender: 'user', text: "Sounds perfect. I had been hoping to try the local salmon today.", translation: "Parece perfeito. Eu estava esperando experimentar o salmão local hoje." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Outline sustained operational processes ('we had been working for hours') interrupted by a sudden incident.",
+        goal: "Explain past operational efforts and team activities prior to a server crash.",
+        goalTranslation: "Explique os esforços operacionais passados e as atividades da equipe antes de uma falha no servidor.",
+        keyVocabulary: [
+          { word: "Had been", translation: "Vinham / Tinham estado" },
+          { word: "Working", translation: "Trabalhando" },
+          { word: "Before", translation: "Antes" },
+          { word: "Outage", translation: "Interrupção" }
+        ],
+        introduction: {
+          scenario: "A technical lead is compiling the incident review following yesterday's power outage.",
+          scenarioTranslation: "Um líder técnico está compilando a revisão do incidente após a queda de energia de ontem."
+        },
+        phrasalVerbs: [
+          { verb: "Go down", meaning: "Parar de funcionar / Cair (sistema)." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, I need the timeline for the post-incident report. Had the database developers been working before the crash?", translation: "Monica, preciso do cronograma para o relatório pós-incidente. Os desenvolvedores de banco de dados estavam trabalhando antes da queda?" },
+          { sender: 'user', text: "Yes, they had been working on the query optimization for three hours before the servers went down.", translation: "Sim, eles estavam trabalhando na otimização de consultas por três horas antes de os servidores caírem." },
+          { sender: 'ai', text: "And what about the automated script logs? Had they been running without issues prior to that?", translation: "E os logs de scripts automatizados? Eles estavam rodando sem problemas antes disso?" },
+          { sender: 'user', text: "Yes, the diagnostic scripts had been running smoothly before the power outage occurred at noon.", translation: "Sim, os scripts de diagnóstico estavam rodando perfeitamente antes de a queda de energia ocorrer ao meio-dia." },
+          { sender: 'ai', text: "Perfect. Had our team been migrating any client accounts when the power failed?", translation: "Perfeito. Nossa equipe estava migrando alguma conta de cliente quando a energia falhou?" },
+          { sender: 'user', text: "Fortunately, no. We had been waiting for the green light, so we hadn't been migrating anything.", translation: "Felizmente, não. Estávamos aguardando o sinal verde, então não estávamos migrando nada." },
+          { sender: 'ai', text: "That is lucky. Had our support desks been receiving any customer complaints before the crash?", translation: "Que sorte. Nossos canais de suporte estavam recebendo reclamações de clientes antes da queda?" },
+          { sender: 'user', text: "No, they hadn't been receiving any complaints because our services had been operating normally.", translation: "Não, eles não estavam recebendo nenhuma reclamação porque nossos serviços estavam operando normalmente." },
+          { sender: 'ai', text: "Outstanding. It seems the outage was entirely external. Your team had been performing perfectly.", translation: "Excelente. Parece que a interrupção foi inteiramente externa. Sua equipe estava desempenhando perfeitamente." },
+          { sender: 'user', text: "Thank you. Our devs had been monitoring the loads for hours to prevent any data corruption.", translation: "Obrigada. Nossos desenvolvedores estavam monitorando as cargas por horas para evitar qualquer corrupção de dados." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Differentiate Past Continuous ('we were working') from Past Perfect Continuous ('we had been working for hours') to prove exhaustive compliance diligence.",
+        goal: "Defend strategic service levels in front of corporate auditors by highlighting prolonged preemptive actions before an incident.",
+        goalTranslation: "Defenda os níveis de serviço estratégicos perante os auditores corporativos, destacando ações preventivas prolongadas antes de um incidente.",
+        keyVocabulary: [
+          { word: "Had been", translation: "Tinha estado / Vinha" },
+          { word: "Waiting", translation: "Aguardando" },
+          { word: "Working", translation: "Trabalhando" },
+          { word: "Before", translation: "Antes" }
+        ],
+        introduction: {
+          scenario: "Defending your team's compliance and preventive diligence during an intense corporate audit review.",
+          scenarioTranslation: "Defendendo a conformidade e a diligência preventiva da sua equipe durante uma revisão intensa de auditoria corporativa."
+        },
+        phrasalVerbs: [
+          { verb: "Point out", meaning: "Apontar / Destacar uma informação relevante." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, the logs show the backup node failed to initialize. Why hadn't your engineers verified the systems?", translation: "Monica, os logs mostram que o nó de backup falhou ao inicializar. Por que seus engenheiros não tinham verificado os sistemas?" },
+          { sender: 'user', text: "Actually, our database engineers had been testing the cluster redundancy for days before the provider collapsed.", translation: "Na verdade, nossos engenheiros de banco de dados vinham testando a redundância do cluster por dias antes de o provedor cair." },
+          { sender: 'ai', text: "For days? But did they record any signs of latency during these redundancy stress tests?", translation: "Por dias? Mas eles registraram algum sinal de latência durante esses testes de estresse de redundância?" },
+          { sender: 'user', text: "No, they didn't. The system had been performing exceptionally well prior to the unexpected network disruption.", translation: "Não, não registraram. O sistema vinha desempenhando excepcionalmente bem antes da interrupção inesperada da rede." },
+          { sender: 'ai', text: "However, our contract requires continuous checks. Were you actively monitoring the security tokens?", translation: "No entanto, nosso contrato exige verificações contínuas. Vocês estavam monitorando ativamente os tokens de segurança?" },
+          { sender: 'user', text: "Yes, we were. We had been verifying token compliance for weeks before the audit team arrived.", translation: "Sim, estávamos. Nós estávamos verificando a conformidade dos tokens por semanas antes de a equipe de auditoria chegar." },
+          { sender: 'ai', text: "Let me point out that the response time was delayed. Why did it take forty minutes to respond?", translation: "Deixe-me apontar que o tempo de resposta atrasou. Por que levou quarenta minutos para responder?" },
+          { sender: 'user', text: "We had been waiting for secondary validation from the local supplier before we could restore our nodes.", translation: "Nós estávamos aguardando a validação secundária do fornecedor local antes de podermos restaurar nossos nós." },
+          { sender: 'ai', text: "Ah, the delay was waiting on external clearance. You had been doing everything in your power.", translation: "Ah, o atraso foi aguardar a autorização externa. Você vinha fazendo tudo ao seu alcance." },
+          { sender: 'user', text: "Indeed. We had been working tirelessly to protect the corporate data, and we succeeded.", translation: "De fato. Nós vínhamos trabalhando incansavelmente para proteger os dados corporativos e tivemos sucesso." }
+        ]
+      }
+    }
   }
 };
 

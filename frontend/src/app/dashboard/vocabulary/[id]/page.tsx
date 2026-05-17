@@ -271,6 +271,22 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Older past', portuguese: 'Passado mais antigo', example: 'The older past action uses Past Perfect.', category: 'Grammar' },
       { english: 'Recent past', portuguese: 'Passado recente', example: 'The recent past action uses Simple Past.', category: 'Grammar' }
     ]
+  },
+  '14': {
+    title: 'Past Perfect Continuous',
+    culturalTip: "When presenting post-mortem reviews to enterprise clients, Past Perfect Continuous is perfect to demonstrate ongoing diligence prior to an incident ('Our engineers had been monitoring the server for hours before the spike occurred').",
+    items: [
+      { english: 'Had been', portuguese: 'Tinha estado / Vinha (auxiliar)', example: 'They had been writing code before the power outage.', category: 'Grammar' },
+      { english: 'Waiting', portuguese: 'Esperando / Aguardando', example: 'We had been waiting for the client for hours before they joined.', category: 'Action' },
+      { english: 'Studying', portuguese: 'Estudando', example: 'She had been studying the regulatory compliance audit.', category: 'Action' },
+      { english: 'Working', portuguese: 'Trabalhando', example: 'Our database developers had been working on the patch.', category: 'Action' },
+      { english: 'For hours', portuguese: 'Por horas', example: 'They had been debugging the server logs for hours.', category: 'Grammar' },
+      { english: 'Before', portuguese: 'Antes', example: 'The system had been running smoothly before the update.', category: 'Grammar' },
+      { english: 'Outage', portuguese: 'Interrupção / Queda de energia', example: 'The network outage occurred during the server migration.', category: 'Business' },
+      { english: 'Prior to', portuguese: 'Anteriormente a / Antes de', example: 'We had been negotiating the SLA terms prior to the merger.', category: 'Business' },
+      { english: 'Duration', portuguese: 'Duração', example: 'This tense describes the duration of a past action.', category: 'Grammar' },
+      { english: 'Continuous', portuguese: 'Contínuo', example: 'It highlights a continuous past process before a disruption.', category: 'Grammar' }
+    ]
   }
 };
 

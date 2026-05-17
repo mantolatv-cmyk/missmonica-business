@@ -136,6 +136,16 @@ const lessons = [
     icon: <Sparkles className="text-[#EC4899]" size={20} />,
     image: "/lessons/lesson_13.png",
     href: "/dashboard/simulations/13"
+  },
+  {
+    id: 14,
+    title: "Lesson 14: Past Perfect Continuous",
+    difficulty: "Advanced",
+    objective: "Mostrar a duração de uma ação contínua ocorrendo no passado antes de outro evento passado.",
+    vocab: "Had been, Waiting, Studying, Working, For hours, Before",
+    icon: <Sparkles className="text-[#06B6D4]" size={20} />,
+    image: "/lessons/lesson_14.png",
+    href: "/dashboard/simulations/14"
   }
 ];
 
