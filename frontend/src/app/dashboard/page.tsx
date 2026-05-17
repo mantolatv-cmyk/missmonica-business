@@ -126,6 +126,16 @@ const lessons = [
     icon: <Sparkles className="text-[#8B5CF6]" size={20} />,
     image: "/lessons/lesson_12.png",
     href: "/dashboard/simulations/12"
+  },
+  {
+    id: 13,
+    title: "Lesson 13: Past Perfect",
+    difficulty: "Advanced",
+    objective: "Expressar ações ocorridas antes de outro momento no passado (o passado do passado).",
+    vocab: "Had, Had left, Had finished, Already, Before, By the time",
+    icon: <Sparkles className="text-[#EC4899]" size={20} />,
+    image: "/lessons/lesson_13.png",
+    href: "/dashboard/simulations/13"
   }
 ];
 

@@ -1146,6 +1146,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  "13": {
+    title: "Past Perfect",
+    aiRole: "Auditor",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Establish a clear sequence: Past Perfect for the older event, and Simple Past for the more recent one.",
+        goal: "Explain the sequence of past events using Past Perfect for older actions.",
+        goalTranslation: "Explique a sequência de eventos passados usando Past Perfect para ações mais antigas.",
+        keyVocabulary: [
+          { word: "Had left", translation: "Tinha saído / Havia saído" },
+          { word: "Already", translation: "Já" },
+          { word: "Before", translation: "Antes" },
+          { word: "Arrived", translation: "Chegou" }
+        ],
+        introduction: {
+          scenario: "A coworker is checking why you missed a quick meeting yesterday evening.",
+          scenarioTranslation: "Um colega de trabalho está verificando por que você perdeu uma reunião rápida ontem no fim do dia."
+        },
+        phrasalVerbs: [
+          { verb: "Catch up", meaning: "Atualizar-se sobre as novidades ou informações pendentes." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica! I didn't see you in the meeting room yesterday at 5 PM. Did you arrive late?", translation: "Oi Monica! Não te vi na sala de reunião ontem às 17h. Você chegou atrasada?" },
+          { sender: 'user', text: "Hi! Yes, I arrived at 5:10 PM, but the speaker had already left the room before I arrived.", translation: "Oi! Sim, eu cheguei às 17h10, mas o palestrante já tinha saído da sala antes de eu chegar." },
+          { sender: 'ai', text: "Ah, that is why! He had finished his quick presentation early. Did he email you his slides?", translation: "Ah, por isso! Ele tinha terminado sua apresentação rápida mais cedo. Ele te enviou os slides por e-mail?" },
+          { sender: 'user', text: "Yes, he had already emailed me the budget slides before the meeting even started.", translation: "Sim, ele já tinha me enviado os slides do orçamento por e-mail antes mesmo de a reunião começar." },
+          { sender: 'ai', text: "Excellent. By the time I checked my inbox, he had sent them to everyone.", translation: "Excelente. No momento em que verifiquei minha caixa de entrada, ele já os tinha enviado para todos." },
+          { sender: 'user', text: "Exactly. I read all his files before I drove back home yesterday.", translation: "Exatamente. Eu li todos os arquivos dele antes de ir de carro para casa ontem." },
+          { sender: 'ai', text: "Good! Let's catch up on the details later today. Have a productive morning.", translation: "Bom! Vamos nos atualizar nos detalhes mais tarde hoje. Tenha uma manhã produtiva." },
+          { sender: 'user', text: "Thank you! I had prepared some notes last night, so I am ready to review them with you.", translation: "Obrigada! Eu tinha preparado algumas notas ontem à noite, então estou pronta para revisá-las com você." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Perfect the timeline flow: emphasize what the team had completed before the executive sign-off took place.",
+        goal: "Outline project milestone timelines and explain operational changes to the coordinator.",
+        goalTranslation: "Descreva os cronogramas de marcos do projeto e explique as mudanças operacionais para o coordenador.",
+        keyVocabulary: [
+          { word: "Had finished", translation: "Tinha terminado" },
+          { word: "By the time", translation: "No momento em que" },
+          { word: "Before", translation: "Antes" },
+          { word: "Already", translation: "Já" }
+        ],
+        introduction: {
+          scenario: "The onboarding coordinator is verifying if all server rollouts occurred in the proper chronological order.",
+          scenarioTranslation: "O coordenador de onboarding está verificando se todas as implantações de servidor ocorreram na ordem cronológica adequada."
+        },
+        phrasalVerbs: [
+          { verb: "Wrap up", meaning: "Finalizar / Concluir uma tarefa com sucesso." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, let's verify our deployment schedule. Had the engineers finished the staging test before you launched?", translation: "Monica, vamos verificar nosso cronograma de implantação. Os engenheiros tinham terminado o teste de staging antes de você lançar?" },
+          { sender: 'user', text: "Yes, they had finished the staging tests at 3 PM. We launched the system at 4 PM.", translation: "Sim, eles tinham terminado os testes de staging às 15h. Nós lançamos o sistema às 16h." },
+          { sender: 'ai', text: "Perfect. And what about the security audit? Had the QA lead approved it prior to launch?", translation: "Perfeito. E sobre a auditoria de segurança? O líder de QA tinha aprovado antes do lançamento?" },
+          { sender: 'user', text: "Yes, he had already approved all certificates before the operations team initiated the setup.", translation: "Sim, ele já tinha aprovado todos os certificados antes de a equipe de operações iniciar a configuração." },
+          { sender: 'ai', text: "Excellent chronology. By the time the VP called for an update, had we secured the data backups?", translation: "Excelente cronologia. No momento em que o vice-presidente ligou para obter uma atualização, nós já tínhamos garantido os backups de dados?" },
+          { sender: 'user', text: "Absolutely. We had secured all backups by the time he called. Everything was safe.", translation: "Absolutamente. Nós tínhamos garantido todos os backups no momento em que ele ligou. Tudo estava seguro." },
+          { sender: 'ai', text: "That is a huge relief. I heard the legacy sync crashed at 6 PM. Had we migrated the clients before that?", translation: "Esse é um grande alívio. Ouvi dizer que a sincronização antiga travou às 18h. Nós tínhamos migrado os clientes antes disso?" },
+          { sender: 'user', text: "Yes, we had migrated all active client accounts before the legacy database crashed.", translation: "Sim, nós tínhamos migrado todas as contas de clientes ativas antes de o banco de dados antigo travar." },
+          { sender: 'ai', text: "Outstanding coordination! You had anticipated every bottleneck before we even ran into them.", translation: "Coordenação excelente! Você tinha antecipado todo gargalo antes mesmo de nos depararmos com eles." },
+          { sender: 'user', text: "Thank you. Our senior devs had worked tirelessly last week, so we were fully prepared to wrap up.", translation: "Obrigada. Nossos desenvolvedores seniores tinham trabalhado incansavelmente na semana passada, então estávamos totalmente prontas para finalizar." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Employ Past Perfect sentences strategically to defend your team against allegations of late responses or poor planning.",
+        goal: "Defend strategic timeline changes during a severe system post-mortem audit with executive directors.",
+        goalTranslation: "Defenda mudanças estratégicas de cronograma durante uma auditoria severa pós-incidente com diretores executivos.",
+        keyVocabulary: [
+          { word: "Had", translation: "Tinha / Havia" },
+          { word: "Had left", translation: "Tinha saído" },
+          { word: "Before", translation: "Antes" },
+          { word: "By the time", translation: "No momento em que" }
+        ],
+        introduction: {
+          scenario: "A critical post-mortem audit meeting with senior board directors analyzing a past system outage.",
+          scenarioTranslation: "Uma reunião de auditoria crítica pós-incidente com diretores seniores analisando uma interrupção de sistema passada."
+        },
+        phrasalVerbs: [
+          { verb: "Back up", meaning: "Fazer backup de arquivos / Dar suporte ou corroborar argumentos." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, the server downtime yesterday damaged our client relations. Why hadn't your team patched the system earlier?", translation: "Monica, o tempo de inatividade do servidor ontem prejudicou nossas relações com os clientes. Por que sua equipe não tinha corrigido o sistema antes?" },
+          { sender: 'user', text: "With all due respect, my team had already patched the primary gateway hours before the outage occurred.", translation: "Com todo respeito, minha equipe já tinha corrigido o gateway principal horas antes de a interrupção ocorrer." },
+          { sender: 'ai', text: "Then why did the backup system fail to take over when the primary nodes collapsed at noon?", translation: "Então por que o sistema de backup falhou em assumir quando os nós principais caíram ao meio-dia?" },
+          { sender: 'user', text: "Because the hosting provider had modified our API keys before they initiated their server maintenance.", translation: "Porque o provedor de hospedagem tinha modificado nossas chaves de API antes de iniciarem a manutenção do servidor." },
+          { sender: 'ai', text: "That is a severe oversight by the provider. Had they warned your department prior to their action?", translation: "Esse é um descuido grave do provedor. Eles tinham avisado seu departamento antes de sua ação?" },
+          { sender: 'user', text: "No, they hadn't warned us. By the time their support team replied, the nodes had already crashed.", translation: "Não, eles não tinham nos avisado. No momento em que a equipe de suporte deles respondeu, os nós já tinham travado." },
+          { sender: 'ai', text: "I see. And had you documented our configuration parameters to back up our compensation claim?", translation: "Entendo. E você tinha documentado nossos parâmetros de configuração para dar suporte à nossa reivindicação de indenização?" },
+          { sender: 'user', text: "Yes, I had. I had exported all security logs before the provider shut down our dashboard access.", translation: "Sim, eu tinha. Eu tinha exportado todos os logs de segurança antes de o provedor bloquear nosso acesso ao painel." },
+          { sender: 'ai', text: "Excellent mitigation. Your foresight has saved us millions in liability. I had doubted our readiness, but I am corrected.", translation: "Excelente mitigação. Sua previdência nos poupou milhões em responsabilidade civil. Eu tinha duvidado da nossa preparação, mas estou corrigido." },
+          { sender: 'user', text: "Thank you. We had established clear emergency protocols months ago, ensuring complete protection.", translation: "Obrigada. Nós tínhamos estabelecido protocolos de emergência claros meses atrás, garantindo proteção completa." }
+        ]
+      }
+    }
   }
 };
 

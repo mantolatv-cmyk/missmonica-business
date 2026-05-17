@@ -255,6 +255,22 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Since Monday', portuguese: 'Desde segunda-feira', example: 'They have been auditing our systems since Monday.', category: 'Business' },
       { english: 'For two hours', portuguese: 'Por duas horas', example: 'We have been presenting our dashboard layout for two hours.', category: 'Business' }
     ]
+  },
+  '13': {
+    title: 'Past Perfect',
+    culturalTip: "In corporate post-mortem reports, Past Perfect is critical to establish the timeline of events ('The system had crashed before we deployed the hotfix'), ensuring clear ownership and operational clarity.",
+    items: [
+      { english: 'Had', portuguese: 'Tinha / Havia', example: 'We had already finalized the draft before the meeting.', category: 'Grammar' },
+      { english: 'Had left', portuguese: 'Tinha saído / Havia saído', example: 'She had left the office before I arrived at 6 PM.', category: 'Grammar' },
+      { english: 'Already', portuguese: 'Já', example: 'They had already resolved the sync error when we called.', category: 'Grammar' },
+      { english: 'Before', portuguese: 'Antes', example: 'The team had tested the staging env before the rollout.', category: 'Grammar' },
+      { english: 'By the time', portuguese: 'No momento em que', example: 'By the time the VP arrived, we had finished the pitch.', category: 'Grammar' },
+      { english: 'Had finished', portuguese: 'Tinha terminado / Tinha concluído', example: 'We had finished the budget reviews prior to Q3.', category: 'Action' },
+      { english: 'Past of the past', portuguese: 'Passado do passado', example: 'Past Perfect represents the past of the past.', category: 'Grammar' },
+      { english: 'Timeline', portuguese: 'Linha do tempo', example: 'Our timeline shows that the milestone had occurred earlier.', category: 'Business' },
+      { english: 'Older past', portuguese: 'Passado mais antigo', example: 'The older past action uses Past Perfect.', category: 'Grammar' },
+      { english: 'Recent past', portuguese: 'Passado recente', example: 'The recent past action uses Simple Past.', category: 'Grammar' }
+    ]
   }
 };
 
