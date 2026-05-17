@@ -218,6 +218,26 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Study', portuguese: 'Estudar', example: 'She studies global market trends.', category: 'Action' },
       { english: 'Live', portuguese: 'Morar / Viver', example: 'They live in London, but they are living in a hotel today.', category: 'Travel' }
     ]
+  },
+  '11': {
+    title: 'Present Perfect x Simple Past',
+    culturalTip: "When pitching to US clients, Present Perfect is ideal for showcasing overall experience ('We have completed 50+ integrations'), while Simple Past is vital for detailing specific milestones ('We completed the project in 2024').",
+    items: [
+      { english: 'Ever', portuguese: 'Alguma vez / Já', example: 'Have you ever traveled abroad for business?', category: 'Grammar' },
+      { english: 'Never', portuguese: 'Nunca', example: 'I have never worked with this legacy database.', category: 'Grammar' },
+      { english: 'Already', portuguese: 'Já', example: 'We have already deployed the hotfix to production.', category: 'Grammar' },
+      { english: 'Yet', portuguese: 'Ainda', example: 'They have not finalized the audit reports yet.', category: 'Grammar' },
+      { english: 'Just', portuguese: 'Acabar de', example: 'He has just signed the strategic contract.', category: 'Grammar' },
+      { english: 'Recently', portuguese: 'Recentemente', example: 'Have you launched any new features recently?', category: 'Grammar' },
+      { english: 'Yesterday', portuguese: 'Ontem', example: 'We approved the structural budget yesterday.', category: 'Grammar' },
+      { english: 'Last year', portuguese: 'Ano passado', example: 'She traveled to London for a summit last year.', category: 'Grammar' },
+      { english: 'In 2019', portuguese: 'Em 2019', example: 'The company was founded in 2019.', category: 'Grammar' },
+      { english: 'Ago', portuguese: 'Atrás', example: 'We initiated the team reorganization three weeks ago.', category: 'Grammar' },
+      { english: 'Experience', portuguese: 'Experiência', example: 'She has a lot of experience in project management.', category: 'Business' },
+      { english: 'Indefinite', portuguese: 'Indefinido', example: 'Present Perfect refers to an indefinite point in time.', category: 'Grammar' },
+      { english: 'Visit', portuguese: 'Visitar', example: 'I visited our headquarters in Munich last summer.', category: 'Action' },
+      { english: 'Travel', portuguese: 'Viajar', example: 'We have traveled to many different countries for summits.', category: 'Travel' }
+    ]
   }
 };
 

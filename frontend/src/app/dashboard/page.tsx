@@ -106,6 +106,16 @@ const lessons = [
     icon: <Sparkles className="text-[#F59E0B]" size={20} />,
     image: "/lessons/lesson_10.png",
     href: "/dashboard/simulations/10"
+  },
+  {
+    id: 11,
+    title: "Lesson 11: Present Perfect x Simple Past",
+    difficulty: "Advanced",
+    objective: "Tempo indefinido/experiência de vida (have done) vs. tempo definido e acabado no passado (did).",
+    vocab: "Ever, Never, Already, Yet, Just, Recently, Yesterday, Ago",
+    icon: <Sparkles className="text-[#10B981]" size={20} />,
+    image: "/lessons/lesson_11.png",
+    href: "/dashboard/simulations/11"
   }
 ];
 

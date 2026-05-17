@@ -958,6 +958,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  "11": {
+    title: "Present Perfect x Simple Past",
+    aiRole: "Social Contact",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Differentiate general experience ('I have traveled') from a specific point in time ('I traveled last year').",
+        goal: "Describe your past travel destinations and overall travel experience.",
+        goalTranslation: "Descreva seus destinos de viagem passados e sua experiência de viagem geral.",
+        keyVocabulary: [
+          { word: "Ever", translation: "Alguma vez / Já" },
+          { word: "Never", translation: "Nunca" },
+          { word: "Yesterday", translation: "Ontem" },
+          { word: "Last year", translation: "Ano passado" }
+        ],
+        introduction: {
+          scenario: "A friendly supplier is asking about your past business travel experience.",
+          scenarioTranslation: "Um fornecedor amigável está perguntando sobre sua experiência de viagens de negócios passadas."
+        },
+        phrasalVerbs: [
+          { verb: "Go to", meaning: "Ir para / Visitar." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Welcome to our London branch, Monica! Have you ever traveled abroad for business before?", translation: "Bem-vinda à nossa filial de Londres, Monica! Você já viajou para o exterior a negócios antes?" },
+          { sender: 'user', text: "Hello! Yes, I have already traveled abroad three times, but I have never visited this branch.", translation: "Olá! Sim, eu já viajei para o exterior três vezes, mas nunca visitei esta filial." },
+          { sender: 'ai', text: "That is great. When did you visit Europe for the first time?", translation: "Que ótimo. Quando você visitou a Europa pela primeira vez?" },
+          { sender: 'user', text: "I visited Europe last year. I spent two weeks in Paris for a global conference.", translation: "Eu visitei a Europa no ano passado. Passei duas semanas em Paris para uma conferência global." },
+          { sender: 'ai', text: "Paris is beautiful! Did you see the Eiffel Tower while you were there?", translation: "Paris é linda! Você viu a Torre Eiffel enquanto esteve lá?" },
+          { sender: 'user', text: "Yes, I did. I saw it on my last day. But yesterday, I arrived here, so I am focusing on London now.", translation: "Sim, eu vi. Vi no meu último dia. Mas ontem, cheguei aqui, então estou focando em Londres agora." },
+          { sender: 'ai', text: "Perfect. Have you tried any traditional British food since you arrived?", translation: "Perfeito. Você experimentou alguma comida tradicional britânica desde que chegou?" },
+          { sender: 'user', text: "No, I haven't tried it yet. I ate a simple sandwich at the hotel yesterday evening.", translation: "Não, ainda não experimentei. Comi um sanduíche simples no hotel ontem à noite." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Use Present Perfect for recent accomplishments without a specific time, and Simple Past for actions completed at a specific point.",
+        goal: "Compare past project accomplishments with indefinite overall professional achievements.",
+        goalTranslation: "Compare realizações de projetos passados com conquistas profissionais gerais de prazo indefinido.",
+        keyVocabulary: [
+          { word: "Already", translation: "Já" },
+          { word: "Yet", translation: "Ainda" },
+          { word: "Recently", translation: "Recentemente" },
+          { word: "Ago", translation: "Atrás" }
+        ],
+        introduction: {
+          scenario: "The operations director is reviewing recent deliverables and past project history.",
+          scenarioTranslation: "O diretor de operações está revisando entregas recentes e o histórico de projetos passados."
+        },
+        phrasalVerbs: [
+          { verb: "Sign off", meaning: "Aprovar formalmente / Assinar a autorização." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica, we need a status update. Have you finalized the dynamic database integration yet?", translation: "Oi Monica, precisamos de uma atualização de status. Você já finalizou a integração dinâmica do banco de dados?" },
+          { sender: 'user', text: "Yes, I have already finalized the core database structure. I completed the final staging test two days ago.", translation: "Sim, eu já finalizei a estrutura principal do banco de dados. Concluí o teste de staging final dois dias atrás." },
+          { sender: 'ai', text: "Excellent news. Did the QA lead sign off on the security protocols yesterday?", translation: "Excelente notícia. O líder de QA aprovou os protocolos de segurança ontem?" },
+          { sender: 'user', text: "Yes, he did. He reviewed the logs yesterday afternoon and signed off on everything.", translation: "Sim, ele aprovou. Ele revisou os logs ontem à tarde e assinou a autorização de tudo." },
+          { sender: 'ai', text: "Perfect. Have you launched any similar global rollouts recently?", translation: "Perfeito. Vocês lançaram algum lançamento global semelhante recentemente?" },
+          { sender: 'user', text: "Yes, we have. Recently, we have deployed three major updates for our Latin American partners.", translation: "Sim, lançamos. Recentemente, implantamos três grandes atualizações para nossos parceiros da América Latina." },
+          { sender: 'ai', text: "That is impressive. When did you launch the first Latin American update?", translation: "Isso é impressionante. Quando vocês lançaram a primeira atualização na América Latina?" },
+          { sender: 'user', text: "We launched the first update in 2023. It resolved all legacy sync errors.", translation: "Nós lançamos a primeira atualização em 2023. Ela resolveu todos os erros de sincronização legados." },
+          { sender: 'ai', text: "Outstanding. I have recently updated the stakeholder roadmap. Let's make sure we document these milestones.", translation: "Excelente. Eu atualizei recentemente o roadmap de stakeholders. Vamos garantir que documentemos esses marcos." },
+          { sender: 'user', text: "Great. I have already drafted the documentation, and I will share it with the team in our next sync.", translation: "Ótimo. Eu já rascunhei a documentação e a compartilharei com a equipe em nossa próxima sincronização." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Formulate precise arguments contrasting past concrete milestones (Simple Past) with broader historical capabilities (Present Perfect).",
+        goal: "Justify strategic tech stack pivots by presenting past performance data and general integration experiences.",
+        goalTranslation: "Justifique mudanças estratégicas de stack tecnológica apresentando dados de desempenho passados e experiências de integração gerais.",
+        keyVocabulary: [
+          { word: "Ever", translation: "Alguma vez / Já" },
+          { word: "Never", translation: "Nunca" },
+          { word: "Just", translation: "Acabar de" },
+          { word: "In 2019", translation: "Em 2019" }
+        ],
+        introduction: {
+          scenario: "A high-level client VP is questioning your historical stability and recent technological pivots.",
+          scenarioTranslation: "O vice-presidente de um cliente de alto nível está questionando sua estabilidade histórica e mudanças tecnológicas recentes."
+        },
+        phrasalVerbs: [
+          { verb: "Look back", meaning: "Olhar para trás / Analisar o histórico passado." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, your team has just proposed a massive architecture pivot. Have you ever handled such a high-risk transition?", translation: "Monica, sua equipe acabou de propor uma mudança massiva de arquitetura. Você já lidou com uma transição de alto risco como essa?" },
+          { sender: 'user', text: "Yes, we have. We have successfully completed five global database migrations without a single minute of downtime.", translation: "Sim, já lidamos. Concluímos com sucesso cinco migrações globais de banco de dados sem um único minuto de inatividade." },
+          { sender: 'ai', text: "Those are impressive general numbers. But did you experience any data losses when you migrated the legacy system in 2019?", translation: "Esses são números gerais impressionantes. Mas vocês sofreram alguma perda de dados quando migraram o sistema legado em 2019?" },
+          { sender: 'user', text: "No, we didn't. When we undertook that migration in 2019, we maintained a 100% data integrity record throughout.", translation: "Não, não sofremos. Quando realizamos aquela migração em 2019, mantivemos um registro de 100% de integridade de dados do início ao fim." },
+          { sender: 'ai', text: "That sounds reassuring. However, our board has never approved a system change of this scale so quickly.", translation: "Isso soa reconfortante. No entanto, nosso conselho nunca aprovou uma mudança de sistema desta escala tão rapidamente." },
+          { sender: 'user', text: "I understand the caution, but we have just tested our new automated validation system and the results are outstanding.", translation: "Eu entendo a cautela, mas acabamos de testar nosso novo sistema de validação automatizado e os resultados são excelentes." },
+          { sender: 'ai', text: "When did you execute these automated tests, and who verified the output?", translation: "Quando vocês executaram esses testes automatizados e quem verificou os resultados?" },
+          { sender: 'user', text: "We executed the validation tests last week, and our principal engineer verified the results yesterday morning.", translation: "Nós executamos os testes de validação na semana passada, e nosso engenheiro principal verificou os resultados ontem de manhã." },
+          { sender: 'ai', text: "If we look back, your firm has always honored its SLAs. I will present your performance data to the board today.", translation: "Se olharmos para trás, sua empresa sempre honrou seus SLAs. Vou apresentar os seus dados de desempenho ao conselho hoje." },
+          { sender: 'user', text: "Thank you. We have built our reputation on high-stakes execution, and we are ready to guarantee this rollout.", translation: "Obrigada. Construímos nossa reputação em execuções sob alta pressão e estamos prontos para garantir este lançamento." }
+        ]
+      }
+    }
   }
 };
 
