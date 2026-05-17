@@ -238,6 +238,23 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Visit', portuguese: 'Visitar', example: 'I visited our headquarters in Munich last summer.', category: 'Action' },
       { english: 'Travel', portuguese: 'Viajar', example: 'We have traveled to many different countries for summits.', category: 'Travel' }
     ]
+  },
+  '12': {
+    title: 'Present Perfect Continuous',
+    culturalTip: "When updating stakeholders on project progress, using Present Perfect Continuous emphasizes that the effort is ongoing ('We have been building this system since Monday'), which builds confidence in active development.",
+    items: [
+      { english: 'How long', portuguese: 'Há quanto tempo', example: 'How long have you been studying English?', category: 'Grammar' },
+      { english: 'Lately', portuguese: 'Ultimamente / Recentemente', example: 'We have been working on a lot of new features lately.', category: 'Grammar' },
+      { english: 'For', portuguese: 'Por / Durante', example: 'I have been working at this firm for five years.', category: 'Grammar' },
+      { english: 'Since', portuguese: 'Desde', example: 'She has been leading the onboarding team since 2022.', category: 'Grammar' },
+      { english: 'Working', portuguese: 'Trabalhando', example: 'They have been working all day on the budget slides.', category: 'Action' },
+      { english: 'Studying', portuguese: 'Estudando', example: 'He has been studying global market trends since Monday.', category: 'Action' },
+      { english: 'Duration', portuguese: 'Duração', example: 'Present Perfect Continuous emphasizes the duration of an activity.', category: 'Grammar' },
+      { english: 'Continuity', portuguese: 'Continuidade', example: 'This verb tense shows continuity of an ongoing work task.', category: 'Grammar' },
+      { english: 'All day', portuguese: 'O dia todo', example: 'The developers have been writing clean code all day.', category: 'Business' },
+      { english: 'Since Monday', portuguese: 'Desde segunda-feira', example: 'They have been auditing our systems since Monday.', category: 'Business' },
+      { english: 'For two hours', portuguese: 'Por duas horas', example: 'We have been presenting our dashboard layout for two hours.', category: 'Business' }
+    ]
   }
 };
 

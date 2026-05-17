@@ -116,6 +116,16 @@ const lessons = [
     icon: <Sparkles className="text-[#10B981]" size={20} />,
     image: "/lessons/lesson_11.png",
     href: "/dashboard/simulations/11"
+  },
+  {
+    id: 12,
+    title: "Lesson 12: Present Perfect Continuous",
+    difficulty: "Intermediate",
+    objective: "Como expressar duração e continuidade de ações que começaram no passado e continuam até hoje.",
+    vocab: "Lately, Recently, For, Since, Working, Studying, How long",
+    icon: <Sparkles className="text-[#8B5CF6]" size={20} />,
+    image: "/lessons/lesson_12.png",
+    href: "/dashboard/simulations/12"
   }
 ];
 

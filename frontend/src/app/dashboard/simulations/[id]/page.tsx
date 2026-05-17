@@ -1052,6 +1052,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  "12": {
+    title: "Present Perfect Continuous",
+    aiRole: "Coordinator",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Focus on the time expressions: 'for 2 years' (duration) vs 'since 2024' (starting point).",
+        goal: "Describe your English learning duration and state if you have been working hard lately.",
+        goalTranslation: "Descreva a duração do seu aprendizado de inglês e diga se tem trabalhado duro ultimamente.",
+        keyVocabulary: [
+          { word: "Working", translation: "Trabalhando" },
+          { word: "Studying", translation: "Estudando" },
+          { word: "For", translation: "Por / Durante" },
+          { word: "Since", translation: "Desde" }
+        ],
+        introduction: {
+          scenario: "An HR coordinator is checking your training background during a casual welcome chat.",
+          scenarioTranslation: "Um coordenador de RH está verificando seu histórico de treinamento durante um bate-papo casual de boas-vindas."
+        },
+        phrasalVerbs: [
+          { verb: "Keep up", meaning: "Manter o ritmo / Continuar progredindo." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica! We want to support your language goals. How long have you been studying English?", translation: "Oi Monica! Queremos apoiar seus objetivos com o idioma. Há quanto tempo você está estudando inglês?" },
+          { sender: 'user', text: "Hi! I have been studying English for two years now. I started my classes since 2024.", translation: "Oi! Eu estou estudando inglês há dois anos. Comecei minhas aulas desde 2024." },
+          { sender: 'ai', text: "That is excellent dedication. Have you been working on your grammar drills lately?", translation: "Essa é uma excelente dedicação. Você tem trabalhado em seus exercícios de gramática ultimamente?" },
+          { sender: 'user', text: "Yes, I have been working a lot lately. I have been practicing my speaking every week.", translation: "Sim, eu tenho trabalhado muito ultimamente. Tenho praticado minha conversação toda semana." },
+          { sender: 'ai', text: "Perfect. It is very important to practice consistently. Have you been using our learning apps as well?", translation: "Perfeito. É muito importante praticar de forma consistente. Você tem usado nossos aplicativos de aprendizado também?" },
+          { sender: 'user', text: "Yes, I have been using them since last month. They help me stay focused.", translation: "Sim, estou usando-os desde o mês passado. Eles me ajudam a manter o foco." },
+          { sender: 'ai', text: "Great job! Keep up the good work. You are making fast progress.", translation: "Excelente trabalho! Continue com o bom trabalho. Você está progredindo rápido." },
+          { sender: 'user', text: "Thank you so much! I am committed to improving my language skills for my career.", translation: "Muito obrigada! Estou comprometida em melhorar minhas habilidades com o idioma para minha carreira." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Differentiate Present Perfect ('we have integrated') from Present Perfect Continuous ('we have been integrating since Monday').",
+        goal: "Explain the duration of an ongoing system integration and compare it with older milestones.",
+        goalTranslation: "Explique a duração de uma integração de sistemas em andamento e compare-a com marcos mais antigos.",
+        keyVocabulary: [
+          { word: "Lately", translation: "Ultimamente" },
+          { word: "Since Monday", translation: "Desde segunda-feira" },
+          { word: "For two hours", translation: "Por duas horas" },
+          { word: "Working", translation: "Trabalhando" }
+        ],
+        introduction: {
+          scenario: "The operations manager is questioning the status of a critical system transition.",
+          scenarioTranslation: "O gerente de operações está questionando o status de uma transição crítica de sistemas."
+        },
+        phrasalVerbs: [
+          { verb: "Run into", meaning: "Deparar-se com / Encontrar problemas." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica, our database sync is lagging. Have you been working on this issue lately?", translation: "Oi Monica, a sincronização do nosso banco de dados está lenta. Você tem trabalhado nesse problema ultimamente?" },
+          { sender: 'user', text: "Yes, we have been working on this issue since Monday. We are auditing all legacy nodes today.", translation: "Sim, nós estamos trabalhando nesse problema desde segunda-feira. Estamos auditando todos os nós legados hoje." },
+          { sender: 'ai', text: "I see. Have you run into any serious compatibility errors since you started the audit?", translation: "Entendo. Vocês se depararam com algum erro grave de compatibilidade desde que começaram a auditoria?" },
+          { sender: 'user', text: "No, we haven't. But we have been analyzing the dynamic query streams for two hours now.", translation: "Não, não nos deparamos. Mas já estamos analisando os fluxos dinâmicos de consulta há duas horas." },
+          { sender: 'ai', text: "That is a long session. Have the backend developers been writing test patches all day?", translation: "Essa é uma longa sessão. Os desenvolvedores de backend têm escrito correções de teste o dia todo?" },
+          { sender: 'user', text: "Yes, they have been writing scripts all day because we want to deploy a hotfix tonight.", translation: "Sim, eles estão escrevendo scripts o dia todo porque queremos implantar uma correção rápida esta noite." },
+          { sender: 'ai', text: "Good. Our security director has been monitoring the logs since this morning. Did you update him?", translation: "Bom. Nosso diretor de segurança está monitorando os logs desde hoje de manhã. Você o atualizou?" },
+          { sender: 'user', text: "Yes, I have already sent him our diagnostic charts. We have been syncing with his team lately.", translation: "Sim, eu já enviei a ele nossos gráficos de diagnóstico. Nós temos nos sincronizado com a equipe dele ultimamente." },
+          { sender: 'ai', text: "Perfect. Your team has been demonstrating outstanding commitment. I will leave you to finish the hotfix.", translation: "Perfeito. Sua equipe tem demonstrado um comprometimento excelente. Vou deixar você finalizar a correção rápida." },
+          { sender: 'user', text: "Thank you. We have been aiming for a smooth transition, and we are confident in our solution.", translation: "Obrigada. Nós estamos buscando uma transição suave e estamos confiantes em nossa solução." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Synthesize continuous long-term strategies (Present Perfect Continuous) with temporary, completed past milestones (Simple Past).",
+        goal: "Justify budget extensions by explaining prolonged operational bottlenecks and ongoing strategic research.",
+        goalTranslation: "Justifique extensões de orçamento explicando gargalos operacionais prolongados e pesquisas estratégicas em andamento.",
+        keyVocabulary: [
+          { word: "How long", translation: "Há quanto tempo" },
+          { word: "Lately", translation: "Ultimamente" },
+          { word: "For", translation: "Por / Durante" },
+          { word: "Since", translation: "Desde" }
+        ],
+        introduction: {
+          scenario: "You are presenting an extensive budget adjustment request to a demanding executive board.",
+          scenarioTranslation: "Você está apresentando uma solicitação abrangente de ajuste de orçamento para um conselho executivo exigente."
+        },
+        phrasalVerbs: [
+          { verb: "Struggle with", meaning: "Lutar contra / Enfrentar sérias dificuldades com." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, this budget adjustment is substantial. How long has your unit been struggling with these supply bottlenecks?", translation: "Monica, este ajuste de orçamento é substancial. Há quanto tempo sua unidade está enfrentando esses gargalos de fornecimento?" },
+          { sender: 'user', text: "We have been struggling with these supply bottlenecks for six months, ever since the local regulations changed.", translation: "Nós estamos enfrentando esses gargalos de fornecimento há seis meses, desde que as regulamentações locais mudaram." },
+          { sender: 'ai', text: "That explains the prolonged delays. Have you been researching alternative shipping partners lately?", translation: "Isso explica os atrasos prolongados. Você tem pesquisado parceiros alternativos de envio ultimamente?" },
+          { sender: 'user', text: "Yes, we have. Our logistics team has been researching European partners since January to mitigate these risks.", translation: "Sim, temos. Nossa equipe de logística está pesquisando parceiros europeus desde janeiro para mitigar esses riscos." },
+          { sender: 'ai', text: "Excellent proactive step. Have you already signed any trial agreements with these new partners?", translation: "Excelente etapa proativa. Vocês já assinaram algum acordo de teste com esses novos parceiros?" },
+          { sender: 'user', text: "Yes, we signed a trial agreement last month. We have been evaluating their performance for three weeks.", translation: "Sim, assinamos um acordo de teste no mês passado. Nós estamos avaliando o desempenho deles há três semanas." },
+          { sender: 'ai', text: "Understood. The board has been observing your operations closely since 2025. Your resilience is appreciated.", translation: "Entendido. O conselho está observando suas operações de perto desde 2025. Sua resiliência é apreciada." },
+          { sender: 'user', text: "Thank you. We have been working all day on these reports to prove our long-term ROI to the board.", translation: "Obrigada. Nós estamos trabalhando o dia todo nestes relatórios para comprovar nosso ROI de longo prazo ao conselho." },
+          { sender: 'ai', text: "The data is highly compelling. I will support this extension during our executive meeting this afternoon.", translation: "Os dados são altamente convincentes. Vou apoiar esta extensão durante nossa reunião executiva esta tarde." },
+          { sender: 'user', text: "We are extremely grateful for your support. We have been building a solid foundation for sustainable growth.", translation: "Ficamos extremamente gratas pelo seu apoio. Nós estamos construindo uma base sólida para o crescimento sustentável." }
+        ]
+      }
+    }
   }
 };
 
