@@ -146,6 +146,16 @@ const lessons = [
     icon: <Sparkles className="text-[#06B6D4]" size={20} />,
     image: "/lessons/lesson_14.png",
     href: "/dashboard/simulations/14"
+  },
+  {
+    id: 15,
+    title: "Lesson 15: Simple Future x Future Continuous",
+    difficulty: "Intermediate",
+    objective: "Master future predictions, concrete decisions, and actions in progress (will vs. will be doing).",
+    vocab: "Will, Will be working, Tomorrow, Tonight, Next year, Forecast",
+    icon: <Sparkles className="text-[#F59E0B]" size={20} />,
+    image: "/lessons/lesson_15.png",
+    href: "/dashboard/simulations/15"
   }
 ];
 

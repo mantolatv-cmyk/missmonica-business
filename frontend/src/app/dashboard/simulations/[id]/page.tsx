@@ -1334,6 +1334,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  '15': {
+    title: "Lesson 15: Simple Future x Future Continuous",
+    aiRole: "Executive Partner",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Use 'will' for sudden decisions ('I will check') and 'will be -ing' for actions in progress at a specific time tomorrow ('I will be working at 10').",
+        goal: "Discuss next-day tasks, work schedules, and actions in progress with a coworker to coordinate handovers.",
+        goalTranslation: "Discuta tarefas do dia seguinte, cronogramas de trabalho e ações em andamento com um colega para coordenar transferências.",
+        keyVocabulary: [
+          { word: "Will", translation: "Irá (auxiliar)" },
+          { word: "Will be working", translation: "Estará trabalhando" },
+          { word: "Tomorrow", translation: "Amanhã" },
+          { word: "Tonight", translation: "Hoje à noite" }
+        ],
+        introduction: {
+          scenario: "Coordinating next-day coverage and tasks with your coworker Alice during the evening shift handover.",
+          scenarioTranslation: "Coordenando a cobertura e as tarefas do dia seguinte com sua colega de trabalho Alice durante a passagem de turno da noite."
+        },
+        phrasalVerbs: [
+          { verb: "Hand over", meaning: "Transferir o controle ou responsabilidade de uma tarefa." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Alice, tomorrow is going to be extremely packed. What time will you arrive at the office?", translation: "Oi Alice, amanhã vai ser extremamente corrido. A que horas você chegará ao escritório?" },
+          { sender: 'user', text: "I will arrive at 8 AM, and I will check the customer emails first thing in the morning.", translation: "Eu chegarei às 8h e checarei os e-mails dos clientes logo pela manhã." },
+          { sender: 'ai', text: "Perfect. Will you be working on the project presentation at 10 AM?", translation: "Perfeito. Você estará trabalhando na apresentação do projeto às 10h?" },
+          { sender: 'user', text: "Yes, I will be working on the presentation at 10 AM, so please send me the latest files.", translation: "Sim, eu estarei trabalhando na apresentação às 10h, então, por favor, envie-me os arquivos mais recentes." },
+          { sender: 'ai', text: "Excellent. I will send you the design files right away. What will you do after lunch?", translation: "Excelente. Eu lhe enviarei os arquivos de design imediatamente. O que você fará depois do almoço?" },
+          { sender: 'user', text: "After lunch, I will meet with the sales team to review the quarterly numbers.", translation: "Depois do almoço, eu me reunirei com a equipe de vendas para revisar os números trimestrais." },
+          { sender: 'ai', text: "Got it. Will you be traveling to the client site tomorrow afternoon?", translation: "Entendido. Você estará viajando para a sede do cliente amanhã à tarde?" },
+          { sender: 'user', text: "No, I won't. I will be working from my desk all afternoon to finish the report.", translation: "Não, não estarei. Estarei trabalhando da minha mesa a tarde toda para terminar o relatório." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Contrast Will ('we will start') with Future Continuous ('we will be monitoring at 2 PM') to show precision in time management.",
+        goal: "Coordinate database migrations and sprint schedules at precise hours with your project manager.",
+        goalTranslation: "Coordene migrações de banco de dados e cronogramas de sprint em horários precisos com seu gerente de projeto.",
+        keyVocabulary: [
+          { word: "Next year", translation: "Ano que vem" },
+          { word: "In progress", translation: "Em andamento" },
+          { word: "Forecast", translation: "Previsão / Projeção" },
+          { word: "Milestone", translation: "Marco / Ponto de controle" }
+        ],
+        introduction: {
+          scenario: "Aligning on the database migration roadmap and timeline constraints with your project manager Oliver.",
+          scenarioTranslation: "Alinhando sobre o roteiro de migração do banco de dados e restrições de cronograma com seu gerente de projeto Oliver."
+        },
+        phrasalVerbs: [
+          { verb: "Align on", meaning: "Alinhar-se sobre / Entrar em acordo sobre um plano." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Oliver, we need to finalize the schedule for the cloud migration. What will your team do tomorrow?", translation: "Oliver, precisamos finalizar o cronograma da migração para a nuvem. O que sua equipe fará amanhã?" },
+          { sender: 'user', text: "We will start the initial backup at 9 AM, and we will notify the users immediately.", translation: "Nós iniciaremos o backup inicial às 9h e notificaremos os usuários imediatamente." },
+          { sender: 'ai', text: "Good plan. Will you be monitoring the database performance during the afternoon?", translation: "Bom plano. Você estará monitorando o desempenho do banco de dados durante a tarde?" },
+          { sender: 'user', text: "Yes, we will be monitoring the traffic at 2 PM when the workload peaks.", translation: "Sim, estaremos monitorando o tráfego às 14h, quando a carga de trabalho atinge o pico." },
+          { sender: 'ai', text: "Perfect. Our CEO will ask for an update tomorrow. What will you tell him?", translation: "Perfeito. Nosso CEO pedirá uma atualização amanhã. O que você dirá a ele?" },
+          { sender: 'user', text: "I will present the preliminary status and I will explain our deployment plan.", translation: "Eu apresentarei o status preliminar e explicarei nosso plano de implantação." },
+          { sender: 'ai', text: "Great. Will you be working on the backup servers at 6 PM tomorrow evening?", translation: "Ótimo. Você estará trabalhando nos servidores de backup às 18h de amanhã à noite?" },
+          { sender: 'user', text: "At 6 PM, I will be hosting a quick sync with our DevOps leads to verify the redundancy.", translation: "Às 18h, estarei realizando uma rápida sincronização com nossos líderes de DevOps para verificar a redundância." },
+          { sender: 'ai', text: "Excellent. I will schedule a final review meeting for Friday morning.", translation: "Excelente. Agendarei uma reunião de revisão final para a manhã de sexta-feira." },
+          { sender: 'user', text: "That works. I will confirm the meeting invite on my calendar right now.", translation: "Combinado. Confirmarei o convite da reunião no meu calendário agora mesmo." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Use Future Continuous to confidently map operational workflows and Will for high-level commitments in enterprise discussions.",
+        goal: "Negotiate market forecasts, strategic deployment pipelines, and predictions in front of board directors.",
+        goalTranslation: "Negocie previsões de mercado, fluxos de implantação estratégicos e projeções perante os diretores do conselho.",
+        keyVocabulary: [
+          { word: "Strategy", translation: "Estratégia" },
+          { word: "Pipeline", translation: "Fluxo de trabalho" },
+          { word: "Trajectory", translation: "Trajetória" },
+          { word: "Prediction", translation: "Previsão" }
+        ],
+        introduction: {
+          scenario: "An intense board review debating market forecasts, strategic deployment pipelines, and predictions with Board Director Diana.",
+          scenarioTranslation: "Uma revisão intensa do conselho debatendo previsões de mercado, fluxos estratégicos de implantação e projeções com a Diretora do Conselho Diana."
+        },
+        phrasalVerbs: [
+          { verb: "Carry out", meaning: "Executar / Realizar um plano ou tarefa." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Diana, our competitors are moving fast. What will our team do next year to secure our market share?", translation: "Diana, nossos concorrentes estão se movendo rápido. O que nossa equipe fará no próximo ano para garantir nossa fatia de mercado?" },
+          { sender: 'user', text: "Next year, we will launch our AI-driven analytics suite and we will expand to European markets.", translation: "No ano que vem, lançaremos nossa suíte de análise orientada por IA e nos expandiremos para os mercados europeus." },
+          { sender: 'ai', text: "Excellent prediction. But will we be experiencing any severe latency during the global rollout?", translation: "Excelente previsão. Mas estaremos enfrentando alguma latência grave durante a implantação global?" },
+          { sender: 'user', text: "No, because we will be using edge server redundancy to guarantee optimal performance globally.", translation: "Não, porque estaremos usando redundância de servidores de borda para garantir o desempenho ideal globalmente." },
+          { sender: 'ai', text: "Good strategy. Our CFO predicts high inflation. How will we adapt our pricing models?", translation: "Boa estratégia. Nosso CFO prevê alta inflação. Como adaptaremos nossos modelos de preços?" },
+          { sender: 'user', text: "We will introduce flexible tiers, and we will protect our enterprise contracts from inflation.", translation: "Introduziremos camadas flexíveis e protegeremos nossos contratos corporativos da inflação." },
+          { sender: 'ai', text: "Splendid. Will you be presenting these revenue projections at the shareholder summit next month?", translation: "Esplêndido. Você estará apresentando essas projeções de receita no summit de acionistas no próximo mês?" },
+          { sender: 'user', text: "Yes, I will be presenting the full financial model alongside our marketing director.", translation: "Sim, eu estarei apresentando o modelo financeiro completo ao lado do nosso diretor de marketing." },
+          { sender: 'ai', text: "We must ensure compliance. What will you do to address the regulatory feedback?", translation: "Precisamos garantir a conformidade. O que você fará para responder ao feedback regulatório?" },
+          { sender: 'user', text: "I will hire a specialized compliance officer, and we will resolve all audits by Q3.", translation: "Contratarei um oficial de conformidade especializado e resolveremos todas as auditorias até o terceiro trimestre." }
+        ]
+      }
+    }
   }
 };
 

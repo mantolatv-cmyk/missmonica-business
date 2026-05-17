@@ -836,6 +836,444 @@ const moduleContent: Record<string, { title: string, questions: Question[] }> = 
         explanation: 'The correct form for "We" is "are".'
       }
     ]
+  },
+  'lesson-10': {
+    title: 'Simple Present x Present Continuous',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which sentence correctly contrasts standard weekly routine with a temporary pivot?',
+        options: [
+          'I am usually working from the home office, but tomorrow I am traveling.',
+          'I usually manage database updates, but this week I am auditing security logs.',
+          'I worked at the office yesterday.',
+          'I will be coding all night long.'
+        ],
+        correctAnswer: 'I usually manage database updates, but this week I am auditing security logs.',
+        explanation: 'We use Simple Present ("usually manage") for general routines and Present Continuous ("this week I am auditing") for temporary project shifts.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Right now, the DevOps engineering team _______ auditing the staging servers.',
+        correctAnswer: 'is',
+        explanation: 'Use the singular form "is" when referring to the collective noun "engineering team" as a single unit performing an action in Present Continuous.'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form a common routine statement using these words:',
+        scrambledWords: ['We', 'usually', 'review', 'our', 'quarterly', 'sprint', 'metrics'],
+        correctAnswer: 'We usually review our quarterly sprint metrics',
+        explanation: 'Simple Present combined with the frequency adverb "usually" indicates a standard business routine.'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the routine verb mistake and correct it:',
+        sentenceWords: ['She', 'work', 'at', 'the', 'main', 'office', 'every', 'day.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'works',
+        correctAnswer: 'works',
+        explanation: 'For third-person singular (he, she, it) in Simple Present, the verb must take an "-s" ("works").'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What does the time expression "at the moment" imply in business?',
+        options: [
+          'A predictable task completed last month.',
+          'A long-term strategy for next year.',
+          'A temporary operational action occurring right now.',
+          'A permanent job responsibility.'
+        ],
+        correctAnswer: 'A temporary operational action occurring right now.',
+        explanation: '"At the moment" indicates that a temporary action is actively ongoing and contrasts with daily routine.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'We _______ review our goals monthly to stay aligned with the board.',
+        correctAnswer: 'usually',
+        explanation: 'Frequency adverbs like "usually" are placed before the main verb in Simple Present routines.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the continuous action verb mistake and correct it:',
+        sentenceWords: ['They', 'are', 'work', 'in', 'the', 'other', 'room', 'at', 'the', 'moment.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'working',
+        correctAnswer: 'working',
+        explanation: 'Present Continuous requires the verb to be in the "-ing" form after the auxiliary "are".'
+      }
+    ]
+  },
+  'lesson-11': {
+    title: 'Present Perfect x Simple Past',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which sentence correctly reports a completed project milestone with a specific past date?',
+        options: [
+          'We have deployed the hotfix yesterday at noon.',
+          'We finalized the cloud gateway integration last night at 10 PM.',
+          'I am launching the database server right now.',
+          'We had migrated the data earlier today.'
+        ],
+        correctAnswer: 'We finalized the cloud gateway integration last night at 10 PM.',
+        explanation: 'For specific, completed past time references ("last night at 10 PM"), we must use Simple Past ("finalized"), not Present Perfect.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Have you _______ traveled abroad to attend a shareholder summit?',
+        correctAnswer: 'ever',
+        explanation: 'Use "ever" in questions to ask about experiences at an indefinite time in a person\'s life.'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form a progress statement using these words:',
+        scrambledWords: ['We', 'have', 'already', 'successfully', 'migrated', 'the', 'main', 'database'],
+        correctAnswer: 'We have already successfully migrated the main database',
+        explanation: 'Present Perfect with "already" emphasizes that a task has been completed prior to the current moment.'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the specific time tense mistake and correct it:',
+        sentenceWords: ['I', 'have', 'visited', 'our', 'Paris', 'office', 'in', '2023.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'visited',
+        correctAnswer: 'visited',
+        explanation: 'Since "in 2023" is a definite, finished time in the past, we must use Simple Past "visited" instead of "have visited" (remove auxiliary have).'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What is the key functional difference between "already" and "yet" in project management?',
+        options: [
+          'Already is for routines, yet is for future predictions.',
+          'Already is for completed actions, while yet is for expected actions not yet done.',
+          'There is no grammatical difference.',
+          'Yet is only used in Simple Past sentences.'
+        ],
+        correctAnswer: 'Already is for completed actions, while yet is for expected actions not yet done.',
+        explanation: 'Use "already" in affirmative sentences for completed tasks, and "yet" in negative or interrogative sentences for pending tasks.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'She has _______ proposed a major strategy shift to the board members.',
+        correctAnswer: 'just',
+        explanation: '"Just" is used in Present Perfect to indicate that an action was completed a very short time ago.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the past auxiliary mistake and correct it:',
+        sentenceWords: ['He', 'did', 'not', 'saw', 'the', 'revised', 'budget', 'report', 'yesterday.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'see',
+        correctAnswer: 'see',
+        explanation: 'After the past auxiliary "did not" (didn\'t), the main verb must remain in its base form ("see").'
+      }
+    ]
+  },
+  'lesson-12': {
+    title: 'Present Perfect Continuous',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which sentence correctly describes a continuous task that started in the past and is still ongoing?',
+        options: [
+          'I am coding this specific security system since Monday morning.',
+          'I have been developing this custom CRM system since last quarter.',
+          'I developed the CRM system for three months last year.',
+          'I will be designing the CRM database system next month.'
+        ],
+        correctAnswer: 'I have been developing this custom CRM system since last quarter.',
+        explanation: 'Present Perfect Continuous ("have been developing") is used to show the duration of an ongoing action that started in the past.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'We have been resolving backend server latency issues _______ six hours.',
+        correctAnswer: 'for',
+        explanation: 'Use "for" to specify a duration or period of time ("six hours").'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form an ongoing work description using these words:',
+        scrambledWords: ['We', 'have', 'been', 'working', 'on', 'the', 'new', 'features', 'lately'],
+        correctAnswer: 'We have been working on the new features lately',
+        explanation: '"Lately" is commonly used with Present Perfect Continuous to highlight recent ongoing work.'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the participle mistake and correct it:',
+        sentenceWords: ['She', 'has', 'been', 'studied', 'global', 'market', 'trends', 'since', '2024.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'studying',
+        correctAnswer: 'studying',
+        explanation: 'Present Perfect Continuous requires "been" followed by the present participle (verb-ing).'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'When do you use the preposition "since" instead of "for" in duration sentences?',
+        options: [
+          'Since is for hours, for is for years.',
+          'Since indicates a specific starting point in time, while for indicates a duration.',
+          'Since is used only with Simple Past.',
+          'Since is used to indicate a future milestone.'
+        ],
+        correctAnswer: 'Since indicates a specific starting point in time, while for indicates a duration.',
+        explanation: '"Since" points to the beginning of the action (e.g., since 2020), whereas "for" measures the length of the time segment.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'How _______ have you been monitoring the company\'s database servers?',
+        correctAnswer: 'long',
+        explanation: '"How long..." is the standard question format to ask about duration of an activity in Present Perfect Continuous.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the singular/plural subject-verb agreement mistake:',
+        sentenceWords: ['They', 'has', 'been', 'debugging', 'the', 'staging', 'system', 'all', 'day.'],
+        incorrectWordIndex: 1,
+        correctedWord: 'have',
+        correctAnswer: 'have',
+        explanation: 'For plural subject pronouns like "They", the correct present auxiliary form is "have", not "has".'
+      }
+    ]
+  },
+  'lesson-13': {
+    title: 'Past Perfect',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which action occurred first in this sentence? "The board meeting had finished before I arrived at the office."',
+        options: [
+          'I arrived at the office.',
+          'The board meeting finished.',
+          'Both actions occurred simultaneously.',
+          'None of the actions occurred.'
+        ],
+        correctAnswer: 'The board meeting finished.',
+        explanation: 'Past Perfect ("had finished") is used to designate the earlier action when describing two completed past events.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'By the time the CTO called the meeting, we had _______ secured the database.',
+        correctAnswer: 'already',
+        explanation: '"Already" is commonly placed between the auxiliary "had" and the past participle to emphasize early completion.'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form a chronology statement using these words:',
+        scrambledWords: ['The', 'speaker', 'had', 'left', 'before', 'I', 'arrived', 'at', 'the', 'hall'],
+        correctAnswer: 'The speaker had left before I arrived at the hall',
+        explanation: 'Past Perfect "had left" (first event) before Simple Past "arrived" (second event).'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the past participle verb mistake and correct it:',
+        sentenceWords: ['She', 'had', 'already', 'finishes', 'the', 'report', 'before', 'the', 'deadline.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'finished',
+        correctAnswer: 'finished',
+        explanation: 'Past Perfect requires the past participle form of the verb ("finished") after the auxiliary "had".'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What is the primary function of the Past Perfect tense in professional communication?',
+        options: [
+          'To describe a permanent future plan.',
+          'To show that a past action was completed prior to another past action.',
+          'To highlight routine habits that are still occurring.',
+          'To report predictions about competitive markets.'
+        ],
+        correctAnswer: 'To show that a past action was completed prior to another past action.',
+        explanation: 'It organizes history chronologically by placing the older past action in the Past Perfect.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'They had never _______ a data breach of this scale prior to the cloud migration.',
+        correctAnswer: 'seen',
+        explanation: 'Past participle "seen" is correct here after the auxiliary "had never" to express past experience prior to another past event.'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the irregular past participle mistake and correct it:',
+        sentenceWords: ['We', 'had', 'went', 'home', 'by', 'six', 'PM', 'yesterday.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'gone',
+        correctAnswer: 'gone',
+        explanation: 'The past participle of the irregular verb "go" is "gone", not the Simple Past form "went".'
+      }
+    ]
+  },
+  'lesson-14': {
+    title: 'Past Perfect Continuous',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'Which sentence correctly describes a continuous past activity leading up to another past disruption?',
+        options: [
+          'We were working all night at our desks.',
+          'We had been testing the server load for hours before the backup node crashed.',
+          'We have been testing the backup node since yesterday morning.',
+          'We will be testing the backup node tomorrow.'
+        ],
+        correctAnswer: 'We had been testing the server load for hours before the backup node crashed.',
+        explanation: 'Past Perfect Continuous ("had been testing") shows a continuous past activity and its duration leading up to a specific past event.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'The engineers had been _______ for three hours before they identified the root cause.',
+        correctAnswer: 'working',
+        explanation: 'Past Perfect Continuous uses "had been" followed by the present participle (verb-ing).'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form an ongoing past description using these words:',
+        scrambledWords: ['I', 'had', 'been', 'waiting', 'for', 'almost', 'an', 'hour', 'before', 'they', 'responded'],
+        correctAnswer: 'I had been waiting for almost an hour before they responded',
+        explanation: 'This describes the duration of a continuous past action before a secondary past event ("they responded").'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the auxiliary mistake and correct it:',
+        sentenceWords: ['They', 'had', 'being', 'studying', 'the', 'audit', 'logs', 'for', 'days', 'prior', 'to', 'Q3.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'been',
+        correctAnswer: 'been',
+        explanation: 'The correct auxiliary combination is "had been" + verb-ing, not "had being".'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'What does the Past Perfect Continuous emphasize in comparison to Simple Past?',
+        options: [
+          'A routine action happening right now.',
+          'The duration of a continuous past activity before a specific past milestone.',
+          'A quick, completed past transaction.',
+          'A strategic future prediction.'
+        ],
+        correctAnswer: 'The duration of a continuous past activity before a specific past milestone.',
+        explanation: 'It highlights the ongoing duration or process leading up to a point of interruption or change in the past.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'We had been trying to reach the international support team _______ days before they replied.',
+        correctAnswer: 'for',
+        explanation: 'Use "for" to express the duration of the continuous past action ("for days").'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the present participle mistake and correct it:',
+        sentenceWords: ['He', 'had', 'been', 'work', 'all', 'night', 'before', 'he', 'fell', 'asleep.'],
+        incorrectWordIndex: 3,
+        correctedWord: 'working',
+        correctAnswer: 'working',
+        explanation: 'The auxiliary "had been" must be followed by a present participle ("working") to show duration in Past Perfect Continuous.'
+      }
+    ]
+  },
+  'lesson-15': {
+    title: 'Simple Future x Future Continuous',
+    questions: [
+      {
+        id: 1,
+        type: 'multiple-choice',
+        question: 'How do you state a scheduled future action that will be actively in progress at a specific time tonight?',
+        options: [
+          'I will present our quarterly results tomorrow.',
+          'I will be working on the database migration tonight at nine PM.',
+          'I was testing the server capacity earlier today.',
+          'I usually review the reports every single evening.'
+        ],
+        correctAnswer: 'I will be working on the database migration tonight at nine PM.',
+        explanation: 'Use Future Continuous ("will be working") to describe an action that will be in progress at a specific future moment.'
+      },
+      {
+        id: 2,
+        type: 'fill-in-the-blank',
+        question: 'Do not call me at noon tomorrow; I will _______ flying to our Chicago branch.',
+        correctAnswer: 'be',
+        explanation: 'Future Continuous requires the auxiliary "will be" followed by the verb-ing form.'
+      },
+      {
+        id: 3,
+        type: 'unscramble',
+        question: 'Form a future continuous plan statement using these words:',
+        scrambledWords: ['I', 'will', 'be', 'traveling', 'tomorrow', 'at', 'eight', 'in', 'the', 'morning'],
+        correctAnswer: 'I will be traveling tomorrow at eight in the morning',
+        explanation: 'This highlights a continuous action ("will be traveling") in progress at a precise future hour.'
+      },
+      {
+        id: 4,
+        type: 'find-the-mistake',
+        question: 'Identify the auxiliary mistake and correct it:',
+        sentenceWords: ['I', 'will', 'being', 'working', 'on', 'the', 'slide', 'deck', 'at', 'midnight.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'be',
+        correctAnswer: 'be',
+        explanation: 'The auxiliary structure for Future Continuous is "will be" followed by verb-ing, not "will being".'
+      },
+      {
+        id: 5,
+        type: 'multiple-choice',
+        question: 'When is Future Continuous used instead of Simple Future?',
+        options: [
+          'To make a sudden decision in a meeting.',
+          'To emphasize that a future action will be ongoing at a specific moment.',
+          'To describe a routine that happens every day.',
+          'To report experiences in past jobs.'
+        ],
+        correctAnswer: 'To emphasize that a future action will be ongoing at a specific moment.',
+        explanation: 'Simple Future will is for general statements, predictions, and sudden decisions, while Future Continuous will be -ing focuses on the action\'s progress.'
+      },
+      {
+        id: 6,
+        type: 'fill-in-the-blank',
+        question: 'What will you _______ doing next year at this time?',
+        correctAnswer: 'be',
+        explanation: 'Use "be" to complete the Future Continuous question structure: "What will you be doing...?"'
+      },
+      {
+        id: 7,
+        type: 'find-the-mistake',
+        question: 'Identify the future base verb mistake and correct it:',
+        sentenceWords: ['She', 'will', 'works', 'on the', 'interface', 'tomorrow', 'morning.'],
+        incorrectWordIndex: 2,
+        correctedWord: 'work',
+        correctAnswer: 'work',
+        explanation: 'After the future auxiliary "will", the verb must be in its base form ("work"), never taking "-s".'
+      }
+    ]
   }
 };
 

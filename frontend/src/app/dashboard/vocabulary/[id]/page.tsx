@@ -287,6 +287,24 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Duration', portuguese: 'Duração', example: 'This tense describes the duration of a past action.', category: 'Grammar' },
       { english: 'Continuous', portuguese: 'Contínuo', example: 'It highlights a continuous past process before a disruption.', category: 'Grammar' }
     ]
+  },
+  '15': {
+    title: 'Simple Future x Future Continuous',
+    culturalTip: "When pitching future deliverables to stakeholders, use Simple Future for concrete commitments ('We will launch tomorrow') and Future Continuous to describe operations in progress at a specific milestone ('We will be monitoring the traffic at 9 PM').",
+    items: [
+      { english: 'Will', portuguese: 'Irá / Auxiliar do futuro', example: 'We will present our strategic forecast tomorrow.', category: 'Grammar' },
+      { english: 'Will be working', portuguese: 'Estará trabalhando', example: 'I will be working on the database migration tonight at 9.', category: 'Grammar' },
+      { english: 'Tomorrow', portuguese: 'Amanhã', example: 'She will host the global onboarding kickoff tomorrow.', category: 'Grammar' },
+      { english: 'Tonight', portuguese: 'Hoje à noite', example: 'The DevOps team will be deploying the staging patch tonight.', category: 'Grammar' },
+      { english: 'Next year', portuguese: 'Ano que vem', example: 'Our company will expand its operations to APAC next year.', category: 'Grammar' },
+      { english: 'In progress', portuguese: 'Em andamento', example: 'This tense represents a future action that will be in progress.', category: 'Grammar' },
+      { english: 'Prediction', portuguese: 'Previsão', example: 'Our analysts will provide a detailed prediction next week.', category: 'Business' },
+      { english: 'Forecast', portuguese: 'Previsão / Projeção financeira', example: 'We will be reviewing our quarterly revenue forecast tomorrow.', category: 'Business' },
+      { english: 'Strategy', portuguese: 'Estratégia', example: 'The executive board will define our long-term strategy.', category: 'Business' },
+      { english: 'Milestone', portuguese: 'Marco / Ponto de controle', example: 'By next Friday, we will have reached our first deployment milestone.', category: 'Business' },
+      { english: 'Pipeline', portuguese: 'Fluxo de trabalho / Funil de projetos', example: 'We will be feeding new leads into our pipeline next month.', category: 'Business' },
+      { english: 'Trajectory', portuguese: 'Trajetória', example: 'These strategic decisions will shape our trajectory.', category: 'Business' }
+    ]
   }
 };
 
