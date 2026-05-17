@@ -864,6 +864,100 @@ const lessonsData: Record<string, any> = {
         ]
       }
     }
+  },
+  "10": {
+    title: "Simple Present x Present Continuous",
+    aiRole: "Coordinator",
+    difficultySettings: {
+      Beginner: {
+        contextTip: "Focus on the frequency 'every day' vs what is happening 'now' (working).",
+        goal: "Introduce your work routine and describe what you are working on right now.",
+        goalTranslation: "Apresente sua rotina de trabalho e descreva no que está trabalhando agora mesmo.",
+        keyVocabulary: [
+          { word: "Usually", translation: "Geralmente" },
+          { word: "Every day", translation: "Todos os dias" },
+          { word: "Now", translation: "Agora" },
+          { word: "Right now", translation: "Agora mesmo" }
+        ],
+        introduction: {
+          scenario: "A coworker is checking your work status and daily routine in a quick stand-up.",
+          scenarioTranslation: "Um colega de trabalho está verificando o status do seu trabalho e rotina diária em um stand-up rápido."
+        },
+        phrasalVerbs: [
+          { verb: "Work on", meaning: "Trabalhar em algo/projeto." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica! I usually start my day with a cup of coffee. What do you usually do in the morning?", translation: "Oi Monica! Eu geralmente começo meu dia com uma xícara de café. O que você geralmente faz de manhã?" },
+          { sender: 'user', text: "Hi! I usually check my email first. I do this every day before I start my main tasks.", translation: "Oi! Eu geralmente checo meu e-mail primeiro. Faço isso todos os dias antes de começar minhas tarefas principais." },
+          { sender: 'ai', text: "That is a good routine. Are you working on the monthly report right now?", translation: "Essa é uma boa rotina. Você está trabalhando no relatório mensal agora mesmo?" },
+          { sender: 'user', text: "No, I am not. Right now, I am testing the new app features on my screen.", translation: "Não, não estou. Agora mesmo, estou testando os novos recursos do aplicativo na minha tela." },
+          { sender: 'ai', text: "Oh, I see. Does the development team usually help you with the testing?", translation: "Ah, entendo. A equipe de desenvolvimento geralmente te ajuda com os testes?" },
+          { sender: 'user', text: "Yes, they do. They usually help me, but today they are attending a global training workshop.", translation: "Sim, eles ajudam. Geralmente eles me ajudam, mas hoje estão participando de um workshop global de treinamento." },
+          { sender: 'ai', text: "Understood. I am working on the slides now. Can you check them later today?", translation: "Entendido. Estou trabalhando nos slides agora. Você pode verificá-los mais tarde hoje?" },
+          { sender: 'user', text: "Yes, I can. I always check my inbox before I finish my work day.", translation: "Sim, posso. Eu sempre verifico minha caixa de entrada antes de terminar meu dia de trabalho." }
+        ]
+      },
+      Intermediate: {
+        contextTip: "Contrast routine ('I work') with temporary states ('I am working this week').",
+        goal: "Contrast your standard monthly duties with your focus this week.",
+        goalTranslation: "Contraste seus deveres mensais padrão com o seu foco desta semana.",
+        keyVocabulary: [
+          { word: "Usually", translation: "Geralmente" },
+          { word: "At the moment", translation: "No momento" },
+          { word: "Today", translation: "Hoje" },
+          { word: "This week", translation: "Esta semana" }
+        ],
+        introduction: {
+          scenario: "The Project Manager is comparing standard monthly milestones with current week priorities.",
+          scenarioTranslation: "O Gerente de Projetos está comparando os marcos mensais padrão com as prioridades da semana atual."
+        },
+        phrasalVerbs: [
+          { verb: "Focus on", meaning: "Focar em / Concentrar-se em." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Hi Monica, we usually review our goals monthly. How do you usually prioritize your weekly deliverables?", translation: "Oi Monica, nós geralmente revisamos nossas metas mensalmente. Como você geralmente prioriza suas entregas semanais?" },
+          { sender: 'user', text: "Hi! I usually write down my action items on Monday. I do this every week to stay organized.", translation: "Oi! Eu geralmente anoto meus itens de ação na segunda-feira. Faço isso toda semana para me manter organizada." },
+          { sender: 'ai', text: "Excellent habit. What specific project are you focusing on this week?", translation: "Excelente hábito. Em qual projeto específico você está focando esta semana?" },
+          { sender: 'user', text: "This week, I am focusing on the client onboarding design. We are testing the dynamic layout today.", translation: "Esta semana, estou focando no design de integração do cliente. Estamos testando o layout dinâmico hoje." },
+          { sender: 'ai', text: "That's great. Does the client usually join the review sessions at this stage?", translation: "Que ótimo. O cliente geralmente participa das sessões de revisão nesta fase?" },
+          { sender: 'user', text: "Yes, they usually participate in our weekly calls, but today they are resolving a billing issue.", translation: "Sim, eles geralmente participam das nossas chamadas semanais, mas hoje estão resolvendo um problema de faturamento." },
+          { sender: 'ai', text: "I see. I am writing the project summary at the moment. Can I add your updates to the file?", translation: "Entendo. Estou escrevendo o resumo do projeto no momento. Posso adicionar suas atualizações ao arquivo?" },
+          { sender: 'user', text: "Yes, please. I am sending you the revised dashboard timeline right now.", translation: "Sim, por favor. Estou te enviando o cronograma revisado do painel agora mesmo." },
+          { sender: 'ai', text: "Thank you. We always appreciate your prompt updates. Is the design team working in the office today?", translation: "Obrigado. Nós sempre apreciamos suas atualizações rápidas. A equipe de design está trabalhando no escritório hoje?" },
+          { sender: 'user', text: "No, they are working from home this week because the main office is undergoing structural maintenance.", translation: "Não, eles estão trabalhando de casa esta semana porque o escritório principal está passando por manutenção estrutural." }
+        ]
+      },
+      Advanced: {
+        contextTip: "Articulate permanent business strategies (Simple Present) vs fluid operational pivots (Present Continuous).",
+        goal: "Differentiate strategic yearly planning from current tactical crisis management.",
+        goalTranslation: "Diferencie o planejamento anual estratégico do gerenciamento de crise tático atual.",
+        keyVocabulary: [
+          { word: "Always", translation: "Sempre" },
+          { word: "Now", translation: "Agora" },
+          { word: "At the moment", translation: "No momento" },
+          { word: "This week", translation: "Esta semana" }
+        ],
+        introduction: {
+          scenario: "You are explaining a sudden strategic pivot to a senior VP during a global market shift.",
+          scenarioTranslation: "Você está explicando uma mudança estratégica repentina para um vice-presidente sênior durante uma mudança no mercado global."
+        },
+        phrasalVerbs: [
+          { verb: "Pivot to", meaning: "Mudar a direção estratégica ou operacional." }
+        ],
+        dialogue: [
+          { sender: 'ai', text: "Monica, our company always prioritizes long-term stable partnerships. Why are we pivoting to a high-speed deployment model this week?", translation: "Monica, nossa empresa sempre prioriza parcerias estáveis de longo prazo. Por que estamos mudando para um modelo de implantação rápida esta semana?" },
+          { sender: 'user', text: "We always value stability, but market trends are shifting rapidly, and our core competitors are releasing updates now.", translation: "Nós sempre valorizamos a estabilidade, mas as tendências do mercado estão mudando rapidamente, e nossos principais concorrentes estão lançando atualizações agora." },
+          { sender: 'ai', text: "I understand the competitive threat. However, is our development team capable of handling this temporary stress?", translation: "Eu entendo a ameaça competitiva. No entanto, nossa equipe de desenvolvimento é capaz de lidar com esse estresse temporário?" },
+          { sender: 'user', text: "Yes, they are exceptionally capable. Although they usually work under standard agile cycles, this week they are working double shifts.", translation: "Sim, eles são excepcionalmente capazes. Embora eles geralmente trabalhem sob ciclos ágeis padrão, esta semana eles estão trabalhando em turnos duplos." },
+          { sender: 'ai', text: "That is a severe temporary burden. How are you managing their fatigue at the moment?", translation: "Esse é um fardo temporário severo. Como você está gerenciando a fadiga deles no momento?" },
+          { sender: 'user', text: "I am actively monitoring their deliverables and we are allocating extra rest days next week to balance their effort.", translation: "Estou monitorando ativamente suas entregas e estamos alocando dias de descanso extras na próxima semana para equilibrar seu esforço." },
+          { sender: 'ai', text: "Good. Executive stakeholders always demand transparency during pivots. Are you keeping them informed today?", translation: "Bom. Os stakeholders executivos sempre exigem transparência durante as mudanças. Você os está mantendo informados hoje?" },
+          { sender: 'user', text: "Absolutely. I am sending them real-time validation data, and I am hosting a progress sync call right now.", translation: "Absolutamente. Estou enviando dados de validação em tempo real e realizando uma chamada de sincronização de progresso agora mesmo." },
+          { sender: 'ai', text: "Excellent composure. Our partnership always relies on your strong leadership during these high-stakes transitions.", translation: "Excelente compostura. Nossa parceria sempre conta com sua liderança forte durante essas transições críticas." },
+          { sender: 'user', text: "Thank you. We are securing our market share today, and I am confident that we are building long-term executive value.", translation: "Obrigada. Estamos garantindo nossa fatia de mercado hoje, e estou confiante de que estamos construindo valor executivo de longo prazo." }
+        ]
+      }
+    }
   }
 };
 

@@ -198,6 +198,26 @@ const vocabularyData: Record<string, LessonData> = {
       { english: 'Hungry', portuguese: 'Com fome', example: 'Are you hungry after the trip?', category: 'Grammar' },
       { english: 'Thirsty', portuguese: 'Com sede', example: 'I am very thirsty.', category: 'Grammar' },
     ]
+  },
+  '10': {
+    title: 'Simple Present x Present Continuous',
+    culturalTip: "In professional communication, mixing up routine work ('I write reports every day') and current work ('I am writing a report now') can lead to confusion about deadlines. Be explicit about frequencies.",
+    items: [
+      { english: 'Usually', portuguese: 'Geralmente', example: 'I usually start working at 9 AM.', category: 'Grammar' },
+      { english: 'Always', portuguese: 'Sempre', example: 'She always double-checks her files.', category: 'Grammar' },
+      { english: 'Every day', portuguese: 'Todos os dias', example: 'We have stand-up meetings every day.', category: 'Grammar' },
+      { english: 'Now', portuguese: 'Agora', example: 'I am reviewing the spreadsheet now.', category: 'Grammar' },
+      { english: 'Right now', portuguese: 'Agora mesmo', example: 'They are leading a client call right now.', category: 'Grammar' },
+      { english: 'At the moment', portuguese: 'No momento', example: 'He is working from home at the moment.', category: 'Grammar' },
+      { english: 'Today', portuguese: 'Hoje', example: 'Today, I am focusing on the Q3 budget.', category: 'Grammar' },
+      { english: 'This week', portuguese: 'Esta semana', example: 'This week, we are finalizing the design assets.', category: 'Grammar' },
+      { english: 'Routine', portuguese: 'Rotina', example: 'Stand-ups are part of our daily routine.', category: 'Business' },
+      { english: 'Habit', portuguese: 'Hábito', example: 'Taking notes is a very good business habit.', category: 'Business' },
+      { english: 'Temporary', portuguese: 'Temporário', example: 'We are using a temporary workspace this month.', category: 'Business' },
+      { english: 'Work', portuguese: 'Trabalhar', example: 'I work in the financial department.', category: 'Action' },
+      { english: 'Study', portuguese: 'Estudar', example: 'She studies global market trends.', category: 'Action' },
+      { english: 'Live', portuguese: 'Morar / Viver', example: 'They live in London, but they are living in a hotel today.', category: 'Travel' }
+    ]
   }
 };
 

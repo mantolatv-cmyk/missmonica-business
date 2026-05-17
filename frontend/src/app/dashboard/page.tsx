@@ -96,6 +96,16 @@ const lessons = [
     icon: <Users className="text-[#A78BFA]" size={20} />,
     image: "/lessons/lesson_9.png",
     href: "/dashboard/simulations/9"
+  },
+  {
+    id: 10,
+    title: "Lesson 10: Simple Present x Present Continuous",
+    difficulty: "Intermediate",
+    objective: "Diferença entre rotina/hábitos (work) e ações temporárias ou que ocorrem agora (working).",
+    vocab: "Usually, Always, Every day, Now, Right now, At the moment, Today",
+    icon: <Sparkles className="text-[#F59E0B]" size={20} />,
+    image: "/lessons/lesson_10.png",
+    href: "/dashboard/simulations/10"
   }
 ];
 
