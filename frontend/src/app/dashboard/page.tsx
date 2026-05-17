@@ -240,7 +240,7 @@ export default function LessonControl() {
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-2">
-                  <h2 className="font-serif text-lg font-bold text-[#F8FAFC] group-hover:text-[#D97706] transition-colors line-clamp-1">
+                  <h2 className="font-serif text-lg font-bold text-[#F8FAFC] group-hover:text-[#D97706] transition-colors">
                     {lesson.title}
                   </h2>
                 </div>
