@@ -887,7 +887,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Work on", meaning: "Trabalhar em algo/projeto." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica! I usually start my day with a cup of coffee. What do you usually do in the morning?", translation: "Oi Monica! Eu geralmente começo meu dia com uma xícara de café. O que você geralmente faz de manhã?" },
+          { sender: 'ai', text: "Hi Sarah! I usually start my day with a cup of coffee. What do you usually do in the morning?", translation: "Oi Sarah! Eu geralmente começo meu dia com uma xícara de café. O que você geralmente faz de manhã?" },
           { sender: 'user', text: "Hi! I usually check my email first. I do this every day before I start my main tasks.", translation: "Oi! Eu geralmente checo meu e-mail primeiro. Faço isso todos os dias antes de começar minhas tarefas principais." },
           { sender: 'ai', text: "That is a good routine. Are you working on the monthly report right now?", translation: "Essa é uma boa rotina. Você está trabalhando no relatório mensal agora mesmo?" },
           { sender: 'user', text: "No, I am not. Right now, I am testing the new app features on my screen.", translation: "Não, não estou. Agora mesmo, estou testando os novos recursos do aplicativo na minha tela." },
@@ -915,7 +915,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Focus on", meaning: "Focar em / Concentrar-se em." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica, we usually review our goals monthly. How do you usually prioritize your weekly deliverables?", translation: "Oi Monica, nós geralmente revisamos nossas metas mensalmente. Como você geralmente prioriza suas entregas semanais?" },
+          { sender: 'ai', text: "Hi David, we usually review our goals monthly. How do you usually prioritize your weekly deliverables?", translation: "Oi David, nós geralmente revisamos nossas metas mensalmente. Como você geralmente prioriza suas entregas semanais?" },
           { sender: 'user', text: "Hi! I usually write down my action items on Monday. I do this every week to stay organized.", translation: "Oi! Eu geralmente anoto meus itens de ação na segunda-feira. Faço isso toda semana para me manter organizada." },
           { sender: 'ai', text: "Excellent habit. What specific project are you focusing on this week?", translation: "Excelente hábito. Em qual projeto específico você está focando esta semana?" },
           { sender: 'user', text: "This week, I am focusing on the client onboarding design. We are testing the dynamic layout today.", translation: "Esta semana, estou focando no design de integração do cliente. Estamos testando o layout dinâmico hoje." },
@@ -945,7 +945,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Pivot to", meaning: "Mudar a direção estratégica ou operacional." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, our company always prioritizes long-term stable partnerships. Why are we pivoting to a high-speed deployment model this week?", translation: "Monica, nossa empresa sempre prioriza parcerias estáveis de longo prazo. Por que estamos mudando para um modelo de implantação rápida esta semana?" },
+          { sender: 'ai', text: "Elena, our company always prioritizes long-term stable partnerships. Why are we pivoting to a high-speed deployment model this week?", translation: "Elena, nossa empresa sempre prioriza parcerias estáveis de longo prazo. Por que estamos mudando para um modelo de implantação rápida esta semana?" },
           { sender: 'user', text: "We always value stability, but market trends are shifting rapidly, and our core competitors are releasing updates now.", translation: "Nós sempre valorizamos a estabilidade, mas as tendências do mercado estão mudando rapidamente, e nossos principais concorrentes estão lançando atualizações agora." },
           { sender: 'ai', text: "I understand the competitive threat. However, is our development team capable of handling this temporary stress?", translation: "Eu entendo a ameaça competitiva. No entanto, nossa equipe de desenvolvimento é capaz de lidar com esse estresse temporário?" },
           { sender: 'user', text: "Yes, they are exceptionally capable. Although they usually work under standard agile cycles, this week they are working double shifts.", translation: "Sim, eles são excepcionalmente capazes. Embora eles geralmente trabalhem sob ciclos ágeis padrão, esta semana eles estão trabalhando em turnos duplos." },
@@ -981,7 +981,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Go to", meaning: "Ir para / Visitar." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Welcome to our London branch, Monica! Have you ever traveled abroad for business before?", translation: "Bem-vinda à nossa filial de Londres, Monica! Você já viajou para o exterior a negócios antes?" },
+          { sender: 'ai', text: "Welcome to our London branch, Arthur! Have you ever traveled abroad for business before?", translation: "Bem-vinda à nossa filial de Londres, Arthur! Você já viajou para o exterior a negócios antes?" },
           { sender: 'user', text: "Hello! Yes, I have already traveled abroad three times, but I have never visited this branch.", translation: "Olá! Sim, eu já viajei para o exterior três vezes, mas nunca visitei esta filial." },
           { sender: 'ai', text: "That is great. When did you visit Europe for the first time?", translation: "Que ótimo. Quando você visitou a Europa pela primeira vez?" },
           { sender: 'user', text: "I visited Europe last year. I spent two weeks in Paris for a global conference.", translation: "Eu visitei a Europa no ano passado. Passei duas semanas em Paris para uma conferência global." },
@@ -1009,7 +1009,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Sign off", meaning: "Aprovar formalmente / Assinar a autorização." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica, we need a status update. Have you finalized the dynamic database integration yet?", translation: "Oi Monica, precisamos de uma atualização de status. Você já finalizou a integração dinâmica do banco de dados?" },
+          { sender: 'ai', text: "Hi Sophia, we need a status update. Have you finalized the dynamic database integration yet?", translation: "Oi Sophia, precisamos de uma atualização de status. Você já finalizou a integração dinâmica do banco de dados?" },
           { sender: 'user', text: "Yes, I have already finalized the core database structure. I completed the final staging test two days ago.", translation: "Sim, eu já finalizei a estrutura principal do banco de dados. Concluí o teste de staging final dois dias atrás." },
           { sender: 'ai', text: "Excellent news. Did the QA lead sign off on the security protocols yesterday?", translation: "Excelente notícia. O líder de QA aprovou os protocolos de segurança ontem?" },
           { sender: 'user', text: "Yes, he did. He reviewed the logs yesterday afternoon and signed off on everything.", translation: "Sim, ele aprovou. Ele revisou os logs ontem à tarde e assinou a autorização de tudo." },
@@ -1039,7 +1039,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Look back", meaning: "Olhar para trás / Analisar o histórico passado." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, your team has just proposed a massive architecture pivot. Have you ever handled such a high-risk transition?", translation: "Monica, sua equipe acabou de propor uma mudança massiva de arquitetura. Você já lidou com uma transição de alto risco como essa?" },
+          { sender: 'ai', text: "Gabriel, your team has just proposed a massive architecture pivot. Have you ever handled such a high-risk transition?", translation: "Gabriel, sua equipe acabou de propor uma mudança massiva de arquitetura. Você já lidou com uma transição de alto risco como essa?" },
           { sender: 'user', text: "Yes, we have. We have successfully completed five global database migrations without a single minute of downtime.", translation: "Sim, já lidamos. Concluímos com sucesso cinco migrações globais de banco de dados sem um único minuto de inatividade." },
           { sender: 'ai', text: "Those are impressive general numbers. But did you experience any data losses when you migrated the legacy system in 2019?", translation: "Esses são números gerais impressionantes. Mas vocês sofreram alguma perda de dados quando migraram o sistema legado em 2019?" },
           { sender: 'user', text: "No, we didn't. When we undertook that migration in 2019, we maintained a 100% data integrity record throughout.", translation: "Não, não sofremos. Quando realizamos aquela migração em 2019, mantivemos um registro de 100% de integridade de dados do início ao fim." },
@@ -1075,7 +1075,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Keep up", meaning: "Manter o ritmo / Continuar progredindo." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica! We want to support your language goals. How long have you been studying English?", translation: "Oi Monica! Queremos apoiar seus objetivos com o idioma. Há quanto tempo você está estudando inglês?" },
+          { sender: 'ai', text: "Hi Lucas! We want to support your language goals. How long have you been studying English?", translation: "Oi Lucas! Queremos apoiar seus objetivos com o idioma. Há quanto tempo você está estudando inglês?" },
           { sender: 'user', text: "Hi! I have been studying English for two years now. I started my classes since 2024.", translation: "Oi! Eu estou estudando inglês há dois anos. Comecei minhas aulas desde 2024." },
           { sender: 'ai', text: "That is excellent dedication. Have you been working on your grammar drills lately?", translation: "Essa é uma excelente dedicação. Você tem trabalhado em seus exercícios de gramática ultimamente?" },
           { sender: 'user', text: "Yes, I have been working a lot lately. I have been practicing my speaking every week.", translation: "Sim, eu tenho trabalhado muito ultimamente. Tenho praticado minha conversação toda semana." },
@@ -1103,7 +1103,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Run into", meaning: "Deparar-se com / Encontrar problemas." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica, our database sync is lagging. Have you been working on this issue lately?", translation: "Oi Monica, a sincronização do nosso banco de dados está lenta. Você tem trabalhado nesse problema ultimamente?" },
+          { sender: 'ai', text: "Hi Julia, our database sync is lagging. Have you been working on this issue lately?", translation: "Oi Julia, a sincronização do nosso banco de dados está lenta. Você tem trabalhado nesse problema ultimamente?" },
           { sender: 'user', text: "Yes, we have been working on this issue since Monday. We are auditing all legacy nodes today.", translation: "Sim, nós estamos trabalhando nesse problema desde segunda-feira. Estamos auditando todos os nós legados hoje." },
           { sender: 'ai', text: "I see. Have you run into any serious compatibility errors since you started the audit?", translation: "Entendo. Vocês se depararam com algum erro grave de compatibilidade desde que começaram a auditoria?" },
           { sender: 'user', text: "No, we haven't. But we have been analyzing the dynamic query streams for two hours now.", translation: "Não, não nos deparamos. Mas já estamos analisando os fluxos dinâmicos de consulta há duas horas." },
@@ -1133,7 +1133,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Struggle with", meaning: "Lutar contra / Enfrentar sérias dificuldades com." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, this budget adjustment is substantial. How long has your unit been struggling with these supply bottlenecks?", translation: "Monica, este ajuste de orçamento é substancial. Há quanto tempo sua unidade está enfrentando esses gargalos de fornecimento?" },
+          { sender: 'ai', text: "Marcus, this budget adjustment is substantial. How long has your unit been struggling with these supply bottlenecks?", translation: "Marcus, este ajuste de orçamento é substancial. Há quanto tempo sua unidade está enfrentando esses gargalos de fornecimento?" },
           { sender: 'user', text: "We have been struggling with these supply bottlenecks for six months, ever since the local regulations changed.", translation: "Nós estamos enfrentando esses gargalos de fornecimento há seis meses, desde que as regulamentações locais mudaram." },
           { sender: 'ai', text: "That explains the prolonged delays. Have you been researching alternative shipping partners lately?", translation: "Isso explica os atrasos prolongados. Você tem pesquisado parceiros alternativos de envio ultimamente?" },
           { sender: 'user', text: "Yes, we have. Our logistics team has been researching European partners since January to mitigate these risks.", translation: "Sim, temos. Nossa equipe de logística está pesquisando parceiros europeus desde janeiro para mitigar esses riscos." },
@@ -1169,7 +1169,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Catch up", meaning: "Atualizar-se sobre as novidades ou informações pendentes." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica! I didn't see you in the meeting room yesterday at 5 PM. Did you arrive late?", translation: "Oi Monica! Não te vi na sala de reunião ontem às 17h. Você chegou atrasada?" },
+          { sender: 'ai', text: "Hi Clara! I didn't see you in the meeting room yesterday at 5 PM. Did you arrive late?", translation: "Oi Clara! Não te vi na sala de reunião ontem às 17h. Você chegou atrasada?" },
           { sender: 'user', text: "Hi! Yes, I arrived at 5:10 PM, but the speaker had already left the room before I arrived.", translation: "Oi! Sim, eu cheguei às 17h10, mas o palestrante já tinha saído da sala antes de eu chegar." },
           { sender: 'ai', text: "Ah, that is why! He had finished his quick presentation early. Did he email you his slides?", translation: "Ah, por isso! Ele tinha terminado sua apresentação rápida mais cedo. Ele te enviou os slides por e-mail?" },
           { sender: 'user', text: "Yes, he had already emailed me the budget slides before the meeting even started.", translation: "Sim, ele já tinha me enviado os slides do orçamento por e-mail antes mesmo de a reunião começar." },
@@ -1197,7 +1197,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Wrap up", meaning: "Finalizar / Concluir uma tarefa com sucesso." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, let's verify our deployment schedule. Had the engineers finished the staging test before you launched?", translation: "Monica, vamos verificar nosso cronograma de implantação. Os engenheiros tinham terminado o teste de staging antes de você lançar?" },
+          { sender: 'ai', text: "Thomas, let's verify our deployment schedule. Had the engineers finished the staging test before you launched?", translation: "Thomas, vamos verificar nosso cronograma de implantação. Os engenheiros tinham terminado o teste de staging antes de você lançar?" },
           { sender: 'user', text: "Yes, they had finished the staging tests at 3 PM. We launched the system at 4 PM.", translation: "Sim, eles tinham terminado os testes de staging às 15h. Nós lançamos o sistema às 16h." },
           { sender: 'ai', text: "Perfect. And what about the security audit? Had the QA lead approved it prior to launch?", translation: "Perfeito. E sobre a auditoria de segurança? O líder de QA tinha aprovado antes do lançamento?" },
           { sender: 'user', text: "Yes, he had already approved all certificates before the operations team initiated the setup.", translation: "Sim, ele já tinha aprovado todos os certificados antes de a equipe de operações iniciar a configuração." },
@@ -1227,7 +1227,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Back up", meaning: "Fazer backup de arquivos / Dar suporte ou corroborar argumentos." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, the server downtime yesterday damaged our client relations. Why hadn't your team patched the system earlier?", translation: "Monica, o tempo de inatividade do servidor ontem prejudicou nossas relações com os clientes. Por que sua equipe não tinha corrigido o sistema antes?" },
+          { sender: 'ai', text: "Vanessa, the server downtime yesterday damaged our client relations. Why hadn't your team patched the system earlier?", translation: "Vanessa, o tempo de inatividade do servidor ontem prejudicou nossas relações com os clientes. Por que sua equipe não tinha corrigido o sistema antes?" },
           { sender: 'user', text: "With all due respect, my team had already patched the primary gateway hours before the outage occurred.", translation: "Com todo respeito, minha equipe já tinha corrigido o gateway principal horas antes de a interrupção ocorrer." },
           { sender: 'ai', text: "Then why did the backup system fail to take over when the primary nodes collapsed at noon?", translation: "Então por que o sistema de backup falhou em assumir quando os nós principais caíram ao meio-dia?" },
           { sender: 'user', text: "Because the hosting provider had modified our API keys before they initiated their server maintenance.", translation: "Porque o provedor de hospedagem tinha modificado nossas chaves de API antes de iniciarem a manutenção do servidor." },
@@ -1263,7 +1263,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Show up", meaning: "Aparecer / Chegar." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Hi Monica! I am so sorry for being late. Had you been waiting for a long time?", translation: "Oi Monica! Sinto muito pelo atraso. Você estava esperando há muito tempo?" },
+          { sender: 'ai', text: "Hi Victor! I am so sorry for being late. Had you been waiting for a long time?", translation: "Oi Victor! Sinto muito pelo atraso. Você estava esperando há muito tempo?" },
           { sender: 'user', text: "Hi! Yes, I had been waiting for almost an hour before you showed up.", translation: "Oi! Sim, eu estava esperando por quase uma hora antes de você aparecer." },
           { sender: 'ai', text: "Oh no! What had you been doing to pass the time while waiting?", translation: "Ah não! O que você estava fazendo para passar o tempo enquanto esperava?" },
           { sender: 'user', text: "I had been studying our training slides before the waiter brought my water.", translation: "Eu estava estudando nossos slides de treinamento antes de o garçom trazer minha água." },
@@ -1291,7 +1291,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Go down", meaning: "Parar de funcionar / Cair (sistema)." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, I need the timeline for the post-incident report. Had the database developers been working before the crash?", translation: "Monica, preciso do cronograma para o relatório pós-incidente. Os desenvolvedores de banco de dados estavam trabalhando antes da queda?" },
+          { sender: 'ai', text: "Isabela, I need the timeline for the post-incident report. Had the database developers been working before the crash?", translation: "Isabela, preciso do cronograma para o relatório pós-incidente. Os desenvolvedores de banco de dados estavam trabalhando antes da queda?" },
           { sender: 'user', text: "Yes, they had been working on the query optimization for three hours before the servers went down.", translation: "Sim, eles estavam trabalhando na otimização de consultas por três horas antes de os servidores caírem." },
           { sender: 'ai', text: "And what about the automated script logs? Had they been running without issues prior to that?", translation: "E os logs de scripts automatizados? Eles estavam rodando sem problemas antes disso?" },
           { sender: 'user', text: "Yes, the diagnostic scripts had been running smoothly before the power outage occurred at noon.", translation: "Sim, os scripts de diagnóstico estavam rodando perfeitamente antes de a queda de energia ocorrer ao meio-dia." },
@@ -1321,7 +1321,7 @@ const lessonsData: Record<string, any> = {
           { verb: "Point out", meaning: "Apontar / Destacar uma informação relevante." }
         ],
         dialogue: [
-          { sender: 'ai', text: "Monica, the logs show the backup node failed to initialize. Why hadn't your engineers verified the systems?", translation: "Monica, os logs mostram que o nó de backup falhou ao inicializar. Por que seus engenheiros não tinham verificado os sistemas?" },
+          { sender: 'ai', text: "Bruno, the logs show the backup node failed to initialize. Why hadn't your engineers verified the systems?", translation: "Bruno, os logs mostram que o nó de backup falhou ao inicializar. Por que seus engenheiros não tinham verificado os sistemas?" },
           { sender: 'user', text: "Actually, our database engineers had been testing the cluster redundancy for days before the provider collapsed.", translation: "Na verdade, nossos engenheiros de banco de dados vinham testando a redundância do cluster por dias antes de o provedor cair." },
           { sender: 'ai', text: "For days? But did they record any signs of latency during these redundancy stress tests?", translation: "Por dias? Mas eles registraram algum sinal de latência durante esses testes de estresse de redundância?" },
           { sender: 'user', text: "No, they didn't. The system had been performing exceptionally well prior to the unexpected network disruption.", translation: "Não, não registraram. O sistema vinha desempenhando excepcionalmente bem antes da interrupção inesperada da rede." },
