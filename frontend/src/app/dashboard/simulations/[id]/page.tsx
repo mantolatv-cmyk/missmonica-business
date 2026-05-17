@@ -20,7 +20,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Focus on basic greetings. Use 'Hi', 'Hello', and 'How are you?'.",
         goal: "Introduce yourself simply and mention your city.",
-        keyVocabulary: ["Hi", "Meeting", "Office", "Name"],
+        goalTranslation: "Apresente-se de forma simples e mencione sua cidade.",
+        keyVocabulary: [
+          { word: "Hi", translation: "Oi" },
+          { word: "Meeting", translation: "Reunião" },
+          { word: "Office", translation: "Escritório" },
+          { word: "Name", translation: "Nome" }
+        ],
         introduction: {
           scenario: "You are entering an online call. A friendly colleague is greeting you.",
           scenarioTranslation: "Você está entrando em uma chamada online. Um colega amigável está te cumprimentando."
@@ -42,7 +48,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Focus on building rapport. Use 'Nice to meet you' and ask about their work.",
         goal: "Engage in small talk about remote work and team dynamics.",
-        keyVocabulary: ["Catch up", "Remote work", "Schedule", "Multinational"],
+        goalTranslation: "Participe de conversas informais sobre trabalho remoto e dinâmica de equipe.",
+        keyVocabulary: [
+          { word: "Catch up", translation: "Colocar o papo em dia" },
+          { word: "Remote work", translation: "Trabalho remoto" },
+          { word: "Schedule", translation: "Cronograma/Agenda" },
+          { word: "Multinational", translation: "Multinacional" }
+        ],
         introduction: {
           scenario: "You are joining an online meeting a few minutes early. You meet John, a colleague from the London office, whom you've never spoken to before.",
           scenarioTranslation: "Você está entrando em uma reunião online alguns minutos mais cedo. Você encontra John, um colega do escritório de Londres, com quem você nunca falou antes."
@@ -67,7 +79,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Focus on executive nuances. Use 'Rapport', 'Stakeholder', and lead the transition to business.",
         goal: "Manage a complex professional introduction and set the agenda for the meeting.",
-        keyVocabulary: ["Stakeholder", "Rapport", "Strategic", "Keynote"],
+        goalTranslation: "Gerencie uma apresentação profissional complexa e defina a pauta da reunião.",
+        keyVocabulary: [
+          { word: "Stakeholder", translation: "Partes interessadas" },
+          { word: "Rapport", translation: "Sintonia / Empatia mútua" },
+          { word: "Strategic", translation: "Estratégico" },
+          { word: "Keynote", translation: "Apresentação principal" }
+        ],
         introduction: {
           scenario: "You are leading a major kickoff meeting with global directors. You need to establish instant credibility.",
           scenarioTranslation: "Você está liderando uma grande reunião de alinhamento com diretores globais. Você precisa estabelecer credibilidade imediata."
@@ -83,7 +101,7 @@ const lessonsData: Record<string, any> = {
           { sender: 'user', text: "We should present our roadmap metrics first, transitioning smoothly into how this schedule secures long-term value.", translation: "Devemos apresentar as métricas do nosso mapa de desenvolvimento primeiro, fazendo uma transição suave para como este cronograma garante valor a longo prazo." },
           { sender: 'ai', text: "That makes sense. They will likely push back on the budget allocation. Do we have a contingency model ready?", translation: "Isso faz sentido. Eles provavelmente vão questionar a alocação de orçamento. Temos um modelo de contingência pronto?" },
           { sender: 'user', text: "Yes, we've prepared a secondary scenario that reallocates minor resources without impacting our core milestones.", translation: "Sim, preparamos um cenário secundário que realoca recursos menores sem impactar nossos marcos principais." },
-          { sender: 'ai', text: "Perfect. This will demonstrate high adaptability. I want you to lead the transition when we reach the cost review slide.", translation: "Perfeito. Isso demonstrará alta adaptabilidade. Quero que você lidere a transição quando chegarmos ao slide de revisão de custos." },
+          { sender: 'ai', text: "Perfect. This will demonstrate high adaptability. I want you to lead the transition when we reach the cost review slide.", translation: "Perfeito. Isso demonstrará alta adaptabilidade. Quero que você liderere a transição quando chegarmos ao slide de revisão de custos." },
           { sender: 'user', text: "Understood. I will leverage our Q1 insights to demonstrate value, ensuring everyone sees this rollout as a win-win partnership.", translation: "Entendido. Vou aproveitar nossos insights do primeiro trimestre para demonstrar valor, garantindo que todos vejam esta implantação como uma parceria em que todos ganham." },
           { sender: 'ai', text: "Splendid. Let's make sure our communication remains crisp and action-oriented throughout the session.", translation: "Esplêndido. Vamos garantir que nossa comunicação permaneça nítida e orientada para a ação durante toda a sessão." },
           { sender: 'user', text: "Agreed. I'll open the shared keynote file now and ensure our screen projection is stable before they log on.", translation: "Acordado. Vou abrir o arquivo keynote compartilhado agora e garantir que nossa projeção de tela esteja estável antes de eles entrarem." }
@@ -98,7 +116,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Use 'Yes' and 'No' clearly. Practice 'I can' and 'I will'.",
         goal: "Confirm your attendance and mention your current task.",
-        keyVocabulary: ["Meeting", "Task", "Yes", "Now"],
+        goalTranslation: "Confirme sua presença e mencione sua tarefa atual.",
+        keyVocabulary: [
+          { word: "Meeting", translation: "Reunião" },
+          { word: "Task", translation: "Tarefa" },
+          { word: "Yes", translation: "Sim" },
+          { word: "Now", translation: "Agora" }
+        ],
         introduction: {
           scenario: "Your team manager is checking if you can join the daily stand-up meeting.",
           scenarioTranslation: "O gerente da sua equipe está verificando se você pode participar da reunião diária de acompanhamento."
@@ -120,7 +144,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Use 'I agree' or 'I see your point' before expressing a different opinion.",
         goal: "Communicate task progress, request feedback, and handle schedule changes professionally.",
-        keyVocabulary: ["Deadline", "Feedback", "Agenda", "Push back"],
+        goalTranslation: "Comunique o progresso das tarefas, solicite feedback e lide com mudanças de cronograma profissionalmente.",
+        keyVocabulary: [
+          { word: "Deadline", translation: "Prazo limite" },
+          { word: "Feedback", translation: "Retorno / Avaliação" },
+          { word: "Agenda", translation: "Pauta / Ordem do dia" },
+          { word: "Push back", translation: "Adiar / Postergar" }
+        ],
         introduction: {
           scenario: "You are in a weekly alignment meeting. The Project Manager is reviewing the Q3 release schedule and needs status updates.",
           scenarioTranslation: "Você está em uma reunião semanal de alinhamento. O Gerente de Projeto está revisando o cronograma de lançamento do terceiro trimestre e precisa de atualizações de status."
@@ -145,7 +175,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Focus on strategic alignment. Use 'Prioritize', 'Bandwidth', and 'Bottleneck'.",
         goal: "Lead the meeting discussion, address resource bottlenecks, and redefine project milestones.",
-        keyVocabulary: ["Prioritize", "Milestone", "Bottleneck", "Stakeholder"],
+        goalTranslation: "Lidere a discussão da reunião, aborde gargalos de recursos e redefina os marcos do projeto.",
+        keyVocabulary: [
+          { word: "Prioritize", translation: "Priorizar" },
+          { word: "Milestone", translation: "Marco / Ponto de controle" },
+          { word: "Bottleneck", translation: "Gargalo" },
+          { word: "Stakeholder", translation: "Parte interessada" }
+        ],
         introduction: {
           scenario: "You are in an executive alignment call to resolve a major delivery delay that impacts prime stakeholders.",
           scenarioTranslation: "Você está em uma chamada de alinhamento executivo para resolver um atraso crítico de entrega que afeta stakeholders importantes."
@@ -176,7 +212,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Practice your name and role.",
         goal: "Introduce yourself simply.",
-        keyVocabulary: ["Name", "Job", "From", "Live"],
+        goalTranslation: "Apresente-se de forma simples.",
+        keyVocabulary: [
+          { word: "Name", translation: "Nome" },
+          { word: "Job", translation: "Trabalho/Profissão" },
+          { word: "From", translation: "De (origem)" },
+          { word: "Live", translation: "Morar" }
+        ],
         introduction: {
           scenario: "You are introducing yourself in a preliminary HR screening call.",
           scenarioTranslation: "Você está se apresentando em uma chamada preliminar de triagem de RH."
@@ -198,7 +240,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Talk about strengths and walk through your experience.",
         goal: "Explain your background and professional experience.",
-        keyVocabulary: ["Resume", "Skills", "Team", "Achieve"],
+        goalTranslation: "Explique seu histórico e experiência profissional.",
+        keyVocabulary: [
+          { word: "Resume", translation: "Currículo" },
+          { word: "Skills", translation: "Habilidades" },
+          { word: "Team", translation: "Equipe" },
+          { word: "Achieve", translation: "Alcançar" }
+        ],
         introduction: {
           scenario: "You are in a standard HR interview explaining your project achievements.",
           scenarioTranslation: "Você está em uma entrevista de RH padrão explicando as conquistas do seu projeto."
@@ -222,7 +270,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Focus on the STAR method (Situation, Task, Action, Result).",
         goal: "Demonstrate high-level leadership and crisis resolution.",
-        keyVocabulary: ["Leadership", "Stakeholder", "Resolution", "Turnaround"],
+        goalTranslation: "Demonstre liderança de alto nível e resolução de crises.",
+        keyVocabulary: [
+          { word: "Leadership", translation: "Liderança" },
+          { word: "Stakeholder", translation: "Parte interessada" },
+          { word: "Resolution", translation: "Resolução" },
+          { word: "Turnaround", translation: "Reviravolta / Recuperação" }
+        ],
         introduction: {
           scenario: "You are undergoing an executive behavioral interview with a senior recruiter.",
           scenarioTranslation: "Você está passando por uma entrevista comportamental executiva com um recrutador sênior."
@@ -253,7 +307,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Use simple greetings and check attachments.",
         goal: "Verify that your email was sent correctly.",
-        keyVocabulary: ["Email", "File", "Send", "Inbox"],
+        goalTranslation: "Verifique se seu e-mail foi enviado corretamente.",
+        keyVocabulary: [
+          { word: "Email", translation: "E-mail" },
+          { word: "File", translation: "Arquivo" },
+          { word: "Send", translation: "Enviar" },
+          { word: "Inbox", translation: "Caixa de entrada" }
+        ],
         introduction: {
           scenario: "You are telling a client that you sent them the project documents.",
           scenarioTranslation: "Você está dizendo a um cliente que enviou os documentos do projeto."
@@ -275,7 +335,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Use polite, formal phrasing like 'Please find attached'.",
         goal: "Formally request feedback on a proposal.",
-        keyVocabulary: ["Attached", "Request", "Oversight", "Shortly"],
+        goalTranslation: "Solicite formalmente feedback sobre uma proposta.",
+        keyVocabulary: [
+          { word: "Attached", translation: "Em anexo" },
+          { word: "Request", translation: "Solicitação" },
+          { word: "Oversight", translation: "Descuido / Lapso" },
+          { word: "Shortly", translation: "Em breve" }
+        ],
         introduction: {
           scenario: "You are emailing a client to get feedback on a revised budget layout.",
           scenarioTranslation: "Você está enviando um e-mail a um cliente para obter feedback sobre um layout de orçamento revisado."
@@ -299,7 +365,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Maintain an executive, professional but firm tone.",
         goal: "Resolve a critical billing discrepancy and settle a dispute.",
-        keyVocabulary: ["Oversight", "Clarify", "Discrepancy", "Reconciliation"],
+        goalTranslation: "Resolva uma discrepância crítica de faturamento e liquide uma disputa.",
+        keyVocabulary: [
+          { word: "Oversight", translation: "Descuido / Omissão" },
+          { word: "Clarify", translation: "Esclarecer" },
+          { word: "Discrepancy", translation: "Discrepância" },
+          { word: "Reconciliation", translation: "Reconciliação" }
+        ],
         introduction: {
           scenario: "You are writing to a corporate partner regarding a major accounting mismatch.",
           scenarioTranslation: "Você está escrevendo para um parceiro corporativo sobre uma grande inconsistência contábil."
@@ -329,7 +401,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Practice standard greetings and exchange basic details.",
         goal: "Exchange business cards and find out the client's firm name.",
-        keyVocabulary: ["Company", "Meet", "Card", "Name"],
+        goalTranslation: "Troque cartões de visita e descubra o nome da empresa do cliente.",
+        keyVocabulary: [
+          { word: "Company", translation: "Empresa" },
+          { word: "Meet", translation: "Conhecer / Encontrar" },
+          { word: "Card", translation: "Cartão de visitas" },
+          { word: "Name", translation: "Nome" }
+        ],
         introduction: {
           scenario: "You are greeting a professional during a coffee break at a summit.",
           scenarioTranslation: "Você está cumprimentando um profissional durante um intervalo para o café em um congresso."
@@ -351,7 +429,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Ask about their industry and suggest connecting on LinkedIn.",
         goal: "Build professional rapport and expand your network.",
-        keyVocabulary: ["Network", "LinkedIn", "Trends", "Insights"],
+        goalTranslation: "Construa sintonia profissional e expanda sua rede de contatos.",
+        keyVocabulary: [
+          { word: "Network", translation: "Rede de contatos" },
+          { word: "LinkedIn", translation: "LinkedIn" },
+          { word: "Trends", translation: "Tendências" },
+          { word: "Insights", translation: "Percepções" }
+        ],
         introduction: {
           scenario: "You are discussing tech trends with a representative at a company booth.",
           scenarioTranslation: "Você está discutindo tendências tecnológicas com um representante no estande de uma empresa."
@@ -375,7 +459,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Deliver a polished value proposition pitch.",
         goal: "Pitch your services and position a strategic partnership.",
-        keyVocabulary: ["Insight", "Strategy", "Proposition", "Synergy"],
+        goalTranslation: "Apresente seus serviços e posicione uma parceria estratégica.",
+        keyVocabulary: [
+          { word: "Insight", translation: "Percepção profunda" },
+          { word: "Strategy", translation: "Estratégia" },
+          { word: "Proposition", translation: "Proposta de valor" },
+          { word: "Synergy", translation: "Sinergia" }
+        ],
         introduction: {
           scenario: "You are chatting with a high-level corporate director at an executive lounge.",
           scenarioTranslation: "Você está conversando com um diretor corporativo de alto nível em uma sala VIP executiva."
@@ -405,7 +495,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Say 'I can't hear you' or 'I can hear you' clearly.",
         goal: "Establish audio and video connection.",
-        keyVocabulary: ["Audio", "Video", "Hear", "See"],
+        goalTranslation: "Estabeleça a conexão de áudio e vídeo.",
+        keyVocabulary: [
+          { word: "Audio", translation: "Áudio" },
+          { word: "Video", translation: "Vídeo" },
+          { word: "Hear", translation: "Ouvir" },
+          { word: "See", translation: "Ver" }
+        ],
         introduction: {
           scenario: "You are checking your connection before starting a video call.",
           scenarioTranslation: "Você está verificando sua conexão antes de iniciar uma chamada de vídeo."
@@ -427,7 +523,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Politely mention glitches: 'Your mic is muted'.",
         goal: "Manage typical virtual meeting technical glitches.",
-        keyVocabulary: ["Muted", "Connection", "Unstable", "Screen"],
+        goalTranslation: "Gerencie problemas técnicos típicos de reuniões virtuais.",
+        keyVocabulary: [
+          { word: "Muted", translation: "Mudo / Silenciado" },
+          { word: "Connection", translation: "Conexão" },
+          { word: "Unstable", translation: "Instável" },
+          { word: "Screen", translation: "Tela" }
+        ],
         introduction: {
           scenario: "You are dealing with audio drops and screen-sharing issues during a client sync.",
           scenarioTranslation: "Você está lidando com quedas de áudio e problemas de compartilhamento de tela durante um alinhamento com o cliente."
@@ -451,7 +553,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Focus on virtual engagement and collaborative workflows.",
         goal: "Lead a high-stakes virtual workshop effectively.",
-        keyVocabulary: ["Bandwidth", "Screen", "Whiteboard", "Engagement"],
+        goalTranslation: "Lidere um workshop virtual de alto impacto de forma eficaz.",
+        keyVocabulary: [
+          { word: "Bandwidth", translation: "Largura de banda" },
+          { word: "Screen", translation: "Tela" },
+          { word: "Whiteboard", translation: "Quadro branco" },
+          { word: "Engagement", translation: "Engajamento" }
+        ],
         introduction: {
           scenario: "You are facilitating a virtual workshop for global business heads with tools lag.",
           scenarioTranslation: "Você está facilitando um workshop virtual para chefes de negócios globais com lentidão nas ferramentas."
@@ -482,7 +590,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Practice basic prepositions like 'at', 'in', 'on'.",
         goal: "Complete check-in and weigh your baggage.",
-        keyVocabulary: ["Bag", "Scale", "Airport", "Ticket"],
+        goalTranslation: "Conclua o check-in e pese sua bagagem.",
+        keyVocabulary: [
+          { word: "Bag", translation: "Mala / Bagagem" },
+          { word: "Scale", translation: "Balança" },
+          { word: "Airport", translation: "Aeroporto" },
+          { word: "Ticket", translation: "Passagem / Bilhete" }
+        ],
         introduction: {
           scenario: "You are checking in your luggage at the ticket counter.",
           scenarioTranslation: "Você está despachando sua bagagem no balcão de passagens."
@@ -504,7 +618,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Use spatial prepositions: 'between', 'next to', 'in front of'.",
         goal: "Find your departure gate and airport facilities.",
-        keyVocabulary: ["Between", "Gate", "Lounge", "Terminal"],
+        goalTranslation: "Encontre seu portão de embarque e instalações do aeroporto.",
+        keyVocabulary: [
+          { word: "Between", translation: "Entre (dois pontos)" },
+          { word: "Gate", translation: "Portão" },
+          { word: "Lounge", translation: "Sala VIP" },
+          { word: "Terminal", translation: "Terminal" }
+        ],
         introduction: {
           scenario: "You are asking an airport agent for directions to the VIP lounge.",
           scenarioTranslation: "Você está pedindo direções a um agente do aeroporto para a sala VIP."
@@ -528,7 +648,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Describe precise spatial locations and customs procedures.",
         goal: "Resolve a critical luggage routing issue with customs.",
-        keyVocabulary: ["Identification", "Behind", "Customs", "Discrepancy"],
+        goalTranslation: "Resolva um problema crítico de roteamento de bagagem com a alfândega.",
+        keyVocabulary: [
+          { word: "Identification", translation: "Identificação" },
+          { word: "Behind", translation: "Atrás de" },
+          { word: "Customs", translation: "Alfândega" },
+          { word: "Discrepancy", translation: "Discrepância" }
+        ],
         introduction: {
           scenario: "You are negotiating with a customs officer regarding an unrouted briefcase containing corporate files.",
           scenarioTranslation: "Você está negociando com um oficial de alfândega sobre uma pasta não roteada contendo arquivos corporativos."
@@ -558,7 +684,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Respond clearly with short, positive answers: 'Yes, I do'.",
         goal: "Pass through passport control.",
-        keyVocabulary: ["Yes", "Passport", "Do", "Visit"],
+        goalTranslation: "Passe pelo controle de passaportes.",
+        keyVocabulary: [
+          { word: "Yes", translation: "Sim" },
+          { word: "Passport", translation: "Passaporte" },
+          { word: "Do", translation: "Verbo auxiliar" },
+          { word: "Visit", translation: "Visita / Visitar" }
+        ],
         introduction: {
           scenario: "An immigration officer is checking your passport at entry control.",
           scenarioTranslation: "Um oficial de imigração está verificando seu passaporte no controle de entrada."
@@ -580,7 +712,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Use 'Can I have' or 'Can you help me' to make polite requests.",
         goal: "Request flight assistance from the crew.",
-        keyVocabulary: ["Can", "Water", "Help", "Request"],
+        goalTranslation: "Solicite assistência de voo para a tripulação.",
+        keyVocabulary: [
+          { word: "Can", translation: "Poder (permissão)" },
+          { word: "Water", translation: "Água" },
+          { word: "Help", translation: "Ajudar" },
+          { word: "Request", translation: "Solicitação" }
+        ],
         introduction: {
           scenario: "You are on board, asking the flight crew for technical assistance with a device.",
           scenarioTranslation: "Você está a bordo, pedindo assistência técnica à tripulação de voo com um dispositivo."
@@ -604,7 +742,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Leverage advanced conditional expressions for polite negotiation.",
         goal: "Negotiate a last-minute flight reschedule with an airline agent.",
-        keyVocabulary: ["Could", "If", "Alternative", "Upgrade"],
+        goalTranslation: "Negocie uma remarcação de voo de última hora com um agente da companhia aérea.",
+        keyVocabulary: [
+          { word: "Could", translation: "Poderia" },
+          { word: "If", translation: "Se" },
+          { word: "Alternative", translation: "Alternativa" },
+          { word: "Upgrade", translation: "Melhoria de classe" }
+        ],
         introduction: {
           scenario: "You are trying to change a fully booked flight due to a business urgency.",
           scenarioTranslation: "Você está tentando alterar um voo totalmente lotado devido a uma urgência de negócios."
@@ -634,7 +778,13 @@ const lessonsData: Record<string, any> = {
       Beginner: {
         contextTip: "Use 'I am', 'He is', and 'She is' correctly.",
         goal: "Introduce your origin and travel party.",
-        keyVocabulary: ["Brazil", "Wife", "Am", "Is"],
+        goalTranslation: "Apresente sua origem e acompanhantes de viagem.",
+        keyVocabulary: [
+          { word: "Brazil", translation: "Brasil" },
+          { word: "Wife", translation: "Esposa" },
+          { word: "Am", translation: "Sou / Estou" },
+          { word: "Is", translation: "É / Está" }
+        ],
         introduction: {
           scenario: "You are talking to a friendly driver outside the airport terminal.",
           scenarioTranslation: "Você está conversando com um motorista amigável do lado de fora do terminal do aeroporto."
@@ -656,7 +806,13 @@ const lessonsData: Record<string, any> = {
       Intermediate: {
         contextTip: "Use plural forms correctly: 'We are', 'They are'.",
         goal: "Describe your team's current status and location.",
-        keyVocabulary: ["Vacation", "Excited", "Are", "Ready"],
+        goalTranslation: "Descreva o status atual e a localização da sua equipe.",
+        keyVocabulary: [
+          { word: "Vacation", translation: "Férias" },
+          { word: "Excited", translation: "Animado" },
+          { word: "Are", translation: "São / Estão" },
+          { word: "Ready", translation: "Pronto" }
+        ],
         introduction: {
           scenario: "You are updating a client on the exact location of your visiting delegation.",
           scenarioTranslation: "Você está atualizando um cliente sobre a localização exata da sua delegação visitante."
@@ -680,7 +836,13 @@ const lessonsData: Record<string, any> = {
       Advanced: {
         contextTip: "Express states of capability and readiness professionally.",
         goal: "Convince a potential client of your team's expertise and readiness.",
-        keyVocabulary: ["Ready", "Expert", "Capable", "Outstanding"],
+        goalTranslation: "Convença um cliente potencial sobre a especialidade e prontidão da sua equipe.",
+        keyVocabulary: [
+          { word: "Ready", translation: "Pronto" },
+          { word: "Expert", translation: "Especialista" },
+          { word: "Capable", translation: "Capaz" },
+          { word: "Outstanding", translation: "Excepcional" }
+        ],
         introduction: {
           scenario: "You are pitching your team's deployment capabilities to a skeptical buyer.",
           scenarioTranslation: "Você está vendendo as capacidades de implantação da sua equipe para um comprador cético."
@@ -722,6 +884,7 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
   const [visibleStep, setVisibleStep] = useState(1);
   const [showBriefing, setShowBriefing] = useState(true);
   const [briefingTranslations, setBriefingTranslations] = useState<Record<string, boolean>>({});
+  const [vocabTranslations, setVocabTranslations] = useState<Record<number, boolean>>({});
   const [showTranslations, setShowTranslations] = useState<Record<number, boolean>>({});
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -815,18 +978,48 @@ export default function ConversationalSimulator({ params }: { params: Promise<{ 
                 <section>
                   <div className="flex justify-between items-center mb-2">
                     <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">Primary Goal ({difficulty})</h4>
+                    <span className="text-[10px] text-gray-500 italic">Click text to translate</span>
                   </div>
-                  <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-white">
-                    {diffSettings.goal}
-                  </p>
+                  <div 
+                    onClick={() => setBriefingTranslations(prev => ({ ...prev, goal: !prev.goal }))}
+                    className="cursor-pointer group"
+                  >
+                    <p className="text-gray-300 leading-relaxed transition-colors group-hover:text-white">
+                      {diffSettings.goal}
+                    </p>
+                    <AnimatePresence>
+                      {briefingTranslations.goal && (
+                        <motion.p 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="text-[#D97706] text-sm mt-2 italic border-t border-[#D97706]/20 pt-2"
+                        >
+                          {diffSettings.goalTranslation}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </section>
 
                 <section>
-                  <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider mb-3">Key Vocabulary</h4>
+                  <div className="flex justify-between items-center mb-3">
+                    <h4 className="text-xs font-bold text-[#D97706] uppercase tracking-wider">Key Vocabulary</h4>
+                    <span className="text-[10px] text-gray-500 italic">Click tag to translate</span>
+                  </div>
                   <div className="flex flex-wrap gap-2">
-                    {diffSettings.keyVocabulary.map((word: string, i: number) => (
-                      <span key={i} className="px-3 py-1 bg-[#1E293B] border border-[#334155] rounded-lg text-xs text-gray-300 font-medium">
-                        {word}
+                    {diffSettings.keyVocabulary.map((item: { word: string; translation: string }, i: number) => (
+                      <span 
+                        key={i} 
+                        onClick={() => setVocabTranslations(prev => ({ ...prev, [i]: !prev[i] }))}
+                        className="px-3 py-1.5 bg-[#1E293B] border border-[#334155] rounded-lg text-xs text-gray-300 font-medium cursor-pointer hover:border-[#D97706] hover:text-white transition-all select-none flex items-center gap-1.5"
+                      >
+                        <span>{item.word}</span>
+                        {vocabTranslations[i] && (
+                          <span className="text-[#D97706] font-normal border-l border-[#334155] pl-1.5">
+                            {item.translation}
+                          </span>
+                        )}
                       </span>
                     ))}
                   </div>
