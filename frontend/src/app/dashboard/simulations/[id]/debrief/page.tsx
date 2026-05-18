@@ -19,7 +19,9 @@ const lessonsMetadata: Record<string, any> = {
   "4": { title: "Professional Emails", summary: "The email response was polite and correctly used formal attachments phrases." },
   "5": { title: "Networking & Events", summary: "You kept the conversation flowing and asked relevant industry questions." },
   "6": { title: "Teams & Online Calls", summary: "You handled the technical issues with patience and used the correct terminology for troubleshooting." },
-  "7": { title: "Prepositions & Travel", summary: "You demonstrated a clear understanding of spatial relationships and prepositions in a travel context." }
+  "7": { title: "Prepositions & Travel", summary: "You demonstrated a clear understanding of spatial relationships and prepositions in a travel context." },
+  "8": { title: "DO / CAN / TO", summary: "You effectively used auxiliary verbs and modal verbs for requests and questions in daily scenarios." },
+  "9": { title: "Present To Be", summary: "Your usage of the verb 'to be' was accurate across various social and travel situations." }
 };
 
 const data = [
