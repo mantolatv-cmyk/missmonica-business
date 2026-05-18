@@ -37,3 +37,43 @@ body {
 .neon-glow-amber {
   box-shadow: inset 0 0 20px rgba(217, 119, 6, 0.05), 0 0 20px rgba(217, 119, 6, 0.05);
 }
+
+/* Premium Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 17, 32, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(248, 250, 252, 0.08); /* Slim, subtle semi-transparent thumb */
+  border-radius: 9999px;
+  border: 1px solid rgba(11, 17, 32, 0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.7); /* Signature amber glow on hover */
+  box-shadow: 0 0 8px rgba(217, 119, 6, 0.4);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(248, 250, 252, 0.08) rgba(11, 17, 32, 0.3);
+}
+
+/* Scrollbar Hider Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+

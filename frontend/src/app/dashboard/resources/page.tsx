@@ -512,7 +512,7 @@ export default function ResourcesPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Left column: list of templates (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col gap-6 max-h-[750px] overflow-y-auto pr-2 no-scrollbar">
+        <div className="lg:col-span-5 flex flex-col gap-6 max-h-[750px] overflow-y-auto pr-2">
           {filteredTemplates.length > 0 ? (
             filteredTemplates.map(template => {
               const isSelected = selectedTemplate.id === template.id;
