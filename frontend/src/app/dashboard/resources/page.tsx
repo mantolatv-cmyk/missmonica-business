@@ -521,7 +521,7 @@ export default function ResourcesPage() {
                   key={template.id}
                   whileHover={{ y: -2 }}
                   onClick={() => setSelectedTemplate(template)}
-                  className={`p-7 rounded-2xl cursor-pointer border transition-all relative overflow-hidden flex flex-col justify-between gap-3 min-h-[170px] ${
+                  className={`p-5 md:p-6 rounded-2xl cursor-pointer border transition-all relative flex flex-col justify-between gap-3 h-auto ${
                     isSelected 
                       ? 'bg-[#0B1120] border-[#D97706] shadow-[0_0_15px_rgba(217,119,6,0.15)]' 
                       : 'bg-[#0B1120] border-[#1E293B] hover:border-[#334155]'
@@ -542,18 +542,18 @@ export default function ResourcesPage() {
                       </span>
                     </div>
 
-                    <h3 className={`font-serif text-xl font-bold leading-snug transition-colors ${
+                    <h3 className={`font-serif text-base sm:text-lg font-bold leading-snug transition-colors ${
                       isSelected ? 'text-[#D97706]' : 'text-white'
                     }`}>
                       {template.title}
                     </h3>
 
-                    <p className="font-sans text-xs text-gray-400 line-clamp-2 leading-relaxed">
+                    <p className="font-sans text-xs text-gray-400 line-clamp-1 leading-relaxed">
                       Subject: {template.subject.replace(/\[.*?\]/g, '___')}
                     </p>
                   </div>
 
-                  <div className="mt-3 flex gap-1.5 flex-wrap">
+                  <div className="mt-2 flex gap-1.5 flex-wrap">
                     {template.targetVocab.slice(0, 2).map((vocab, i) => (
                       <span key={i} className="text-[9px] px-2 py-0.5 bg-[#0F172A] border border-[#1E293B] rounded text-gray-400 font-medium">
                         {vocab}
