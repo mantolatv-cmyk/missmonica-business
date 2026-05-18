@@ -512,7 +512,7 @@ export default function ResourcesPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Left column: list of templates (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col gap-4 max-h-[750px] overflow-y-auto pr-2 no-scrollbar">
+        <div className="lg:col-span-5 flex flex-col gap-6 max-h-[750px] overflow-y-auto pr-2 no-scrollbar">
           {filteredTemplates.length > 0 ? (
             filteredTemplates.map(template => {
               const isSelected = selectedTemplate.id === template.id;
@@ -521,37 +521,39 @@ export default function ResourcesPage() {
                   key={template.id}
                   whileHover={{ y: -2 }}
                   onClick={() => setSelectedTemplate(template)}
-                  className={`p-5 rounded-2xl cursor-pointer border transition-all relative overflow-hidden flex flex-col gap-2 ${
+                  className={`p-7 rounded-2xl cursor-pointer border transition-all relative overflow-hidden flex flex-col justify-between gap-3 min-h-[170px] ${
                     isSelected 
-                      ? 'bg-[#0B1120] border-[#D97706] shadow-[0_0_15px_rgba(217,119,6,0.1)]' 
+                      ? 'bg-[#0B1120] border-[#D97706] shadow-[0_0_15px_rgba(217,119,6,0.15)]' 
                       : 'bg-[#0B1120] border-[#1E293B] hover:border-[#334155]'
                   }`}
                 >
-                  <div className="flex justify-between items-start">
-                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest">
-                      {template.category}
-                    </span>
-                    
-                    <span className={`px-2 py-0.5 rounded text-[8px] font-bold uppercase border tracking-tight ${
-                      template.difficulty === 'Advanced' 
-                        ? 'text-[#D97706] border-[#D97706]/40 bg-[#D97706]/10' 
-                        : 'text-[#10B981] border-[#10B981]/40 bg-[#10B981]/10'
+                  <div className="flex flex-col gap-2.5">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                        {template.category}
+                      </span>
+                      
+                      <span className={`px-2 py-0.5 rounded text-[8px] font-bold uppercase border tracking-tight ${
+                        template.difficulty === 'Advanced' 
+                          ? 'text-[#D97706] border-[#D97706]/40 bg-[#D97706]/10' 
+                          : 'text-[#10B981] border-[#10B981]/40 bg-[#10B981]/10'
+                      }`}>
+                        {template.difficulty}
+                      </span>
+                    </div>
+
+                    <h3 className={`font-serif text-xl font-bold leading-snug transition-colors ${
+                      isSelected ? 'text-[#D97706]' : 'text-white'
                     }`}>
-                      {template.difficulty}
-                    </span>
+                      {template.title}
+                    </h3>
+
+                    <p className="font-sans text-xs text-gray-400 line-clamp-2 leading-relaxed">
+                      Subject: {template.subject.replace(/\[.*?\]/g, '___')}
+                    </p>
                   </div>
 
-                  <h3 className={`font-serif text-lg font-bold transition-colors ${
-                    isSelected ? 'text-[#D97706]' : 'text-white'
-                  }`}>
-                    {template.title}
-                  </h3>
-
-                  <p className="font-sans text-xs text-gray-400 line-clamp-2 leading-relaxed">
-                    Subject: {template.subject.replace(/\[.*?\]/g, '___')}
-                  </p>
-
-                  <div className="mt-2 flex gap-1.5 flex-wrap">
+                  <div className="mt-3 flex gap-1.5 flex-wrap">
                     {template.targetVocab.slice(0, 2).map((vocab, i) => (
                       <span key={i} className="text-[9px] px-2 py-0.5 bg-[#0F172A] border border-[#1E293B] rounded text-gray-400 font-medium">
                         {vocab}
